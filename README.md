@@ -129,6 +129,32 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
 标准模型（Yang–Mills → 电弱 → QCD → 组装）
 ```
 
+## 学习笔记（docs/）
+
+按阶段组织的学习笔记，随学习进度持续补充。已完成的章节：
+
+| 阶段 | 笔记 |
+|---|---|
+| 第 0 阶段（数学补课） | [SO(3)/SU(2) 与角动量的关系](docs/stage-00-math/01-so3-su2-and-angular-momentum.md) |
+| 第 3 阶段（桥梁） | [KG 方程与 Dirac 方程：相对论量子力学的尝试及其失败](docs/stage-03-relativistic-qm/01-klein-gordon-and-dirac.md) |
+| 第 3 阶段（桥梁） | [场的拉格朗日形式：从弦的振动到诺特定理](docs/stage-03-relativistic-qm/02-lagrangian-field-theory.md) |
+| 第 4 阶段（QFT 核心） | [QED：旋量场、光子场与规范不变性](docs/stage-04-qft-core/05-qed.md) |
+| 第 4 阶段（QFT 核心） | [一圈修正：发散、正规化与重整化](docs/stage-04-qft-core/06-one-loop-renormalization.md) |
+| 第 4 阶段（QFT 核心） | [路径积分表述：对所有历史求和](docs/stage-04-qft-core/07-path-integral.md) |
+| 第 6 阶段（标准模型） | [标准模型拉氏量：逐项读懂那著名的一页](docs/stage-06-standard-model/01-standard-model-lagrangian.md) |
+
+目录约定：`docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序（留有空位便于插入）。
+
+### 本地预览
+
+笔记含 LaTeX 公式（MathJax 渲染）和可折叠的自检答案，建议用自带的服务器在浏览器中阅读：
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install markdown pymdown-extensions
+.venv/bin/python serve.py        # 打开 http://localhost:8000
+```
+
 ## 最小书单
 
 四本就够，其余都是辅助：
