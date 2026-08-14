@@ -47,10 +47,10 @@
 QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空中楼阁。需要达到：
 
 - 希尔伯特空间、算符、狄拉克记号烂熟
-- 角动量理论（SU(2) 的物理化身）
-- 微扰论（含时微扰论、费米黄金定则——QFT 里算截面就是它的推广）
-- 散射理论基本概念
-- 谐振子的产生/湮灭算符解法（**QFT 本质上是无穷多个谐振子**）
+- 角动量理论（SU(2) 的物理化身）（[笔记](docs/stage-02-quantum-mechanics/02-angular-momentum.md)）
+- 微扰论（含时微扰论、费米黄金定则——QFT 里算截面就是它的推广）（[笔记](docs/stage-02-quantum-mechanics/03-perturbation-theory.md)）
+- 散射理论基本概念（[笔记](docs/stage-02-quantum-mechanics/04-scattering-theory.md)）
+- 谐振子的产生/湮灭算符解法（**QFT 本质上是无穷多个谐振子**）（[笔记](docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)）
 
 教材：Griffiths《量子力学概论》入门，之后 Shankar 或 Sakurai《现代量子力学》。
 
