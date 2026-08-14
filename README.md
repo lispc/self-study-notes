@@ -26,7 +26,7 @@
 
 不要单独憋半年学数学，按需补：
 
-- **群论基础**：群的定义、SO(3)/SU(2) 与角动量的关系、李群/李代数的概念。初期只需"会用"，严格的表示论后面再补。
+- **群论基础**：群的定义、[SO(3)/SU(2) 与角动量的关系](docs/stage-00-math/01-so3-su2-and-angular-momentum.md)、李群/李代数的概念。初期只需"会用"，严格的表示论后面再补。
 - **张量与指标运算**：爱因斯坦求和约定、闵可夫斯基度规 η_μν、逆变/协变指标。这是 QFT 的日常书写语言，一周就能上手。
 - **变分原理**：泛函导数、欧拉–拉格朗日方程（在经典力学的拉格朗日形式里自然学到）。
 
@@ -58,9 +58,9 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 ## 第 3 阶段：经典场论 + 相对论量子力学（1–2 个月，过渡桥梁）
 
-- 场的拉格朗日形式：从弦的振动推广到场；诺特流、能动张量
-- Klein–Gordon 方程、Dirac 方程（作为"相对论量子力学的尝试"引入；理解它们的困难——负能量解、多粒子问题——正是 QFT 存在的理由）
-- 电磁学的协变形式（F_μν、规范势）
+- 场的拉格朗日形式：从弦的振动推广到场；诺特流、能动张量（[笔记](docs/stage-03-relativistic-qm/02-lagrangian-field-theory.md)）
+- Klein–Gordon 方程、Dirac 方程（作为"相对论量子力学的尝试"引入；理解它们的困难——负能量解、多粒子问题——正是 QFT 存在的理由）（[笔记](docs/stage-03-relativistic-qm/01-klein-gordon-and-dirac.md)）
+- 电磁学的协变形式（F_μν、规范势）（[笔记](docs/stage-03-relativistic-qm/03-covariant-electromagnetism.md)）
 
 这一阶段一般已并入 QFT 教材的前几章（如 Peskin 第 2–3 章），不必单独啃书。
 
@@ -68,13 +68,13 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 主线逻辑：
 
-1. **标量场量子化**：自由场 = 无穷多谐振子，粒子是场的激发
+1. **标量场量子化**：自由场 = 无穷多谐振子，粒子是场的激发（[笔记](docs/stage-04-qft-core/01-scalar-field-quantization.md)）
 2. **传播子与因果性**：费曼传播子
 3. **相互作用 + 微扰论**：Wick 定理、**费曼图与费曼规则**（从这里开始你会"算"了）
 4. **S 矩阵与截面**：LSZ 约化公式，算出第一个真实物理量——散射截面
-5. **QED**：旋量场 + 光子场 + 规范不变性；算康普顿散射、e⁺e⁻ → μ⁺μ⁻
-6. **一圈修正**：发散、正规化、**重整化**（QFT 思想上最深的部分；Wilson 的有效理论视角是现代的正确理解）
-7. **路径积分表述**（可与传统算符形式平行学）
+5. **QED**：旋量场 + 光子场 + 规范不变性；算康普顿散射、e⁺e⁻ → μ⁺μ⁻（[笔记](docs/stage-04-qft-core/05-qed.md)）
+6. **一圈修正**：发散、正规化、**重整化**（QFT 思想上最深的部分；Wilson 的有效理论视角是现代的正确理解）（[笔记](docs/stage-04-qft-core/06-one-loop-renormalization.md)）
+7. **路径积分表述**（可与传统算符形式平行学）（[笔记](docs/stage-04-qft-core/07-path-integral.md)）
 
 教材（按难度排）：
 
@@ -87,7 +87,7 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 ## 第 5 阶段：对称性与群论补课（与第 4 阶段后期并行）
 
 - 李群/李代数，SU(2)、SU(3) 的表示论
-- 整体对称 vs 规范对称
+- [整体对称 vs 规范对称](docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)
 - 自发对称性破缺、Goldstone 定理、Higgs 机制
 
 教材：Georgi《Lie Algebras in Particle Physics》，或 Schwartz/Peskin 相关章节。
@@ -96,10 +96,10 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 到这里是"组装"阶段，每一块都是前面零件的组合：
 
-1. **非阿贝尔规范理论**（Yang–Mills）：协变导数、场强、渐近自由（QCD 的招牌性质）
-2. **电弱统一**：SU(2)×U(1)、希格斯机制、W/Z/光子质量谱、费米子质量来自 Yukawa 耦合
-3. **QCD**：色 SU(3)、夸克禁闭、部分子模型、跑动耦合
-4. **标准模型拉氏量**：三部分拼起来，逐项读懂那一页著名的公式
+1. **非阿贝尔规范理论**（Yang–Mills）：协变导数、场强、渐近自由（QCD 的招牌性质）（[笔记](docs/stage-06-standard-model/01-yang-mills.md)）
+2. **电弱统一**：SU(2)×U(1)、希格斯机制、W/Z/光子质量谱、费米子质量来自 Yukawa 耦合（[笔记](docs/stage-06-standard-model/02-electroweak-unification.md)）
+3. **QCD**：色 SU(3)、夸克禁闭、部分子模型、跑动耦合（[笔记](docs/stage-06-standard-model/03-qcd.md)）
+4. **标准模型拉氏量**：三部分拼起来，逐项读懂那一页著名的公式（[笔记](docs/stage-06-standard-model/04-standard-model-lagrangian.md)）
 5. 选学深化：反常（anomaly）与相消、CKM 矩阵与 CP 破坏、中微子质量、超出标准模型的问题
 
 教材：Schwartz 后半本；Cheng & Li《Gauge Theory of Elementary Particle Physics》；Griffiths《Introduction to Elementary Particles》（偏现象学，可当先导读物）。
@@ -129,26 +129,9 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
 标准模型（Yang–Mills → 电弱 → QCD → 组装）
 ```
 
-## 学习笔记（docs/）
+## 学习笔记与本地预览
 
-按阶段组织的学习笔记，随学习进度持续补充。已完成的章节：
-
-| 阶段 | 笔记 |
-|---|---|
-| 第 0 阶段（数学补课） | [SO(3)/SU(2) 与角动量的关系](docs/stage-00-math/01-so3-su2-and-angular-momentum.md) |
-| 第 3 阶段（桥梁） | [KG 方程与 Dirac 方程：相对论量子力学的尝试及其失败](docs/stage-03-relativistic-qm/01-klein-gordon-and-dirac.md) |
-| 第 3 阶段（桥梁） | [场的拉格朗日形式：从弦的振动到诺特定理](docs/stage-03-relativistic-qm/02-lagrangian-field-theory.md) |
-| 第 3 阶段（桥梁） | [电磁学的协变形式：F_μν 与规范势](docs/stage-03-relativistic-qm/03-covariant-electromagnetism.md) |
-| 第 4 阶段（QFT 核心） | [标量场量子化：从无穷多谐振子到粒子](docs/stage-04-qft-core/01-scalar-field-quantization.md) |
-| 第 4 阶段（QFT 核心） | [QED：旋量场、光子场与规范不变性](docs/stage-04-qft-core/05-qed.md) |
-| 第 4 阶段（QFT 核心） | [一圈修正：发散、正规化与重整化](docs/stage-04-qft-core/06-one-loop-renormalization.md) |
-| 第 4 阶段（QFT 核心） | [路径积分表述：对所有历史求和](docs/stage-04-qft-core/07-path-integral.md) |
-| 第 5 阶段（群论补课） | [整体对称 vs 规范对称：守恒律与冗余](docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md) |
-| 第 6 阶段（标准模型） | [标准模型拉氏量：逐项读懂那著名的一页](docs/stage-06-standard-model/01-standard-model-lagrangian.md) |
-
-目录约定：`docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序（留有空位便于插入）。
-
-### 本地预览
+学习笔记在 `docs/` 下，按阶段组织（`docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序，留有空位便于插入）。已完成的笔记链接已直接挂在上面的路线图条目上（条目标注"笔记"的即是）。
 
 笔记含 LaTeX 公式（MathJax 渲染）和可折叠的自检答案，建议用自带的服务器在浏览器中阅读：
 

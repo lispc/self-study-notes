@@ -126,7 +126,7 @@ $$4\ \text{分量} \;-\; 1\ \text{约束}\;-\; 1\ \text{规范冗余} \;=\; 2\ \
 
 ## 6. 大图景：标准模型与引力
 
-标准模型的结构正好是本章二分法的实例（逐项解读见[标准模型拉氏量笔记](../stage-06-standard-model/01-standard-model-lagrangian.md)）：
+标准模型的结构正好是本章二分法的实例（逐项解读见[标准模型拉氏量笔记](../stage-06-standard-model/04-standard-model-lagrangian.md)）：
 
 - **规范部分**：局域群 $\mathrm{SU}(3)_c \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$——纯描述冗余，但经规范原理给出全部相互作用：胶子、$W^\pm, Z$、光子的存在与耦合形式。
 - **整体部分**：重子数 $B$、轻子数 $L$（偶然对称，见 2.1 节）以及各种近似味对称——给出守恒律与选择定则。

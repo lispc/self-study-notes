@@ -38,7 +38,13 @@ PAGE = """<!DOCTYPE html>
   nav {{ margin-bottom: 1.5rem; }}
   nav a {{ font-size: .9em; color: #57606a; }}
   .dir {{ font-weight: 600; margin-top: 1.2em; }}
-  ul.files {{ list-style: none; padding-left: 1em; }}
+  ul.files {{ list-style: none; padding-left: .2em; }}
+  ul.files li {{ margin: .35em 0; }}
+  .fname {{ color: #8b949e; font-size: .8em; margin-left: .6em; }}
+  .stage {{ margin-top: 2.2em; }}
+  .stage h2 {{ font-size: 1.15em; border-bottom: 1px solid #d0d7de; padding-bottom: .3em; margin-bottom: .2em; }}
+  .desc {{ color: #57606a; font-size: .9em; margin: .2em 0 .6em; }}
+  h1 {{ font-size: 1.5em; }}
   details {{ border: 1px solid #d0d7de; border-radius: 6px; padding: .4em .9em; margin: .6em 0 1.2em; background: #fbfdfc; }}
   summary {{ cursor: pointer; color: #0969da; font-size: .92em; }}
   details[open] summary {{ margin-bottom: .5em; }}
@@ -69,6 +75,26 @@ def render_md(path):
     return PAGE.format(title=title, content=f'<nav><a href="/">&larr; 全部笔记</a></nav>\n{body}')
 
 
+def _doc_title(path):
+    """取 Markdown 文件第一个一级标题作为显示名。"""
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("# "):
+                return line[2:].strip()
+    return os.path.basename(path)
+
+
+# 目录名 → (阶段标题, 一句话描述)；未收录的目录按目录名原样显示
+STAGES = {
+    "stage-00-math": ("第 0 阶段 · 数学补课", "群论、指标运算、变分原理——按需补的数学工具"),
+    "stage-03-relativistic-qm": ("第 3 阶段 · 过渡桥梁", "经典场论与相对论量子力学：QFT 的语言与动机"),
+    "stage-04-qft-core": ("第 4 阶段 · QFT 核心", "量子化 → 费曼图 → QED → 重整化 → 路径积分"),
+    "stage-05-symmetry-group-theory": ("第 5 阶段 · 对称性与群论", "李群表示、整体/规范对称、自发对称性破缺"),
+    "stage-06-standard-model": ("第 6 阶段 · 标准模型", "Yang–Mills → 电弱统一 → QCD → 逐项读懂拉氏量"),
+}
+
+
 def render_index():
     entries = {}  # dir -> [file names]
     for dirpath, _dirnames, filenames in os.walk(ROOT):
@@ -76,16 +102,21 @@ def render_index():
         mds = sorted(f for f in filenames if f.endswith(".md"))
         if mds:
             entries[rel_dir] = mds
-    parts = ['<h1>📖 学习笔记</h1>']
+    parts = ["<h1>QFT / 标准模型学习笔记</h1>",
+             '<p class="desc">按路线图阶段组织；每篇末尾有 5 道自检题（点击展开答案）。</p>']
     for rel_dir in sorted(entries):
-        label = "未分类" if rel_dir == "." else rel_dir
-        parts.append(f'<p class="dir">{html.escape(label)}/</p><ul class="files">')
+        stage_title, desc = STAGES.get(rel_dir, (rel_dir, ""))
+        parts.append(f'<section class="stage"><h2>{html.escape(stage_title)}</h2>')
+        if desc:
+            parts.append(f'<p class="desc">{html.escape(desc)}</p>')
+        parts.append('<ul class="files">')
         for name in entries[rel_dir]:
             rel = name if rel_dir == "." else f"{rel_dir}/{name}"
             url = urllib.parse.quote(rel)
-            parts.append(f'<li><a href="/{url}">{html.escape(name)}</a></li>')
-        parts.append("</ul>")
-    if len(parts) == 1:
+            title = html.escape(_doc_title(os.path.join(ROOT, rel_dir, name)))
+            parts.append(f'<li><a href="/{url}">{title}</a><span class="fname">{html.escape(name)}</span></li>')
+        parts.append("</ul></section>")
+    if len(parts) <= 2:
         parts.append("<p>docs/ 下还没有 Markdown 文件。</p>")
     return PAGE.format(title="学习笔记", content="\n".join(parts))
 
