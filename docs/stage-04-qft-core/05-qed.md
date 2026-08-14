@@ -301,7 +301,7 @@ $$\frac{d\sigma}{d\Omega} = \frac{\alpha^2}{2m^2}\big(1+\cos^2\theta\big), \qqua
 | 规范原理 | 定域 U(1)：$\partial_\mu\to D_\mu=\partial_\mu+ieA_\mu$，$A_\mu\to A_\mu-\partial_\mu\alpha/e$；光子被强迫引入 |
 | 拉氏量 | $\bar\psi(i\slashed D-m)\psi-\frac14F^2$；$F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ 规范不变；$A_\mu A^\mu$ 破坏规范不变性 ⟹ 光子无质量 |
 | 费曼规则 | 顶点 $-ie\gamma^\mu$；传播子 $i(\slashed p+m)/(p^2-m^2)$、$-i\eta_{\mu\nu}/k^2$；外线 $u,v,\varepsilon_\mu$ |
-| $e^+e^-\to\mu^+\mu^-$ | $\frac14\sum|\mathcal M|^2=e^4(1+\cos^2\theta)$；$d\sigma/d\Omega=\frac{\alpha^2}{4s}(1+\cos^2\theta)$；$\sigma=\frac{4\pi\alpha^2}{3s}$；$R=3\sum_q Q_q^2$ |
+| $e^+e^-\to\mu^+\mu^-$ | $\frac14\sum\lvert\mathcal M\rvert^2=e^4(1+\cos^2\theta)$；$d\sigma/d\Omega=\frac{\alpha^2}{4s}(1+\cos^2\theta)$；$\sigma=\frac{4\pi\alpha^2}{3s}$；$R=3\sum_q Q_q^2$ |
 | 康普顿散射 | $s$ 道 + $u$ 道两张图；Ward 恒等式 $k_\mu\mathcal M^\mu=0$ 是规范不变性的检验；Klein–Nishina 公式；低能极限回到 Thomson 截面 $\frac{8\pi}{3}r_e^2$ |
 | 技术收获 | Casimir 技巧（自旋求和→求迹）、求迹公式、交叉对称、Mandelstam 变量 |
 

@@ -138,9 +138,12 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
 | 第 0 阶段（数学补课） | [SO(3)/SU(2) 与角动量的关系](docs/stage-00-math/01-so3-su2-and-angular-momentum.md) |
 | 第 3 阶段（桥梁） | [KG 方程与 Dirac 方程：相对论量子力学的尝试及其失败](docs/stage-03-relativistic-qm/01-klein-gordon-and-dirac.md) |
 | 第 3 阶段（桥梁） | [场的拉格朗日形式：从弦的振动到诺特定理](docs/stage-03-relativistic-qm/02-lagrangian-field-theory.md) |
+| 第 3 阶段（桥梁） | [电磁学的协变形式：F_μν 与规范势](docs/stage-03-relativistic-qm/03-covariant-electromagnetism.md) |
+| 第 4 阶段（QFT 核心） | [标量场量子化：从无穷多谐振子到粒子](docs/stage-04-qft-core/01-scalar-field-quantization.md) |
 | 第 4 阶段（QFT 核心） | [QED：旋量场、光子场与规范不变性](docs/stage-04-qft-core/05-qed.md) |
 | 第 4 阶段（QFT 核心） | [一圈修正：发散、正规化与重整化](docs/stage-04-qft-core/06-one-loop-renormalization.md) |
 | 第 4 阶段（QFT 核心） | [路径积分表述：对所有历史求和](docs/stage-04-qft-core/07-path-integral.md) |
+| 第 5 阶段（群论补课） | [整体对称 vs 规范对称：守恒律与冗余](docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md) |
 | 第 6 阶段（标准模型） | [标准模型拉氏量：逐项读懂那著名的一页](docs/stage-06-standard-model/01-standard-model-lagrangian.md) |
 
 目录约定：`docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序（留有空位便于插入）。

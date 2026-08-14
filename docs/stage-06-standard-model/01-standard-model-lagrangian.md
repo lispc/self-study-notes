@@ -232,7 +232,7 @@ $$\boxed{m_f = \frac{y_f\, v}{\sqrt2}}$$
 | $-\tfrac14 G^2$（含 $g_s, g_s^2$ 自耦合） | 胶子传播子 + 三/四胶子顶点 | 渐近自由、禁闭、强子结构 |
 | $-\tfrac14 W^2 - \tfrac14 B^2$ | $W,B$ 传播子 + 弱自耦合顶点 | 弱规范玻色子动力学、$WW\gamma/WWZ$ 顶点 |
 | $\bar f i\gamma^\mu D_\mu f$ | $q\bar q g$、$ffW$、$ffZ$、$ff\gamma$ 顶点 | QCD 相互作用；$\beta$ 衰变、$\mu$ 衰变（带电流）；中性流与电磁流 |
-| $\|D_\mu H\|^2$ | $M_W, M_Z$；$hWW, hZZ$ 耦合 | 弱力短程（$\sim M_W^{-1} \sim 10^{-18}$ m）；希格斯与规范玻色子的耦合 |
+| $\lVert D_\mu H\rVert^2$ | $M_W, M_Z$；$hWW, hZZ$ 耦合 | 弱力短程（$\sim M_W^{-1} \sim 10^{-18}$ m）；希格斯与规范玻色子的耦合 |
 | $V(H) = -\mu^2H^\dagger H + \lambda(H^\dagger H)^2$ | $v \approx 246$ GeV、$m_h \approx 125$ GeV、$h^3, h^4$ 自耦合 | 电弱对称性破缺的总开关；希格斯玻色子本身 |
 | $-y_f \bar f_L H f_R + \mathrm{h.c.}$ | $m_f = y_f v/\sqrt2$ | 夸克、轻子质量谱；CKM 混合与 CP 破坏 |
 
