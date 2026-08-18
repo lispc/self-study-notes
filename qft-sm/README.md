@@ -138,7 +138,7 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install markdown pymdown-extensions
-.venv/bin/python serve.py        # 打开 http://localhost:8000
+.venv/bin/python serve.py        # 打开 http://localhost:9000
 ```
 
 ## 最小书单

@@ -3,7 +3,7 @@
 
 仓库按"书"组织：每本书一个顶层目录，书内 docs/ 放笔记。
 用法：
-    .venv/bin/python serve.py          # 默认端口 8000
+    .venv/bin/python serve.py          # 默认端口 9000
     PORT=9000 .venv/bin/python serve.py
 """
 import html
@@ -14,12 +14,13 @@ import posixpath
 import urllib.parse
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-PORT = int(os.environ.get("PORT", "8000"))
+PORT = int(os.environ.get("PORT", "9000"))
 
 # 书名目录 → (书的显示名, 一句话描述)
 BOOKS = {
     "qft-sm": ("量子场论与标准模型 · 自学路线图", "从数学补课到标准模型拉氏量"),
     "condensed-matter": ("凝聚态物理入门导论", "从晶格振动到拓扑物态——场论思想的应用现场"),
+    "digital-design": ("数字电路设计", "从逻辑门到一颗五级流水 RISC-V 核"),
 }
 
 # 书的 docs 内子目录 → (阶段标题, 一句话描述)；未收录的子目录按目录名原样显示
@@ -88,7 +89,12 @@ def render_md(path):
         extension_configs={"pymdownx.arithmatex": {"generic": True}},
     )
     title = os.path.basename(path)
-    return PAGE.format(title=title, content=f'<nav><a href="/">&larr; 全部笔记</a></nav>\n{body}')
+    rel = os.path.relpath(path, BASE)
+    book = rel.split(os.sep, 1)[0]
+    nav = '<a href="/">&larr; 书库</a>'
+    if book in BOOKS:
+        nav += f' / <a href="/{book}/">{html.escape(BOOKS[book][0])}</a>'
+    return PAGE.format(title=title, content=f"<nav>{nav}</nav>\n{body}")
 
 
 def _doc_title(path):
@@ -101,41 +107,50 @@ def _doc_title(path):
     return os.path.basename(path)
 
 
-def render_index():
-    # book -> rel_dir -> [file names]
-    tree = {}
-    for book in BOOKS:
-        docs_root = os.path.join(BASE, book, "docs")
-        if not os.path.isdir(docs_root):
-            continue
-        for dirpath, _dirnames, filenames in os.walk(docs_root):
-            rel_dir = os.path.relpath(dirpath, BASE)
-            mds = sorted(f for f in filenames if f.endswith(".md"))
-            if mds:
-                tree.setdefault(book, {})[rel_dir] = mds
-
+def render_home():
+    """书库首页：只列书，点进单本书的目录页。"""
     parts = ["<h1>学习仓库</h1>",
-             '<p class="desc">自学讲义合集。每篇末尾有 5 道自检题（点击展开答案）。</p>']
+             '<p class="desc">自学讲义合集。每篇笔记末尾有 5 道自检题（点击展开答案）。</p>',
+             '<ul class="files">']
     for book, (book_title, book_desc) in BOOKS.items():
-        parts.append(f'<section class="book"><h1><a href="/{book}/README.md">{html.escape(book_title)}</a></h1>')
-        parts.append(f'<p class="desc">{html.escape(book_desc)}</p>')
-        for rel_dir in sorted(tree.get(book, {})):
-            stage_title, stage_desc = STAGES.get(rel_dir, (None, ""))
-            if stage_title:  # 有阶段划分的书
-                parts.append(f'<section class="stage"><h2>{html.escape(stage_title)}</h2>')
-                if stage_desc:
-                    parts.append(f'<p class="desc">{html.escape(stage_desc)}</p>')
-            parts.append('<ul class="files">')
-            for name in tree[book][rel_dir]:
-                rel = f"{rel_dir}/{name}"
-                url = urllib.parse.quote(rel)
-                title = html.escape(_doc_title(os.path.join(BASE, rel)))
-                parts.append(f'<li><a href="/{url}">{title}</a><span class="fname">{html.escape(name)}</span></li>')
-            parts.append("</ul>")
-            if stage_title:
-                parts.append("</section>")
-        parts.append("</section>")
+        parts.append(
+            f'<li><a href="/{book}/">{html.escape(book_title)}</a>'
+            f'<span class="fname">{book}/</span><br>'
+            f'<span class="desc">{html.escape(book_desc)}</span></li>')
+    parts.append("</ul>")
     return PAGE.format(title="学习仓库", content="\n".join(parts))
+
+
+def render_book(book):
+    """单本书的目录页：docs/ 下按 stage 子目录（或平铺）列出全部笔记。"""
+    book_title, book_desc = BOOKS[book]
+    docs_root = os.path.join(BASE, book, "docs")
+    tree = {}  # rel_dir -> [file names]
+    for dirpath, _dirnames, filenames in os.walk(docs_root):
+        rel_dir = os.path.relpath(dirpath, BASE)
+        mds = sorted(f for f in filenames if f.endswith(".md"))
+        if mds:
+            tree[rel_dir] = mds
+
+    parts = [f'<nav><a href="/">&larr; 书库</a></nav>',
+             f"<h1>{html.escape(book_title)}</h1>",
+             f'<p class="desc">{html.escape(book_desc)} · <a href="/{book}/README.md">路线图 README</a></p>']
+    for rel_dir in sorted(tree):
+        stage_title, stage_desc = STAGES.get(rel_dir, (None, ""))
+        if stage_title:  # 有阶段划分的书
+            parts.append(f'<section class="stage"><h2>{html.escape(stage_title)}</h2>')
+            if stage_desc:
+                parts.append(f'<p class="desc">{html.escape(stage_desc)}</p>')
+        parts.append('<ul class="files">')
+        for name in tree[rel_dir]:
+            rel = f"{rel_dir}/{name}"
+            url = urllib.parse.quote(rel)
+            title = html.escape(_doc_title(os.path.join(BASE, rel)))
+            parts.append(f'<li><a href="/{url}">{title}</a><span class="fname">{html.escape(name)}</span></li>')
+        parts.append("</ul>")
+        if stage_title:
+            parts.append("</section>")
+    return PAGE.format(title=book_title, content="\n".join(parts))
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
@@ -143,7 +158,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
         path = urllib.parse.unquote(self.path.split("?", 1)[0])
         path = posixpath.normpath(path).lstrip("/")
         if path in ("", "."):
-            return self._send(render_index())
+            return self._send(render_home())
+        book = path.rstrip("/")
+        if book in BOOKS:
+            return self._send(render_book(book))
         full = os.path.realpath(os.path.join(BASE, path))
         if not full.startswith(os.path.realpath(BASE) + os.sep):
             return self._send("403 Forbidden", status=403, content_type="text/plain; charset=utf-8")

@@ -1,15 +1,16 @@
 # AGENTS.md
 
-QFT/凝聚态自学讲义仓库（"学习仓库"）。主要内容：根 `README.md`（书库入口）+ 两本书各自一个顶层目录（`qft-sm/`、`condensed-matter/`，各含 `README.md` 路线图与 `docs/` 笔记）+ `serve.py`（本地预览服务器）。笔记为简体中文，含 LaTeX 公式。
+QFT/凝聚态/数字电路自学讲义仓库（"学习仓库"）。主要内容：根 `README.md`（书库入口）+ 三本书各自一个顶层目录（`qft-sm/`、`condensed-matter/`、`digital-design/`，各含 `README.md` 路线图与 `docs/` 笔记）+ `serve.py`（本地预览服务器）。笔记为简体中文，含 LaTeX 公式。
 
 ## 目录与文件约定
 
 - 仓库 = 多本"书"并列：`<书名>/README.md` 是该书的路线图/目录，`<书名>/docs/` 是笔记。
 - QFT 书笔记路径：`qft-sm/docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序，留空位便于插入（如第 4 阶段 02–04 尚未写）。
 - 凝聚态书笔记路径：`condensed-matter/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。
-- 新增笔记后必须同步该书 README：QFT 书在对应路线图条目末尾加 `（[笔记](docs/...)）` 链接；凝聚态书把目录条目改为链接。
+- 数字电路书笔记路径：`digital-design/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位；含 ```verilog / ```bash 代码块。物理书的单位/度规约定不适用于本书。
+- 新增笔记后必须同步该书 README：QFT 书在对应路线图条目末尾加 `（[笔记](docs/...)）` 链接；凝聚态书和数字电路书把目录条目改为链接。
 - 跨书引用用相对路径（如凝聚态笔记引用 QFT 笔记：`../../qft-sm/docs/stage-XX/...`）。
-- `serve.py` 首页按 `BOOKS` 与 `STAGES` 字典映射书名/阶段标题；新增书或 stage 目录时在其中加一行。
+- `serve.py` 是两层结构：`/` 书库首页只列书（`BOOKS` 字典），`/<书>/` 是该书目录页（按 `STAGES` 字典分节，平铺的书直接列文件）；新增书或 stage 目录时在对应字典加一行。
 
 ## 笔记格式模板
 
@@ -20,7 +21,7 @@ QFT/凝聚态自学讲义仓库（"学习仓库"）。主要内容：根 `README
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install markdown pymdown-extensions   # 若 pip 报 --user 错误，加 --isolated
-.venv/bin/python serve.py                           # http://localhost:8000
+.venv/bin/python serve.py                           # http://localhost:9000
 ```
 
 技术栈：Python-Markdown + `md_in_html` + `pymdownx.arithmatex`（generic 模式）+ MathJax 3（CDN）。
@@ -40,7 +41,7 @@ python3 -m venv .venv
 
 ```bash
 # 必须加 --noproxy '*'：shell 有 http_proxy 环境变量，否则 localhost 被送进代理报 502
-curl -s --noproxy '*' -o /tmp/check.html -w "%{http_code}" "http://127.0.0.1:8000/<文档相对 docs 的路径>"
+curl -s --noproxy '*' -o /tmp/check.html -w "%{http_code}" "http://127.0.0.1:9000/<文档相对 docs 的路径>"
 ```
 
 检查：返回 200；`<details` 出现次数与源文件折叠块数一致；`arithmatex` 出现几十次以上（公式被正确包裹）；正文中无残留 `**`；arithmatex 块内不含字面 `$$`（坑 1 的症状）；表格每行列数一致（坑 2 的症状）。
