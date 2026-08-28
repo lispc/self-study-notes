@@ -12,14 +12,14 @@
 
 1. 晶体结构：晶格与基元、倒格子、Brillouin 区、X 射线衍射 *(待写)*
 2. [晶格振动与声子](docs/02-lattice-vibrations-phonons.md)：单/双原子链、声子量子化、热容（Einstein/Debye）
-3. 金属自由电子气：Drude、Sommerfeld、费米面与态密度 *(待写)*
+3. [金属自由电子气](docs/03-free-electron-gas.md)：Drude、Sommerfeld、费米海与态密度
 4. [能带论](docs/04-band-theory.md)：Bloch 定理、近自由电子、紧束缚、金属/绝缘体判据
 5. 半导体浅尝：有效质量、载流子统计、pn 结 *(待写)*
 
 ### 第二部分：相互作用、序与相变（核心物理）
 
 6. [相互作用电子气](docs/06-interacting-electron-gas.md)：Hartree–Fock、屏蔽与等离激元、Fermi 液体
-7. [磁性](docs/07-magnetism.md)：交换作用、Ising/Heisenberg 模型、平均场、自旋波
+7. [磁性](docs/07-magnetism.md)：交换作用、Ising/Heisenberg 模型、平均场、自旋波（[补充材料：为什么铁有磁性而铜、铝没有](docs/07s-why-iron-magnetic.md)）
 8. [超导](docs/08-superconductivity.md)：London 方程、Cooper 对、BCS、作为"光子获质量"的迈斯纳效应
 9. [相变与临界现象](docs/09-phase-transitions-criticality.md)：Landau 理论、临界指数、普适性、Wilson 重整化群（[补充阅读：二维 Ising 模型——最简单的相变系统及其数学](docs/09s-2d-ising-model.md)）
 

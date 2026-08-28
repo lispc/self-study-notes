@@ -206,7 +206,7 @@ $$C_V = \frac{12\pi^4}{5}\,Nk_B\left(\frac{T}{\Theta_D}\right)^3 \quad (T \ll \T
 
 ## 8. 往前看：声子在本书里的回响
 
-- **第 3 章**：自由电子气的热容 $\propto T$，与声子的 $T^3$ 在极低温交汇，两者的比值是常规实验定 $\Theta_D$ 与 Sommerfeld 系数的入口。
+- **[第 3 章](03-free-electron-gas.md)**：自由电子气的热容 $\propto T$，与声子的 $T^3$ 在极低温交汇，两者的比值是常规实验定 $\Theta_D$ 与 Sommerfeld 系数的入口。
 - **第 4 章**：Bloch 电子与格波共享同一个 BZ 几何；"BZ 边界群速度为零/开能隙"从机械振动推广到电子波。
 - **第 8 章**：超导的微观根源是电子通过交换虚声子产生有效吸引——声子不只是热学配角，而是相互作用的中介者，与 QED 里光子传递电磁相互作用完全同构。
 - **第 9 章**：声学声子在 $k\to0$ 处 $\omega\to0$（无能隙）是自发破缺连续平移对称性的 Goldstone 模——同一个概念会贯穿相变与临界现象。
@@ -281,7 +281,7 @@ $$\omega \approx 2\sqrt{\frac{\kappa}{m}}\cdot\frac{ka}{2} = a\sqrt{\frac{\kappa
 
 $$v_s = 3\times10^{-10}\ \mathrm{m}\times\sqrt{\frac{30\ \mathrm{N/m}}{5\times10^{-26}\ \mathrm{kg}}} = 3\times10^{-10}\times\sqrt{6\times10^{26}}\ \frac{\mathrm{m}}{\mathrm s} \approx 3\times10^{-10}\times 2.4\times10^{13}\ \frac{\mathrm m}{\mathrm s} \approx 7\times10^3\ \mathrm{m/s}.$$
 
-典型固体声速确实在 $10^3$–$10^4$ m/s 量级（如铜约 4700 m/s，硅约 8400 m/s）。注意声速比费米速度（第 3 章，$\sim 10^6$ m/s）小两个数量级以上——这个巨大尺度分离是 Born–Oppenheimer 近似（电子瞬时跟随离子）成立的物理基础。
+典型固体声速确实在 $10^3$–$10^4$ m/s 量级（如铜约 4700 m/s，硅约 8400 m/s）。注意声速比费米速度（[第 3 章](03-free-electron-gas.md)，$\sim 10^6$ m/s）小两个数量级以上——这个巨大尺度分离是 Born–Oppenheimer 近似（电子瞬时跟随离子）成立的物理基础。
 
 </details>
 

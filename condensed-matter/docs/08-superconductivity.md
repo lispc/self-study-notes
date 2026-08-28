@@ -1,7 +1,7 @@
 # 超导：Cooper 对、BCS 与凝聚态版的希格斯机制
 
 > 本书位置：凝聚态物理入门导论第 8 章
-> 前置知识：第 3 章（金属自由电子气）的费米面与态密度、[第 2 章](02-lattice-vibrations-phonons.md) 的声子概念、[第 7 章](07-magnetism.md) 的 Landau 平均场思想；一点点电磁学（Maxwell 方程）。
+> 前置知识：[第 3 章](03-free-electron-gas.md)（金属自由电子气）的费米面与态密度、[第 2 章](02-lattice-vibrations-phonons.md) 的声子概念、[第 7 章](07-magnetism.md) 的 Landau 平均场思想；一点点电磁学（Maxwell 方程）。
 > 学习目标：从四个实验事实出发，推出 London 方程与穿透深度；完整推导 Cooper 对的束缚能；读懂 BCS 的能隙方程与凝聚能；最后看清"超导 = U(1) 自发对称性破缺 + 规范场获质量"，即凝聚态版的希格斯机制。
 
 约定：本书保留 $\hbar$ 与 $k_B$（不取自然单位）；电磁部分用 SI 单位制（$\mu_0$ 显式出现）；电子电荷记为 $-e$（$e>0$）。

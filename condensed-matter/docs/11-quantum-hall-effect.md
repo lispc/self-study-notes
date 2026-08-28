@@ -1,7 +1,7 @@
 # 量子 Hall 效应：精确量子化与拓扑的登场
 
 > 本书位置：凝聚态物理入门导论第 11 章（第三部分：现代专题）
-> 前置知识：本科量子力学（谐振子、电磁场中的带电粒子）、Drude 输运图像（本书第 3 章）、谐振子的代数解法（[QFT 书：谐振子的产生/湮灭算符解法](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)）。
+> 前置知识：本科量子力学（谐振子、电磁场中的带电粒子）、Drude 输运图像（[第 3 章](03-free-electron-gas.md)）、谐振子的代数解法（[QFT 书：谐振子的产生/湮灭算符解法](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)）。
 > 学习目标：完整推导 Landau 能级与简并度；理解整数 Hall 平台 $\sigma_{xy}=\nu e^2/h$ 为什么必须靠无序才能存在；复现 Laughlin 规范论证；从边缘态看到"体-边对应"的前奏，为第 12 章（拓扑物态）铺路。
 
 凝聚态笔记约定：**保留 $\hbar$ 与 $k_B$**（不取自然单位），电子电荷写作 $-e$（$e>0$ 为元电荷）。磁场沿 $z$ 方向，电子气限制在 $xy$ 平面内。

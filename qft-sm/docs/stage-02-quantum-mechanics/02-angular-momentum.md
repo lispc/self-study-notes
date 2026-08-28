@@ -211,7 +211,7 @@ $$\langle j m\,\rvert\, T^k_q \,\rvert\, j' m'\rangle = C^{jm}_{j' m'\, k q}\tim
 
 ## 8. 应用与前瞻
 
-**氢原子的简并结构**。库仑势的能级 $E_n = -13.6\,\mathrm{eV}/n^2$ 只依赖主量子数 $n$。对每个 $n$，$l = 0, 1, \dots, n-1$，每个 $l$ 有 $2l+1$ 个 $m$，简并度
+**氢原子的简并结构**。库仑势的能级 $E_n = -13.6\,\mathrm{eV}/n^2$ 只依赖主量子数 $n$（径向方程的求解与 $n$ 的来历见补充材料[氢原子与电子亚层](02s-hydrogen-and-subshells.md)）。对每个 $n$，$l = 0, 1, \dots, n-1$，每个 $l$ 有 $2l+1$ 个 $m$，简并度
 
 $$\sum_{l=0}^{n-1}(2l+1) = n^2 \quad \xrightarrow{\ \text{乘自旋}\ }\ 2n^2.$$
 
