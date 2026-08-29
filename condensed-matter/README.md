@@ -30,9 +30,21 @@
 12. [拓扑物态入门](docs/12-topological-phases.md)：Berry 相、SSH 模型、TKNN/Chern 数、拓扑绝缘体
 13. [强关联浅尝](docs/13-strong-correlations.md)：Mott 绝缘体、Hubbard 模型、超交换、高温超导悬案
 
+### 第四部分：多电子问题怎么算——近似阶梯（计算方法）
+
+14. [多电子问题与精确解](docs/14-exact-methods-fci-ed.md)：基组、Slater–Condon 规则、FCI 与指数墙、H₂ 显微镜、ED 与符号问题（[补充材料：高斯基组与双体积分求值](docs/14s-gaussian-integrals.md)）
+15. [HF 之后](docs/15-post-hf-mp2-cc.md)：相关能、Brillouin 定理与 MP2、Goldstone 图、大小一致性、耦合簇 CCSD(T)
+16. [密度泛函理论](docs/16-dft.md)：Hohenberg–Kohn、Kohn–Sham、泛函阶梯、能隙问题与失灵清单
+17. [超越 DFT](docs/17-beyond-dft-gw-dmft.md)：格林函数与 Dyson 方程、屏蔽自能 GW、动力学平均场 DMFT、方法地图
+18. [多参考与 CASSCF](docs/18-multireference-casscf.md)：活性空间、静态相关的正面强攻、CASPT2/NEVPT2、磁交换常数接口
+19. [激发态方法](docs/19-excited-states.md)：线性响应与 RPA、EOM-CC、TD-DFT 与 Casida 方程、Bethe–Salpeter
+20. [DMRG 与张量网络](docs/20-dmrg-tensor-networks.md)：纠缠面积律、矩阵乘积态、扫掠变分、化学活性空间
+21. [嵌入方法](docs/21-embedding-methods.md)：QM/MM、DFT+U、子系统 DFT、DMET——分而治之收官
+
 ## 与 QFT 书的接口
 
 - 第 2 章（声子）←→ [谐振子代数解法](../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
 - 第 6 章（Fermi 液体）←→ [一圈修正与重整化](../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)（准粒子与穿衣粒子）
 - 第 7、8 章（磁性、超导）←→ 自发对称性破缺、Goldstone、希格斯机制（[电弱统一](../qft-sm/docs/stage-06-standard-model/02-electroweak-unification.md)）
 - 第 9 章（重整化群）←→ [Wilson 有效理论视角](../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)
+- 第 15、17 章（微扰图、Dyson 方程与自能）←→ [一圈修正与重整化](../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)（Goldstone/连接簇定理 ↔ 费曼图；自能 ↔ 传播子重整化）

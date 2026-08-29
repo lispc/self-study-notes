@@ -84,7 +84,7 @@ $$\boxed{\;I\,N(E_F) > 1 \quad\Longrightarrow\quad \text{铁磁不稳定（Stone
 
 ### 4.3 沿 3d 系列走一遍
 
-趋势清晰可讲：从 Sc 到 Zn，核电荷增加使 3d 轨道收缩、交叠变小、d 带变窄，$N(E_F)$ 一路走高；$I$ 平缓，故 Stoner 积单调爬升，到 Fe 处越过 1，Ni 之后 d 带填满、$E_F$ 落回宽阔的 s 带里，积数跳水。典型能带计算值（如 Moruzzi–Janak–Williams 的全元素表；依结构略有出入）：
+趋势清晰可讲：从 Sc 到 Zn，核电荷增加使 3d 轨道收缩、交叠变小、d 带变窄，$N(E_F)$ 一路走高；$I$ 平缓，故 Stoner 积单调爬升，到 Fe 处越过 1，Ni 之后 d 带填满、$E_F$ 落回宽阔的 s 带里，积数跳水。典型能带计算值（如 Moruzzi–Janak–Williams 的全元素表——即第 16 章[密度泛函理论](16-dft.md)的输出；依结构略有出入）：
 
 | 元素 | d 电子数 | d 带趋势 | Stoner 积 $I\,N(E_F)$ | 实际磁序 |
 |---|---|---|---|---|
