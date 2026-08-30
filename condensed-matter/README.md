@@ -18,7 +18,7 @@
 
 ### 第二部分：相互作用、序与相变（核心物理）
 
-6. [相互作用电子气](docs/06-interacting-electron-gas.md)：Hartree–Fock、屏蔽与等离激元、Fermi 液体
+6. [相互作用电子气](docs/06-interacting-electron-gas.md)：Hartree–Fock、屏蔽与等离激元、Fermi 液体（[补充材料：费米液体补全——动理学方程、求和规则、不稳定性与 Luttinger 定理](docs/06s-fermi-liquid-toolbox.md)）
 7. [磁性](docs/07-magnetism.md)：交换作用、Ising/Heisenberg 模型、平均场、自旋波（[补充材料：为什么铁有磁性而铜、铝没有](docs/07s-why-iron-magnetic.md)）
 8. [超导](docs/08-superconductivity.md)：London 方程、Cooper 对、BCS、作为"光子获质量"的迈斯纳效应
 9. [相变与临界现象](docs/09-phase-transitions-criticality.md)：Landau 理论、临界指数、普适性、Wilson 重整化群（[补充阅读：二维 Ising 模型——最简单的相变系统及其数学](docs/09s-2d-ising-model.md)）
@@ -38,7 +38,7 @@
 17. [超越 DFT](docs/17-beyond-dft-gw-dmft.md)：格林函数与 Dyson 方程、屏蔽自能 GW、动力学平均场 DMFT、方法地图
 18. [多参考与 CASSCF](docs/18-multireference-casscf.md)：活性空间、静态相关的正面强攻、CASPT2/NEVPT2、磁交换常数接口
 19. [激发态方法](docs/19-excited-states.md)：线性响应与 RPA、EOM-CC、TD-DFT 与 Casida 方程、Bethe–Salpeter
-20. [DMRG 与张量网络](docs/20-dmrg-tensor-networks.md)：纠缠面积律、矩阵乘积态、扫掠变分、化学活性空间
+20. [DMRG 与张量网络](docs/20-dmrg-tensor-networks.md)：纠缠面积律、矩阵乘积态、扫掠变分、化学活性空间（[补充材料：一维的无费米面世界——Luttinger 液体与玻色化](docs/20s-luttinger-liquid.md)）
 21. [嵌入方法](docs/21-embedding-methods.md)：QM/MM、DFT+U、子系统 DFT、DMET——分而治之收官
 
 ## 与 QFT 书的接口
