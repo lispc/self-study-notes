@@ -2,7 +2,7 @@
 
 > 路线图位置：第四部分（多电子问题怎么算）· 第 19 章
 > 前置知识：[第 15 章](15-post-hf-mp2-cc.md)（耦合簇与 $\bar H$ 机器）、[第 16 章](16-dft.md)（KS 框架与失灵清单）、[第 17 章](17-beyond-dft-gw-dmft.md)（格林函数、GW 与准粒子谱）；第 3 章[金属自由电子气](03-free-electron-gas.md)（费米海与响应的语言）；[QFT 书微扰论](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)（含时微扰与费米黄金定则——线性响应的经典母体）。
-> 学习目标：理解激发态的正确语言是**响应函数**（微扰的极点 = 激发能），而非"基态方法的激发版"；会推 TDHF/RPA 的本征值结构并用它算出 H₂ 的单态激发能（交换修正抬高能隙的机制）；理解 EOM-CC 把 $\bar H$ 的激发本征值直接当成激发态（与第 15 章机器的无缝衔接）；掌握 TD-DFT 的 Runge–Gross 定位、Casida 方程与核 $f_{xc}$ 的地位、以及三大经典失败（电荷转移、双重激发、Rydberg 态）；认识 BSE = GW 准粒子 + 电子–空穴梯形图（固体光学的第三根支柱），并会画三大方法的分工表。
+> 学习目标：理解激发态的正确语言是**响应函数**（微扰的极点 = 激发能），而非"基态方法的激发版"；会推 TDHF/RPA 的本征值结构并用它算出 H₂ 的单态激发能（电子–空穴库仑吸引压低激发能、交换造成单–三态劈裂的机制）；理解 EOM-CC 把 $\bar H$ 的激发本征值直接当成激发态（与第 15 章机器的无缝衔接）；掌握 TD-DFT 的 Runge–Gross 定位、Casida 方程与核 $f_{xc}$ 的地位、以及三大经典失败（电荷转移、双重激发、Rydberg 态）；认识 BSE = GW 准粒子 + 电子–空穴梯形图（固体光学的第三根支柱），并会画三大方法的分工表。
 >
 > 记号约定：原子单位（同第 14 章）。激发能记 $\omega$；$i,j$ 占据、$a,b$ 空轨道（沿第 15 章约定）。
 
@@ -10,7 +10,7 @@
 
 ## 1. 一句话总结
 
-**激发态的计算不是"把基态方法的本征值往上数一格"，而是响应理论：对体系加一个频率为 $\omega$ 的微扰，响应函数的极点就是激发能——这条统一战线上有三支主力军。TDHF/RPA（与第 6 章环图同源）把 Slater 行列式的响应线性化成一个本征值问题，交换项在极点处把激发能从轨道能差抬高；EOM-CC 把耦合簇的 $\bar H = e^{-T}He^T$ 直接对角化到激发扇区，继承 CC 的精度与大小一致性（单参考区的激发能 ~0.1–0.3 eV）；TD-DFT 靠 Runge–Gross 定理（含时版 HK）把一切塞进核 $f_{xc} = \delta v_{xc}/\delta n$，绝热近似下便宜好用，但电荷转移激发（导数不连续缺席）、双重激发（需要频率依赖）、Rydberg 态（渐近势错误）是结构性翻车点。固体一侧的答案是 BSE：GW 准粒子能隙 + 电子–空穴梯形图，激子束缚把光学吸收带从带边拉低——四条路线合起来，"激发态"这枚硬币在分子与固体两面都可支付。**
+**激发态的计算不是"把基态方法的本征值往上数一格"，而是响应理论：对体系加一个频率为 $\omega$ 的微扰，响应函数的极点就是激发能——这条统一战线上有三支主力军。TDHF/RPA（与第 6 章环图同源）把 Slater 行列式的响应线性化成一个本征值问题，电子–空穴耦合项在极点处把激发能从轨道能差移开（库仑吸引压低、交换劈裂单–三态）；EOM-CC 把耦合簇的 $\bar H = e^{-T}He^T$ 直接对角化到激发扇区，继承 CC 的精度与大小一致性（单参考区的激发能 ~0.1–0.3 eV）；TD-DFT 靠 Runge–Gross 定理（含时版 HK）把一切塞进核 $f_{xc} = \delta v_{xc}/\delta n$，绝热近似下便宜好用，但电荷转移激发（导数不连续缺席）、双重激发（需要频率依赖）、Rydberg 态（渐近势错误）是结构性翻车点。固体一侧的答案是 BSE：GW 准粒子能隙 + 电子–空穴梯形图，激子束缚把光学吸收带从带边拉低——四条路线合起来，"激发态"这枚硬币在分子与固体两面都可支付。**
 
 ## 2. 统一语言：线性响应
 
@@ -26,13 +26,13 @@ $$\delta\langle A\rangle(\omega) = \sum_B \chi_{AB}(\omega)\,v_B(\omega),$$
 
 HF 基态上加振荡外场，单激发（占据 $i\to$ 空轨道 $a$）的振幅 $X_{ia}, Y_{ia}$ 耦合成线性方程组（无规相近似 RPA 的名字来自对响应函数的环图求和——第 6 章 6 节的同一台机器）：
 
-$$\begin{pmatrix} A & B \\ -B & A \end{pmatrix}\binom{X}{Y} = \omega\binom{X}{Y},\qquad A_{ia,jb} = \delta_{ij}\delta_{ab}\Delta_{ia} + \langle aj\lVert ib\rangle,\ \ B_{ia,jb} = \langle ab\lVert ij\rangle,$$
+$$\begin{pmatrix} A & B \\ -B & -A \end{pmatrix}\binom{X}{Y} = \omega\binom{X}{Y},\qquad A_{ia,jb} = \delta_{ij}\delta_{ab}\Delta_{ia} + \langle aj\lVert ib\rangle,\ \ B_{ia,jb} = \langle ab\lVert ij\rangle,$$
 
 $\Delta_{ia} = \varepsilon_a - \varepsilon_i$ 为轨道能差。**Tamm–Dancoff 近似**（TDA）扔掉 $B$ 块（退激发-再激发耦合），退化为 CIS 型本征问题；保留 $B$ 才有 RPA 的求和规则友好性。最简单的定量标本是 H₂ 最小基（自检问题 1）：
 
-$$\omega_\text{RPA}^{S} = \sqrt{\Delta(\Delta + 2K)},\qquad K = (\sigma_g\sigma_u\lvert\sigma_g\sigma_u)\ \text{型交换积分},$$
+$$\omega_\text{RPA}^{S} = \sqrt{(\Delta - J + 2K)^2 - K^2},\qquad J = (\sigma_g\sigma_g\lvert\sigma_u\sigma_u)\ \text{（直接库仑）},\ \ K = (\sigma_g\sigma_u\lvert\sigma_g\sigma_u)\ \text{（交换）},$$
 
-——交换相互作用把单态激发能从裸能隙 $\Delta$ 抬高（同自旋电子互相回避，激发后体系要为"拥挤"付钱）；三态则压低。**分子激发谱的形状（单/三态劈裂）在最小模型里就是这两行**。
+——直接库仑项 $-J$（激发的电子–空穴对互相吸引）把单态激发能压到裸能隙 $\Delta$ **之下**；交换项 $2K$ 只作用于单态（三态的空间波函数反对称、该项变号消失），三态 $\omega^T = \sqrt{(\Delta - J)^2 - K^2}$，单–三态劈裂 $\approx 2K$。**分子激发谱的形状（单/三态劈裂）在最小模型里就是这两行**。
 
 ### 3.2 EOM-CC：把 $\bar H$ 对角化到激发扇区
 
@@ -76,7 +76,7 @@ $K^{eh}$ 含屏蔽直接项（吸引）与裸交换项（排斥）——结构�
 
 | 方法 | 单粒子底座 | 电子–空穴耦合 | 代价 | 强项 | 死穴 |
 |---|---|---|---|---|---|
-| TDHF/RPA | HF | 裸交换 | $N^4$ | 严格、教学标本 | 能隙高估 |
+| TDHF/RPA | HF | 裸交换 | $N^4$ | 可解析、教学标本 | 能隙高估 |
 | CIS(TDA) | HF | 裸交换 | $N^4$ | 最便宜的波函数方案 | 无关联 |
 | EOM-CCSD | CCSD | 精确（$\bar H$） | $N^6$ | ~0.1–0.3 eV、双激发 | 静态相关、固体 |
 | TD-DFT（绝热） | KS | $f_{xc}$ 近似 | $N^3$–$N^4$ | 大体系日常 | CT/双重/Rydberg |
@@ -87,7 +87,7 @@ $K^{eh}$ 含屏蔽直接项（吸引）与裸交换项（排斥）——结构�
 ## 小结
 
 - 激发态 = 响应函数的极点；TRK 求和规则是免费的体检器。
-- TDHF/RPA：$\begin{pmatrix}A&B\\-B&A\end{pmatrix}$ 本征值；交换抬高单态能隙（$\omega^S = \sqrt{\Delta(\Delta+2K)}$）；与第 6 章环图同源。
+- TDHF/RPA：$\begin{pmatrix}A&B\\-B&-A\end{pmatrix}$ 本征值；库仑压低激发能、交换劈裂单–三态（$\omega^S = \sqrt{(\Delta - J + 2K)^2 - K^2}$）；与第 6 章环图同源。
 - EOM-CC：$[\bar H, R] = \omega R$——激发算符是 $\bar H$ 的本征向量；继承 CC 的精度与大小一致性。
 - TD-DFT：Runge–Gross + Casida；绝热核便宜，CT/双重/Rydberg 三大翻车对应基态失灵清单的镜像。
 - BSE：GW 底座 + 屏蔽 e–h 梯形图，固体光学正主；与 Casida 同构。
@@ -95,21 +95,21 @@ $K^{eh}$ 含屏蔽直接项（吸引）与裸交换项（排斥）——结构�
 
 ## 自检问题
 
-**1.** 对 H₂ 最小基组推导 TDHF/RPA 的单态激发能 $\omega^S = \sqrt{\Delta(\Delta + 2K)}$（$\Delta = \varepsilon_u - \varepsilon_g$、$K$ 为 $g$–$u$ 交换型积分），并解释交换作用为何抬高单态、压低三态。
+**1.** 对 H₂ 最小基组推导 TDHF/RPA 的单态激发能 $\omega^S = \sqrt{(\Delta - J + 2K)^2 - K^2}$（$\Delta = \varepsilon_u - \varepsilon_g$，$J$、$K$ 为 $g$–$u$ 间的直接与交换积分），并解释为何激发能被压到裸能隙之下、而交换作用造成单–三态劈裂 $\approx 2K$。
 
 <details markdown="1"><summary>点击显示答案</summary>
 
 **设置**：占据 $\sigma_g$、空 $\sigma_u$，单激发对唯一：$X, Y$ 两个振幅（激发与退激发）。RPA 矩阵在此退化为 $2\times2$：
 
-$$\begin{pmatrix}\Delta + K & K' \\ -K' & -(\Delta + K)\end{pmatrix}\binom{X}{Y} = \omega\binom{X}{Y},$$
+$$\begin{pmatrix}A & B \\ -B & -A\end{pmatrix}\binom{X}{Y} = \omega\binom{X}{Y},$$
 
-其中单态自旋耦合使对角含直接–交换组合 $A = \Delta + (gg\lvert uu) - (gu\lvert gu)$、$B$ 同类（记号细节各教材略异，收进一个耦合常数 $K$ 后结构相同）。本征值：
+单态自旋耦合给出（$J = (gg\lvert uu)$ 为直接库仑积分、$K = (gu\lvert gu)$ 为交换积分）：$A^S = \Delta - J + 2K$（轨道能差 + 电子–空穴库仑吸引 $-J$ + 交换 $2K$）、$B^S = K$。本征值：
 
-$$\omega = \pm\sqrt{(\Delta + K)^2 - K'^2}\ \xrightarrow{\ K' = K\ }\ \pm\sqrt{\Delta(\Delta + 2K)}\quad(\text{单态}).$$
+$$\omega = \pm\sqrt{A^2 - B^2}\ \Longrightarrow\ \omega^S = \sqrt{(\Delta - J + 2K)^2 - K^2}\quad(\text{单态}).$$
 
-（CIS/TDA 直接给 $\Delta + K$；RPA 的 $B$ 块把它开方修正——两者在 $\Delta\gg K$ 时一致。）
+（CIS/TDA 扔掉 $B$ 直接给 $\Delta - J + 2K$；RPA 的 $B$ 块把它开方修正——两者在耦合弱时一致。）
 
-**物理解释**：单态中激发电子与基电子**同处对称空间波函数**，交换排斥 $K$ 抬高激发态能量（$\omega$ 增大）；三态空间部分反对称、交换项反号，$\omega^T = \sqrt{\Delta(\Delta - 2K)}$ 压低——**单–三态劈裂 $\approx 2K$，纯粹是交换作用**（第 6 章交换穴的激发态版）。对照第 18 章：$K$ 也正是决定单/三态次序（磁交换）的量——基态磁性、激发谱、响应函数三者在同一个积分上会师。
+**物理解释**：直接库仑项 $-J$ 描述激发的电子–空穴对的相互吸引，把激发能压到裸能隙 $\Delta$ **之下**（平衡几何的 H₂ 上 $J > 2K$，净修正为负）；交换项 $2K$ 只出现在单态（三态空间波函数反对称、交换穴使该项变号消失），$\omega^T = \sqrt{(\Delta - J)^2 - K^2}$（TDA：$\Delta - J$）——**单–三态劈裂 $\approx 2K$，纯粹是交换作用**（第 6 章交换穴的激发态版）。对照第 18 章：$K$ 也正是决定单/三态次序（磁交换）的量——基态磁性、激发谱、响应函数三者在同一个积分上会师。
 
 </details>
 
@@ -131,11 +131,11 @@ $$[z, [H, z]] = [z, -ip_z] = -i[z, p_z] = -i\cdot i = 1\qquad\Longrightarrow\qqu
 
 多电子体系对 $N$ 个电子坐标求和，每个坐标贡献同样的双重对易子，得 $\sum_n f_{n0} = N$。$\blacksquare$
 
-**体检用途**：求和规则只依赖对易关系——**任何近似（泛函、截断、基组）算出的 $f$ 分布积分必须仍等于 $N$**。RPA 完整版保持它（$B$ 块的功劳——这正是 TDA 破坏的东西）；绝热 TD-DFT 在完整线性化下保持（Casida 方程的结构保证）；粗糙的组态平均或截断谱则违反。 violated 的幅度直接标定"谱重心偏了多少"——比逐态比较更稳健的体检。
+**体检用途**：求和规则只依赖对易关系——**任何近似（泛函、截断、基组）算出的 $f$ 分布积分必须仍等于 $N$**。RPA 完整版保持它（$B$ 块的功劳——这正是 TDA 破坏的东西）；绝热 TD-DFT 在完整线性化下保持（Casida 方程的结构保证）；粗糙的组态平均或截断谱则违反。违反的幅度直接标定"谱重心偏了多少"——比逐态比较更稳健的体检。
 
 </details>
 
-**3.** Casida 方程的推导骨架：从 TDKS 方程出发做线性化，指明 $f_{xc}$ 在哪个环节进场、绝热近似砍掉了什么；说明 TDA 如何把问题化为本标准本征值。
+**3.** Casida 方程的推导骨架：从 TDKS 方程出发做线性化，指明 $f_{xc}$ 在哪个环节进场、绝热近似砍掉了什么；说明 TDA 如何把问题化为标准本征值问题。
 
 <details markdown="1"><summary>点击显示答案</summary>
 
@@ -161,7 +161,7 @@ $$\omega_\text{CT}^{\text{adia}} \to \varepsilon_L^s - \varepsilon_H^s\qquad(R\t
 
 而第 16 章自检问题 4 证明：KS 能隙 $= I - A - \Delta_{xc}$，近似泛函普遍 $\Delta_{xc}\to0$——**CT 能被系统性低估约一个导数不连续性**（GGA 上常见低估 1–2 eV）。
 
-**精确核的修复**：$f_{xc}^{\text{exact}}$ 在基态密度由 D 区过渡到 A 区的地方长出一个**空间台阶**（高度 $\sim\Delta_{xc}/n$ 的脉冲型贡献），使电子–空穴耦合积分在零交叠极限下**不趋零**而趋 $\Delta_{xc}$，恰好补齐 $\omega_\text{CT} = (\varepsilon_L^s - \varepsilon_H^s) + \Delta_{xc} - 1/R = I - A - 1/R$ ✓。台阶是非局域的（依赖两端密度、跨整个分子），任何以局域密度泛函为核的近似天生没有——这就是"局域近似造不出 CT 激发"的定理式表述。工程绕道：长程修正泛函（CAM-B3LYR 把长程交换换成精确的）、或用范围分离的 $f_{xc}$。
+**精确核的修复**：$f_{xc}^{\text{exact}}$ 在基态密度由 D 区过渡到 A 区的地方长出一个**空间台阶**（高度 $\sim\Delta_{xc}/n$ 的脉冲型贡献），使电子–空穴耦合积分在零交叠极限下**不趋零**而趋 $\Delta_{xc}$，恰好补齐 $\omega_\text{CT} = (\varepsilon_L^s - \varepsilon_H^s) + \Delta_{xc} - 1/R = I - A - 1/R$ ✓。台阶是非局域的（依赖两端密度、跨整个分子），任何以局域密度泛函为核的近似天生没有——这就是"局域近似造不出 CT 激发"的定理式表述。工程绕道：长程修正泛函（CAM-B3LYP 把长程交换换成精确的）、或用范围分离的 $f_{xc}$。
 
 </details>
 

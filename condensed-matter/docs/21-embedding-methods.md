@@ -45,7 +45,7 @@ $$\text{嵌入} = \underbrace{\text{碎片（高阶方法，小）}}_{\text{DFT+
 
 $$E_{+U} = \frac{U}{2}\sum_\sigma\Big[\mathrm{Tr}\big(n^\sigma\big) - \mathrm{Tr}\big(n^\sigma n^\sigma\big)\Big]\ =\ \frac{U}{2}\sum_\sigma\mathrm{Tr}\big[n^\sigma(1 - n^\sigma)\big]\ \ge\ 0.$$
 
-三条读法：(i) $n$ 的本征值取 0 或 1（整数占据、$n$ 幂等）时修正为零——**惩罚的只是分数占据**；(ii) 分数占据正是第 16 章自检问题 4 里"分段线性被抹平"的表征——**DFT+U 是在局域子空间内手工恢复导数不连续**，把 $E(N)$ 被近似泛函压弯的凸性重新掰平（掰过头就是著名的 DFT+U 把体系推向电荷有序/局域化的偏置）；(iii) 修正的势 $v = U(\tfrac12 - n)$ 把占据轨道压低、空轨道抬高，能隙被砸开 $\sim U - W$（对照第 17 章 Hubbard-I 的 $\sqrt{U^2 + W^2} - W$）——NiO 的隙出来了。
+三条读法：(i) $n$ 的本征值取 0 或 1（整数占据、$n$ 幂等）时修正为零——**惩罚的只是分数占据**；(ii) 分数占据正是第 16 章自检问题 4 里"分段线性被抹平"的表征——**DFT+U 是在局域子空间内手工恢复导数不连续**，把 $E(N)$ 被近似泛函压弯的凸性重新掰平（掰过头就是著名的 DFT+U 把体系推向电荷有序/局域化的偏置）；(iii) 修正的势 $v = U(\tfrac12 - n)$ 把占据轨道压低、空轨道抬高，能隙被砸开 $\sim U - W/2$（对照第 17 章 Hubbard-I 的 $\sqrt{U^2 + W^2/4} - W/2$，$W$ 为全带宽）——NiO 的隙出来了。
 
 命门形态（双重计数的教科书案例）：$U$ 里有一部分库仑已经被 DFT 的交换相关算过一遍——参数要么从头算（cRPA：约束 RPA 把 $W$ 里的 d–d 屏蔽扣掉再取低频极限），要么经验拟合；双重计数扣除干净与否直接决定结果可信度。**DFT+U 处在第一性原理与唯象之间**：形式粗糙（各向同性 $U$、静态、投影依赖），但便宜（KS 成本不变）且专治 d/f——工业界的主力工具。
 
@@ -53,9 +53,9 @@ $$E_{+U} = \frac{U}{2}\sum_\sigma\Big[\mathrm{Tr}\big(n^\sigma\big) - \mathrm{Tr
 
 **子系统 DFT**（frozen-density embedding）：把大体系密度分解 $n = \sum_A n_A$，每个片段在自己的嵌入势里做 KS：
 
-$$v_\text{emb}^{A} = v_\text{ext} + v_H[n - n_A] + \frac{\delta E_{xc}[n]}{\delta n} - \frac{\delta E_{xc}[n_A]}{\delta n_A}\bigg\lvert_{n_A},$$
+$$v_\text{emb}^{A} = v_\text{ext} + v_H[n - n_A] + \frac{\delta E_{xc}[n]}{\delta n} - \frac{\delta E_{xc}[n_A]}{\delta n_A}\bigg\lvert_{n_A} + \frac{\delta T_s^\text{nadd}}{\delta n_A},$$
 
-多出来的项是**非加和动能** $T_s^\text{nadd}[n_A, n_B] = T_s[n_A + n_B] - T_s[n_A] - T_s[n_B]$（自检问题 4 证明它在密度不交叠时严格为零、交叠时无好泛函）——命门所在。适用带：弱交叠的分子聚集体、溶液化的分层描述；共价断键处失效。
+最难办的是最后一项：**非加和动能** $T_s^\text{nadd}[n_A, n_B] = T_s[n_A + n_B] - T_s[n_A] - T_s[n_B]$（自检问题 4 证明它在密度不交叠时严格为零、交叠时无好泛函）——命门所在。适用带：弱交叠的分子聚集体、溶液化的分层描述；共价断键处失效。
 
 **WF-in-DFT**：同一思想的精度升级——碎片用 CCSD(T)/CASSCF（第 15、18 章），环境用 DFT，缝合势由冻结密度构造，动能修正与 DFT+U 一样是双重计数的角斗场。卖点是"溶液中的化学精度"：气相 CC 的精度带着溶剂的统计平均。这是嵌入谱系的"分子端旗手"，与固体端的 DMFT-in-DFT 遥相呼应。
 
@@ -64,7 +64,7 @@ $$v_\text{emb}^{A} = v_\text{ext} + v_H[n - n_A] + \frac{\delta E_{xc}[n]}{\delt
 **密度矩阵嵌入理论**（Knizia–Chan 2012）的构造干净得像教学题：
 
 1. **整体低阶解**：对整个晶格解一个便宜的哈密顿 $H_\text{low}$（如 $U = 0$ 的平均场），得基态 $|\Psi_\text{low}\rangle$；
-2. **切碎片**：选定杂质（若干格点），对 $|\Psi_\text{low}\rangle$ 做跨切口的 Schmidt 分解——**环境只通过至多 $d$ 条 Schmidt 浴轨道与碎片纠缠**（自由 Slater 态的约化密度矩阵秩有限，见自检问题 2）；
+2. **切碎片**：选定杂质（若干格点），对 $|\Psi_\text{low}\rangle$ 做跨切口的 Schmidt 分解——**环境只通过不超过碎片自旋轨道数条 Schmidt 浴轨道与碎片纠缠**（自由 Slater 态的约化密度矩阵秩有限，见自检问题 2）；
 3. **高阶解杂质**：碎片 + 浴构成小体系（如单格点 Hubbard 碎片 → 二格点杂质模型），用**严格方法**解（ED——第 14 章的机器、或 DMRG——第 20 章）；
 4. **自洽**：调整 $H_\text{low}$ 的参数（化学势、跃迁），使杂质上的一体密度矩阵与嵌入波函数的匹配——整体物理量（能量、占据、自旋）从匹配后的关联密度矩阵读出。
 
@@ -113,7 +113,7 @@ $$E_{+U} = \frac{U}{2}\sum_\sigma\mathrm{Tr}\big[n^\sigma(1 - n^\sigma)\big].$$
 
 $$v^\sigma = \frac{\partial E_{+U}}{\partial n^\sigma} = U\Big(\frac12 - n^\sigma\Big)\quad\Rightarrow\quad \varepsilon_\nu \to \varepsilon_\nu + U\Big(\frac12 - \nu\Big).$$
 
-占据轨道（$\nu\to1$）压低 $-U/2$、空轨道（$\nu\to0$）抬高 $+U/2$——**子空间内隙被手工撑开 $\sim U$**（与带宽抵消后 $\sim U - W$，对照第 17 章 Hubbard-I 的 $\sqrt{U^2 + W^2} - W$ 大 $U$ 极限）。
+占据轨道（$\nu\to1$）压低 $-U/2$、空轨道（$\nu\to0$）抬高 $+U/2$——**子空间内隙被手工撑开 $\sim U$**（与带宽抵消后 $\sim U - W/2$，对照第 17 章 Hubbard-I 的 $\sqrt{U^2 + W^2/4} - W/2$ 大 $U$ 极限，$W$ 为全带宽）。
 
 **分段线性的恢复**：$E_U$ 对 $\nu$ 的二阶导为 $-U < 0$——**凹**修正；而近似 DFT 的 $E(N)$ 沿分数占据被压成**凸**（分数态低于弦、过度离域，第 16 章自检问题 4）。凹修正恰好把凸病掰直：$U$ 调准时子空间内的 $E(N)$ 回到分段线性、导数跳变（导数不连续性）被手工安放回来。**这就是"DFT+U = 局域化的导数不连续修复器"的确切含义**；$U$ 过大则矫枉过正——把本该部分离域的 d 带推向整数占据与电荷有序，即 DFT+U 已知的局域化偏置。
 
@@ -129,7 +129,7 @@ $$\lvert\Psi_\text{low}\rangle = \sum_{\alpha}^{d_\text{sp}} \lambda_\alpha\,\lv
 
 **Hubbard 实例**：半满、$U=0$ 的链，碎片 = 格点 A（自旋两通道各一条浴轨道 $b_\uparrow, b_\downarrow$）。杂质哈密顿：
 
-$$H_\text{imp} = U\,n_{A\uparrow}n_{A\downarrow} + \sum_\sigma\Big[\varepsilon_A n_{A\sigma} + \varepsilon_b n_{b\sigma} + t'\big(c^\dagger_{A\sigma}c_{b\sigma} + \text{h.c.}\big)\Big] + (\text{浴内项})，$$
+$$H_\text{imp} = U\,n_{A\uparrow}n_{A\downarrow} + \sum_\sigma\Big[\varepsilon_A n_{A\sigma} + \varepsilon_b n_{b\sigma} + t'\big(c^\dagger_{A\sigma}c_{b\sigma} + \text{h.c.}\big)\Big] + (\text{浴内项}),$$
 
 其中 $\varepsilon_{A,b}, t'$ 由 Schmidt 系数（即平均场占据）决定，自洽时再调整——**正是第 13 章 5 节的两格点 Hubbard 模型**（相互作用只开在碎片上）。严格解（4 维活性空间的 FCI，第 14 章的手艺）给出关联的一体密度矩阵；能量按 $E = \mathrm{Tr}[(h + \Sigma_\text{corr})\gamma]/2$ 型匹配式读出。**物理**：DMET 假设"强关联最激烈处（杂质）之外的环境可以用平均场描述其纠缠结构"——与 DMFT 的"自能局域"假设同族，但静态化。
 

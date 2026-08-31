@@ -4,7 +4,7 @@
 > 前置知识：第 14 章（基组两大家族、$O(M^4)$ 双体积分的账）；多维高斯积分的基本手艺。
 > 学习目标：理解为什么全世界的量子化学都用高斯型轨道（高斯乘积定理）；会推最简单的 $(ss\lvert ss)$ 积分闭式；知道压缩（contraction）、Schwarz 筛选与密度拟合（RI）如何把 $M^4$ 的账压到能付得起；认识 Kato 尖点条件——高斯基组天生缺陷与收敛律的来源。
 >
-> 记号约定：原子单位（同第 14 章）。$\lvert\vec r - \vec A\rvert$ 记与中心 $\vec A$ 的距离。
+> 记号约定：原子单位（同第 14 章）。$\lvert\vec r - \vec A\rvert$ 记与中心 $\vec A$ 的距离。本篇双电子积分用化学家记号 $(ab\lvert cd) = \iint a(1)b(1)c(2)d(2)/r_{12}$，与第 14 章的物理学家记号对应为 $(ab\lvert cd) = \langle ac\lvert bd\rangle$（实轨道下二者可互换使用）。
 
 ---
 
@@ -24,9 +24,9 @@ $$e^{-\alpha\lvert\vec r-\vec A\rvert^2}\,e^{-\beta\lvert\vec r-\vec B\rvert^2} 
 
 两个中心合成一个：**一切多中心积分逐步塌缩为单中心高斯积分**。最典型的成品是四个 s 型原语的双体积分（推导见自检问题 5）：
 
-$$(ab\lvert cd) = \frac{2\pi^{5/2}}{pq\sqrt{p+q}}\,e^{-\mu\lvert\vec A-\vec B\rvert^2 - \nu\lvert\vec C-\vec D\rvert^2},$$
+$$(ab\lvert cd) = \frac{2\pi^{5/2}}{pq\sqrt{p+q}}\,e^{-\mu\lvert\vec A-\vec B\rvert^2 - \nu\lvert\vec C-\vec D\rvert^2}\;F_0\!\left(\frac{pq}{p+q}\lvert\vec P-\vec Q\rvert^2\right),$$
 
-$p,\mu$ 属于 $(a,b)$ 对、$q,\nu$ 属于 $(c,d)$ 对——一个初等函数，没有数值积分。更高角动量（p、d、f……）的积分由 s 型出发用**递推关系**（Obara–Saika、McMurchie–Davidson）逐级升角生成：机器做微商，人不用画图。
+$p,\mu,\vec P$ 属于 $(a,b)$ 对、$q,\nu,\vec Q$ 属于 $(c,d)$ 对；$F_0$ 是 Boys 函数（$F_0(0)=1$，闭式与递推见自检问题 5）——纯闭式，没有数值积分。更高角动量（p、d、f……）的积分由 s 型出发用**递推关系**（Obara–Saika、McMurchie–Davidson）逐级升角生成：机器做微商，人不用画图。
 
 ## 3. 收缩：把原语打包成"轨道"
 
@@ -58,7 +58,7 @@ $$(pq\lvert rs)\ \approx\ \sum_{JK}(pq\lvert J)\,V^{JK}\,(K\lvert rs),\qquad V^{
 
 $$\frac{\partial\psi}{\partial r}\bigg|_{r=0} = -Z\,\psi(0)\qquad(\text{电子–核尖点，原子单位}),$$
 
-（电子–电子尖点是它的一半，$-\tfrac12$。）精确轨道在核处有**尖角**；高斯处处光滑、核处斜率为零——**原理上不可能**重现尖点。后果不是灾难而是税单：相关能随基组层次 $n$ 的收敛从指数律退化为 $n^{-4}$ 型幂律，于是 cc-pVnZ 外推公式（用 n 与 n+1 两层外推到基组极限）成为标准操作。这条"物理正确性换工程可行性"的交换，贯穿整个量子化学史。
+（电子–电子尖点是 $+\tfrac12$：约化质量取半使系数减半，而电子间排斥 $+1/r_{12}$ 与核吸引异号。）精确轨道在核处有**尖角**；高斯处处光滑、核处斜率为零——**原理上不可能**重现尖点。后果不是灾难而是税单：相关能的分波增量按 $(l+\tfrac12)^{-4}$、基组截断残差按 $n^{-3}$ 幂律收敛（不再是指数律），于是 cc-pVnZ 外推公式（用 n 与 n+1 两层外推到基组极限）成为标准操作。这条"物理正确性换工程可行性"的交换，贯穿整个量子化学史。
 
 ## 小结
 
@@ -109,11 +109,11 @@ $$\lvert\langle\varphi_{pq}\lvert\varphi_{rs}\rangle_C\rvert^2 \le \langle\varph
 
 $$-\frac12\nabla^2\psi - \frac{Z}{r}\psi = E\psi \;\Longrightarrow\; -\frac{1}{2r^2}\frac{\text d}{\text dr}\left(r^2\frac{\text d\psi}{\text dr}\right) - \frac{Z}{r}\psi = E\psi.$$
 
-乘 $r$、取 $r\to0$：设 $\psi = \psi(0) + \psi'(0)r + O(r^2)$。逐项：左边第一项 $\sim -\tfrac{1}{2r^2}\tfrac{d}{dr}(r^2\psi') = -\tfrac{1}{r^2}(2r\psi' + r^2\psi'') \sim -\tfrac{2\psi'}{r}$，乘 $r$ 后 $\to -2\psi'(0)$；库仑项 $-\tfrac{Z}{r}\psi$ 乘 $r$ 后 $\to -Z\psi(0)$；右边 $E\psi r \to 0$。故
+乘 $r$、取 $r\to0$：设 $\psi = \psi(0) + \psi'(0)r + O(r^2)$。逐项：左边第一项 $-\tfrac{1}{2r^2}\tfrac{d}{dr}(r^2\psi') = -\tfrac{1}{2r^2}(2r\psi' + r^2\psi'') \sim -\tfrac{\psi'}{r}$，乘 $r$ 后 $\to -\psi'(0)$；库仑项 $-\tfrac{Z}{r}\psi$ 乘 $r$ 后 $\to -Z\psi(0)$；右边 $E\psi r \to 0$。故
 
-$$-2\psi'(0) - Z\psi(0) = 0\;\Longrightarrow\;\frac{\psi'(0)}{\psi(0)} = -\frac{Z}{2}\cdot\frac{2}{1}\cdot\frac{1}{1} = -Z.$$
+$$-\psi'(0) - Z\psi(0) = 0\;\Longrightarrow\;\frac{\psi'(0)}{\psi(0)} = -Z.$$
 
-（电子–电子尖点同理，电荷换 1、约化质量换 $\tfrac12$，得 $-\tfrac12$。）
+（电子–电子尖点同理：相对运动的约化质量 $\mu = \tfrac12$ 使动能系数从 $\tfrac12$ 变 $1$，排斥势 $+1/r_{12}$ 又使符号反转——两者合起来得 $+\tfrac12$。）
 
 **高斯的无能**：每个 $g_\alpha(\vec r) = e^{-\alpha r^2}$ 在 $r = 0$ 处 $g'(0) = 0$（偶函数光滑极值）；线性组合 $\sum d_i e^{-\alpha_i r^2}$ 仍满足 $\phi'(0) = \sum d_i\cdot 0 = 0$——除非 $\phi(0)=0$（无意义），条件 $\phi'/\phi = -Z$ 无法满足。核附近的密度形状系统性偏差，是基组收敛幂律化的根源；Slater 型 $e^{-\zeta r}$ 的导数 $= -\zeta e^{-\zeta r}$，恰好能配出尖点——**物理形状与代数便利在这里正面冲突，量子化学选择了后者并付了收敛律的税**。
 
@@ -159,7 +159,7 @@ $$\int e^{-p\lvert\vec r_1-\vec P\rvert^2}\,e^{-s^2\lvert\vec r_1-\vec Q\rvert^2
 
 $$(ab\lvert cd) = E_{ab}E_{cd}\,\frac{2\pi^{5/2}}{pq\sqrt{p+q}}\;F_0\!\left(\frac{pq}{p+q}\lvert\vec P-\vec Q\rvert^2\right),\qquad F_0(T) = \int_0^1 e^{-Tu^2}\,\text du.$$
 
-**极限核对**：$\vec P\to\vec Q$ 时 $T\to0$、$F_0(0) = 1$，回到正文引用的闭式；再取单中心全同（$p = q = 2a$、四中心重合）得 $\pi^{5/2}/4a^{3/2}$，与高斯密度的静电自能直接积分一致——闭式可信。
+**极限核对**：$\vec P\to\vec Q$ 时 $T\to0$、$F_0(0) = 1$，回到正文引用的闭式；再取单中心全同（$p = q = 2a$、四中心重合）得 $\pi^{5/2}/(4a^{5/2})$，与高斯密度的静电自能直接积分一致——闭式可信。
 
 **收尾**：更高角动量通过 $F_n(T) = \int_0^1u^{2n}e^{-Tu^2}\text du$ 与其递推 $F_{n+1} = \dfrac{(2n+1)F_n - e^{-T}}{2T}$（对 $u^{2n+1}e^{-Tu^2}$ 求导再积分即得）以及对 $A$、$B$、$C$、$D$ 的坐标微商，从 $(ss\lvert ss)$ 机械生成——这就是第 2 节"机器做微商"的确切含义。
 

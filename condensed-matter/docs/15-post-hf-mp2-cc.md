@@ -10,13 +10,13 @@
 
 ## 1. 一句话总结
 
-**HF 的误差叫相关能——总量级仅 ~1%，却是化学的全部：H₂ 解离错的 8.5 eV（静态相关，第 14 章）与平衡位形的 ~1 eV 短程回避不足（动态相关）都记在这本账上。修账有两条路：MP2 用二阶微扰把"电子成对虚激发"的动能收益算出来（Goldstone 图 = QFT 费曼图的同一台机器），代价 $N^5$、精度 ~1 kcal/mol 量级，但在静态相关处发散；耦合簇把修正写成指数拟设 $\Psi = e^T\Phi_0$，指数自动生成一切"断开的"高阶激发乘积——这正是动态相关的主体——从而严格大小一致、精度随截断 rank 系统性爬升（CCSD $N^6$、CCSD(T) $N^7$，后者是单参考问题的黄金标准）。CC 的疆界也清楚：静态相关面前 $e^T$ 收敛半径失效（多参考问题），固体面前 $N^7$ 代价失效——两条边界分别通向下一章的 DFT 与第 13 章的强关联。**
+**HF 的误差叫相关能——总量级仅 ~1%，却是化学的全部：H₂ 解离错的 8.5 eV（静态相关，第 14 章）与平衡位形的 ~1 eV 短程回避不足（动态相关）都记在这本账上。修账有两条路：MP2 用二阶微扰把"电子成对虚激发"的动能收益算出来（Goldstone 图 = QFT 费曼图的同一台机器），代价 $N^5$、精度数 kcal/mol 量级，但在静态相关处发散；耦合簇把修正写成指数拟设 $\Psi = e^T\Phi_0$，指数自动生成一切"断开的"高阶激发乘积——这正是动态相关的主体——从而严格大小一致、精度随截断 rank 系统性爬升（CCSD $N^6$、CCSD(T) $N^7$，后者是单参考问题的黄金标准）。CC 的疆界也清楚：静态相关面前 $e^T$ 收敛半径失效（多参考问题），固体面前 $N^7$ 代价失效——两条边界分别通向下一章的 DFT 与第 13 章的强关联。**
 
 ## 2. 相关能：HF 差的那 1%
 
 **定义**（ Löwdin）：$E_\text{corr} = E_\text{exact} - E_\text{HF}$（同一基组、同一几何）。量级账：
 
-- 总能量：每个电子 ~ 数十 Ha（H₂O 约 −76 Ha）；
+- 总能量：每个电子 ~ 数 Ha（H₂O 十个电子约 −76 Ha）；
 - HF 误差：每对电子 ~ 0.02–0.04 Ha（H₂ 平衡位形 $E_\text{corr} \approx -0.041$ Ha ≈ 1.1 eV，He 原子 $-0.042$ Ha）；
 - 化学精度：1 kcal/mol = 1.6 mHa = 0.043 eV——反应能与势垒的实验可信度。
 
@@ -40,19 +40,19 @@ $$\boxed{\;E_\text{MP2} = \frac14\sum_{ijab}\frac{\lvert\langle ij\lVert ab\rang
 
 ### 3.2 Goldstone 图：费曼图的凝聚态表亲
 
-画出 $\langle ij\lVert ab\rangle\lVert ab\rangle ij\rangle$ 的耦合：两条电子线在两处相互作用——这就是最简单的 **Goldstone 图**。规则与 QFT 的费曼图（[QFT 书](../../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)）严格同构：线的传播、顶点的耦合、分母的"能量减能量"；差别只在"时间"是绝热开关的微扰序、粒子是电子而非相对论量子场。**连接簇（Goldstone）定理**保证只有连接图进入能量——断开的图等于子系统的能量乘积，会被逐块抵消（这就是 MP2 天生大小一致的图论表述，也是 QFT 里"只有连接图贡献 S 矩阵"的同一句话）。第 6 章 6 节的 RPA 环图、本章的 MP2 图、QFT 的真空极化图——同一棵树上三根枝。
+画出 $\langle ij\lVert ab\rangle\langle ab\lVert ij\rangle$ 的耦合：两条电子线在两处相互作用——这就是最简单的 **Goldstone 图**。规则与 QFT 的费曼图（[QFT 书](../../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)）严格同构：线的传播、顶点的耦合、分母的"能量减能量"；差别只在"时间"是绝热开关的微扰序、粒子是电子而非相对论量子场。**连接簇（Goldstone）定理**保证只有连接图进入能量——断开的图等于子系统的能量乘积，会被逐块抵消（这就是 MP2 天生大小一致的图论表述，也是 QFT 里"只有连接图贡献 S 矩阵"的同一句话）。第 6 章 6 节的 RPA 环图、本章的 MP2 图、QFT 的真空极化图——同一棵树上三根枝。
 
 ### 3.3 性能与疆界
 
 - **代价**：能量求和本身 $O(N_\mathrm{o}^2N_\mathrm{v}^2)$，瓶颈在把双体积分从原子轨道基变换到分子轨道基（四指标变换 $O(M^5)$）——习惯记 **$N^5$**。百原子分子日常可算。
-- **精度**：平衡态、单参考体系 ~ 1–3 kcal/mol；更贵的修正（MP3/4）不保证单调变好——微扰级数常常渐近发散。
+- **精度**：平衡态、单参考体系 ~ 数 kcal/mol；更贵的修正（MP3/4）不保证单调变好——微扰级数常常渐近发散。
 - **疆界**：分母 $\varepsilon_i + \varepsilon_j - \varepsilon_a - \varepsilon_b \to 0$ 时发散。HOMO–LUMO 能隙小的体系—— stretched 键、过渡金属、强关联——分母塌掉，MP2 灾难性地过度修正（自检问题 5 用第 14 章的 H₂ 亲手演示：解离处 MP2 $\to -\infty$ 而 FCI 完好）。**MP2 是"有能隙才有收敛半径"的方法**。
 
 ## 4. 耦合簇：指数拟设
 
 ### 4.1 先看 CI 为什么不够好
 
-组态相互作用写 $\Psi = (1 + C_1 + C_2 + \cdots)\Phi_0$，线性、直观，截断到 CISD 久经考验——但有个结构性缺陷：**截断 CI 不大小一致**（size-extensive）。两个远离的子系统 A、B，严格能量应严格可加 $E(AB) = E(A) + E(B)$；截断 CI 做不到——自检问题 2 用一个两能级模型给出定量演示：CISD 对耦合双激发（A 上一个 double × B 上一个 double，整体是四激发）视而不见，能量高出缺陷 $\sim 4v^4/\Delta^3 \sim E_\text{corr}^2/\Delta$。He 原子 $E_\text{corr} \approx 0.042$ Ha、$\Delta \sim 1$ Ha 时缺陷已 ~7 mHa，超化学精度 4 倍——**体系越大、错误按分子数累积越快**，这对要算反应能（大分子差值）的化学是致命伤。
+组态相互作用写 $\Psi = (1 + C_1 + C_2 + \cdots)\Phi_0$，线性、直观，截断到 CISD 久经考验——但有个结构性缺陷：**截断 CI 不大小一致**（size-extensive）。两个远离的子系统 A、B，严格能量应严格可加 $E(AB) = E(A) + E(B)$；截断 CI 做不到——自检问题 2 用一个两能级模型给出定量演示：CISD 对耦合双激发（A 上一个 double × B 上一个 double，整体是四激发）视而不见，能量高出缺陷 $\sim 2v^4/\Delta^3 \sim 2E_\text{corr}^2/\Delta$。He 原子 $E_\text{corr} \approx 0.042$ Ha、$\Delta \sim 1$ Ha 时缺陷已 ~3.5 mHa ≈ 2.2 kcal/mol，超化学精度两倍——**体系越大、错误按分子数累积越快**，这对要算反应能（大分子差值）的化学是致命伤。
 
 ### 4.2 $e^T$：让断开的激发自动相乘
 
@@ -62,7 +62,7 @@ $$\Psi_\text{CC} = e^{T}\Phi_0,\qquad T = T_1 + T_2 + T_3 + \cdots,\qquad T_n = 
 
 $T_n$ 把 $n$ 对电子激发出去，系数 $t$ 叫**簇振幅**。妙处全在指数的展开：$e^{T_2}\Phi_0 = (1 + T_2 + \tfrac12 T_2^2 + \cdots)\Phi_0$ 中 $\tfrac12T_2^2$ 项是**两对电子独立激发**——一个四激发，但它不是"四个电子协同跳"的连接四激发，而是"两处各自的双激发碰巧同时发生"的**断开乘积**。把 $\Psi$ 按 CI 系数展开（自检问题 4）：
 
-$$c_2 = t_2 + \tfrac12t_1^2,\qquad c_3 = t_1t_2 + \tfrac{\text{次}}{6}t_1^3,\qquad c_4 \supset \tfrac12 t_2t_2',\ \cdots$$
+$$c_2 = t_2 + \tfrac12t_1^2,\qquad c_3 = t_1t_2 + \tfrac16t_1^3,\qquad c_4 \supset \tfrac12 t_2t_2',\ \cdots$$
 
 动态相关的主要成分正是这些大量而微弱的独立对激发（每对 ~0.02 Ha，簇振幅 $\sim10^{-2}$–$10^{-1}$），它们的**乘积项**贡献了波函数里数量占绝对优势的高阶 CI 系数——CCSD 不算 $T_4$ 却精确包含 $\tfrac12T_2^2$ 的全部四激发，这就是**同 rank 下 CC 远胜 CI** 的原因。QFT 的对应物：这不是别的，就是把微扰级数按连接部分**指数化重求和**——与生成泛函 $Z = e^{iS_\text{连接}}$ 的 linked-cluster 定理一模一样。
 
@@ -87,10 +87,10 @@ $$\langle\Phi_\mu\lvert\bar H\lvert\Phi_0\rangle = 0,\qquad \bar H \equiv e^{-T}
 | 方法 | 代价 | 典型误差 |
 |---|---|---|
 | HF | $N^4$ | ~1 eV / 键 |
-| MP2 | $N^5$ | 5–10 kcal/mol |
-| CCSD | $N^6$ | 2–4 kcal/mol |
+| MP2 | $N^5$ | 数 kcal/mol |
+| CCSD | $N^6$ | 1–2 kcal/mol |
 | CCSD(T) | $N^7$ | **~1 kcal/mol**（黄金标准） |
-| CCSDT、CCSDTQ… | $N^8$、$N^9$ | 向 FCI 收敛 |
+| CCSDT、CCSDTQ… | $N^8$、$N^{10}$ | 向 FCI 收敛 |
 
 对成千上万小–中分子的反应能，CCSD(T)/cc-pVQZ 与实验的符合度达到"理论值可以当实验用"的程度——这是量子化学五十年最大的工程成就。**疆界有二**：静态相关（多参考）时振幅不再小、$e^T$ 展开失效（Cr₂ 分子是著名车祸现场；对付它要 CASSCF 等多参考方法，见[第 18 章](18-multireference-casscf.md)）；固体时 $N^7$ 的 $N$ 以万计——周期体系 CC 至今是稀有技能。两条边界合起来，恰好画出下一章 DFT 的领地：**便宜、能算固体、但精度不可系统控制**——量子化学的镜像互补。
 
@@ -126,25 +126,25 @@ $$E_\text{MP2} = \frac14\sum_{ijab}\frac{\lvert\langle ij\lVert ab\rangle\vert^2
 
 <details markdown="1"><summary>点击显示答案</summary>
 
-**单体**：$2\times2$ 矩阵 $[\,E_0,\ v;\ v,\ E_0+\Delta\,]$，基态 $E = E_0 - \tfrac{v^2}{\Delta} + O(v^4)$（记 $E_\text{corr} = -v^2/\Delta$）。
+**单体**：$2\times2$ 矩阵 $[\,E_0,\ v;\ v,\ E_0+\Delta\,]$，基态 $E = E_0 - \tfrac{v^2}{\Delta} + \tfrac{v^4}{\Delta^3} + O(v^6)$（记 $E_\text{corr} = -v^2/\Delta$；大小一致性比较在 $O(v^4)$ 阶进行，这一阶必须留住）。
 
-**复合体系**：组态空间由 $|00\rangle, |d0\rangle, |0d\rangle, |dd\rangle$ 张成（$d$ 为激发）。严格基态 = 单体基态之积，能量恰 $2(E_0 - v^2/\Delta)$——对本模型严格。
+**复合体系**：组态空间由 $|00\rangle, |d0\rangle, |0d\rangle, |dd\rangle$ 张成（$d$ 为激发）。严格基态 = 单体基态之积，能量严格可加：$2E_0 - 2v^2/\Delta + 2v^4/\Delta^3 + O(v^6)$。
 
 **CISD**：四激发 $|dd\rangle$ 被截掉，剩三维空间 $\{|00\rangle,|d0\rangle,|0d\rangle\}$；由对称性约化为 $2\times2$：
 
 $$\begin{pmatrix} 2E_0 & \sqrt2\,v \\ \sqrt2\,v & 2E_0 + \Delta \end{pmatrix}\;\Longrightarrow\; E_\text{CISD} = 2E_0 + \tfrac{\Delta}{2} - \sqrt{\tfrac{\Delta^2}{4} + 2v^2} \approx 2E_0 - \frac{2v^2}{\Delta} + \frac{4v^4}{\Delta^3}.$$
 
-比严格值高出
+比严格值高出（同阶相减）
 
-$$\delta_\text{CISD} = \frac{4v^4}{\Delta^3} = \frac{4E_\text{corr}^2}{\Delta}\qquad(\text{每对子系统}).$$
+$$\delta_\text{CISD} = \Big(2E_0 - \frac{2v^2}{\Delta} + \frac{4v^4}{\Delta^3}\Big) - \Big(2E_0 - \frac{2v^2}{\Delta} + \frac{2v^4}{\Delta^3}\Big) = \frac{2v^4}{\Delta^3} = \frac{2E_\text{corr}^2}{\Delta}\qquad(\text{每对子系统}).$$
 
 **CCSD**：复合簇算符 $T = T_A + T_B$，$\Psi = e^{T_A}e^{T_B}|00\rangle$——指数展开自动包含 $T_AT_B|00\rangle \propto |dd\rangle$，即严格乘积态，能量精确可加。（本模型双激发是唯一的激发类型，CCSD = FCI = 严格。）
 
 **真实量级**：He 的 $E_\text{corr} \approx 0.042$ Ha、典型 $\Delta \sim 1$ Ha：
 
-$$\delta \sim \frac{4\times(0.042)^2}{1} \approx 7\ \mathrm{mHa} \approx 1.9\ \mathrm{kcal/mol}$$
+$$\delta \sim \frac{2\times(0.042)^2}{1} \approx 3.5\ \mathrm{mHa} \approx 2.2\ \mathrm{kcal/mol}$$
 
-每对 He–He 相互作用单元——化学精度的四倍，且随分子尺寸**线性累积**（$n$ 个单元缺陷 $\propto n$）。CI 阶梯每上一级（CISDT、CISDTQ）修掉一部分，但"截断就不严格可加"是结构性的；CC 从根上免疫。
+每对 He–He 相互作用单元——化学精度的两倍，且随分子尺寸**线性累积**（$n$ 个单元缺陷 $\propto n$）。CI 阶梯每上一级（CISDT、CISDTQ）修掉一部分，但"截断就不严格可加"是结构性的；CC 从根上免疫。
 
 </details>
 

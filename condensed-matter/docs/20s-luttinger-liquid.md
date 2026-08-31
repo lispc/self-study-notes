@@ -64,7 +64,7 @@ $$\langle\rho(x)\rho(0)\rangle\ =\ -\frac{K}{2\pi^2x^2}\ +\ A\,\frac{\cos 2k_Fx}
 
 自旋费米子的 Luttinger 液体拆成**两支独立的玻色模**：
 
-$$H = H_\rho[\phi_\rho,\theta_\rho;\ u_\rho,\ K_\rho] + H_\sigma[\phi_\sigma,\theta_\sigma;\ u_\sigma,\ K_\sigma]，\qquad u_\rho \ne u_\sigma\ (\text{只要相互作用自旋相关}).$$
+$$H = H_\rho[\phi_\rho,\theta_\rho;\ u_\rho,\ K_\rho] + H_\sigma[\phi_\sigma,\theta_\sigma;\ u_\sigma,\ K_\sigma]，\qquad u_\rho \ne u_\sigma\ (\text{只要相互作用非零：电荷扇区被重整，自旋扇区被 SU(2) 锁死}).$$
 
 电子算符同时携带两个标签（$\psi \sim e^{-i(\cdots\phi_\rho\cdots)}\times e^{-i(\cdots\phi_\sigma\cdots)}$），它的格林函数是两支模关联函数的**乘积**——谱函数的支持区域是两条"翅膀"：注入一个电子，其电荷成分以 $u_\rho$ 跑掉、自旋成分以 $u_\sigma$ 跑掉，**永远不再合体**（自检问题 4 把两翼结构算清楚）。空穴子（holon，电荷无自旋）与自旋子（spinon，自旋无电荷）由此获得谱学身份。
 
@@ -86,7 +86,7 @@ $$\frac{d\lambda}{dl} = (1-K)\lambda$$
 
 $$\text{无自旋}：K\lt\tfrac12\quad(\text{BKT 型相变})；\qquad\text{自旋}：K_\rho\lt1\ (\text{即任何斥力})\ \Longrightarrow\ \text{半满一维 Hubbard 是 Mott 绝缘体}.$$
 
-第 13 章"半满大 $U$ 出 Mott 隙"的图像在 1D 加码成"**任意** $U>0$ 即绝缘"（隙 $\Delta\propto e^{-2\pi v_F/U}$，弱耦合指数小）——一维是 Mott 物理的放大镜，也是第 20 章 DMRG 校准的首选标本（Hubbard 链的隙、$K$、自旋–电荷速度全部可从基态数值提取）。
+第 13 章"半满大 $U$ 出 Mott 隙"的图像在 1D 加码成"**任意** $U>0$ 即绝缘"（隙 $\Delta\propto e^{-2\pi t/U} = e^{-\pi v_F/U}$，半满 $v_F = 2t$；弱耦合指数小）——一维是 Mott 物理的放大镜，也是第 20 章 DMRG 校准的首选标本（Hubbard 链的隙、$K$、自旋–电荷速度全部可从基态数值提取）。
 
 ## 7. 与全书的接口
 
@@ -140,15 +140,19 @@ $$(p_3,p_4) = (p_1,p_2)\ \text{或}\ (p_2,p_1).$$
 
 <details markdown="1"><summary>点击显示答案</summary>
 
-**(a)**：高斯理论里顶点算符关联是初等指数（Wick 定理对指数直接生效）：
+**(a)**：高斯理论里顶点算符关联是初等指数（Wick 定理对指数直接生效）。记 $A = \phi - \theta$：
 
-$$\langle e^{-i(\phi-\theta)(x)}\,e^{i(\phi-\theta)(0)}\rangle = e^{-\frac12\langle(\phi-\theta)(x) - (\phi-\theta)(0)\rangle^2}\cdot(\text{交叉项消去}).$$
+$$\langle e^{-iA(x)}\,e^{iA(0)}\rangle = e^{-\frac12\big\langle\big(A(x) - A(0)\big)^2\big\rangle}.$$
 
-等时情形 $\langle\phi(x)\theta(0)\rangle = \tfrac{i\pi}{2}\,\mathrm{sgn}(x)$ 型的常数相位差保证 $\phi-\theta$ 的自关联为 $\langle(\phi-\theta)(x)(\phi-\theta)(0)\rangle = -\tfrac12\ln(x/a)$，于是
+等时情形 $\langle\phi(x)\theta(0)\rangle = \tfrac{i\pi}{2}\,\mathrm{sgn}(x)$ 型的交叉项是**常数相位**（不含 $x$ 依赖，它只负责第 (c) 问的反对易号），$A$ 的自关联由 $\phi$ 与 $\theta$ 两个场各贡献 $-\tfrac12\ln(x/a)$ **相加**：
 
-$$\langle\psi_R(x)\psi_R^\dagger(0)\rangle\propto e^{+\frac12\ln(x/a)^{-1}}\cdot e^{-\ln(x/a)^{-1}/2} = \frac{1}{x}，$$
+$$\big\langle A(x)A(0)\big\rangle = -\ln(x/a)\ \Longrightarrow\ \big\langle\big(A(x)-A(0)\big)^2\big\rangle = 2\big\langle A^2(0)\big\rangle - 2\big\langle A(x)A(0)\big\rangle = 2\ln(x/a) + \text{常数}.$$
 
-恰是自由费米子 $G(x) = \sin k_Fx/2\pi k_Fx\cdots$ 的包络（振荡因子 $e^{ik_Fx}$ 由 Klein 因子与正规化携带）✓。
+常数部分只影响归一化，于是
+
+$$\langle\psi_R(x)\psi_R^\dagger(0)\rangle\propto e^{-\frac12\cdot 2\ln(x/a)} = e^{-\ln(x/a)} = \frac{a}{x}\ \propto\ \frac{1}{x},$$
+
+恰是自由费米子 $G(x) \sim \sin(k_Fx)/\pi x$ 的包络（$k_F$ 振荡由左右手标签 $r = \pm1$ 携带）✓。
 
 **(b)**：$\partial_x\phi$ 的关联由 $\langle\phi\phi\rangle$ 求两次导：$\langle\partial_x\phi(x)\partial_{x'}\phi(x')\rangle = -\tfrac12\big/(x-x')^2$（对 $-\tfrac12\ln\lvert x-x'\rvert$ 先对 $x$ 再对 $x'$ 求导，两次链式法则各带一个符号），故
 
@@ -228,7 +232,7 @@ $$\frac{d\lambda}{dl} = (1-K)\lambda\qquad\Longrightarrow\ K\lt1\ \text{相关�
 
 $$K\lt\frac12\quad\Longleftrightarrow\quad g_u\ \text{相关}\ \Longrightarrow\ \phi\ \text{被钉扎到 }\cos4\phi\text{ 的极小、电荷隙打开（BKT 型）。}$$
 
-自旋情形：$\cos\sqrt8\,\phi_\rho$ 维数 $2K_\rho$，判据 $K_\rho\lt1$——**任何**斥力即满足，半满自旋 Hubbard 链对任意 $U>0$ 都是 Mott 绝缘体（隙 $\Delta\propto e^{-2\pi v_F/U}$，弱耦合指数小）。$K=\tfrac12$ 处的无自旋 BKT 点对应 XXZ 链 $\Delta = 1$（Heisenberg）——XXZ 的各向异性与 $K$ 有 Bethe ansatz 的精确映射
+自旋情形：$\cos\sqrt8\,\phi_\rho$ 维数 $2K_\rho$，判据 $K_\rho\lt1$——**任何**斥力即满足，半满自旋 Hubbard 链对任意 $U>0$ 都是 Mott 绝缘体（隙 $\Delta\propto e^{-2\pi t/U} = e^{-\pi v_F/U}$，半满 $v_F = 2t$；弱耦合指数小）。$K=\tfrac12$ 处的无自旋 BKT 点对应 XXZ 链 $\Delta = 1$（Heisenberg）——XXZ 的各向异性与 $K$ 有 Bethe ansatz 的精确映射
 
 $$K = \frac{\pi}{2(\pi - \arccos\Delta)}\qquad(\Delta = 1\to\tfrac12;\ \Delta = 0\to1)，$$
 

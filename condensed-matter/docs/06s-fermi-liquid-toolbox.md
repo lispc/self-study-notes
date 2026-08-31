@@ -23,7 +23,7 @@ $$\frac{\partial n}{\partial t} + \frac{\partial\varepsilon}{\partial\vec k}\cdo
 - **流体力学极限**（$\omega\tau\ll1$，碰撞频繁）：局域平衡，输运是扩散型的——普通声波（第一声）；
 - **无碰撞极限**（$\omega\tau\gg1$，低温高频）：$I_{\text{coll}}\to0$，但方程依然非平凡——因为 $f$ 函数的**平均场回复力**独自支撑振荡。这就是零声。
 
-**零声的物理**：费米面整体做微小的四极变形并传播——不是密度波（普通声），是**形状波**（frozen shape surfing at ~v_F）。推导（完整版见自检问题 1）落地为一个超越方程：
+**零声的物理**：费米面做微小的各向异性形状畸变并传播（畸变向前缘尖凸，而非均匀伸缩）——不是密度波（普通声），是**形状波**（frozen shape surfing at ~v_F）。推导（完整版见自检问题 1）落地为一个超越方程：
 
 $$s\ln\frac{s+1}{s-1} = 2 + \frac{2}{F_0^s},\qquad s = \frac{\omega}{qv_F}\ \gt 1,$$
 
@@ -48,7 +48,7 @@ $$\frac{\chi}{\chi_0} = \frac{m^\ast/m}{1+F_0^a}$$
 
 $$\frac{m^\ast}{m} = 1 + \frac{F_1^s}{3}$$
 
-前两个的机理一眼见底：均匀形变只涉及费米面态密度（$m^\ast$）与 $l=0$ 的相互作用修正——$F_0^s>0$（同种电荷挤压更贵）压低 $\kappa$；$F_0^a<0$（自旋反平行对更贵、平行倾向被奖励——07s 的 Stoner 交换正是这个符号）放大 $\chi$，因子 $(1+F_0^a)^{-1}$ 在 $F_0^a\to-1$ 处发散（³He 的 $F_0^a\approx-0.7$，磁化率增强三四倍，是液体理论的经典战果）。第三个最深刻：$m^\ast$ 本不该由 $f$ 函数决定（它是准粒子色散的定义），但**动量守恒**强迫它表达为 $F_1^s$——Galilean 不变的液体里，一个准粒子的运动必须拖曳周围的背流（backflow），使**总**动量恰为 $\hbar\vec k$；把电流用两种方式算（准粒子流 + 背流修正），就锁死了 $m^\ast/m = 1+F_1^s/3$。注意它顺带给出 Pomeranchuk 的第一条款：$m^\ast>0\Rightarrow F_1^s>-3$ **自动满足**——电荷 $l=1$ 形变（整体加速）永不失稳，守恒律护体。
+前两个的机理一眼见底：均匀形变只涉及费米面态密度（$m^\ast$）与 $l=0$ 的相互作用修正——$F_0^s>0$（同种电荷挤压更贵）压低 $\kappa$；$F_0^a<0$（自旋反平行对更贵、平行倾向被奖励——07s 的 Stoner 交换正是这个符号）放大 $\chi$，因子 $(1+F_0^a)^{-1}$ 在 $F_0^a\to-1$ 处发散（³He 的 $F_0^a\approx-0.7$：仅相互作用因子 $1/(1+F_0^a)\approx3$，计入 $m^\ast/m\approx2.8$ 后总增强 $\chi/\chi_0\approx9$，是液体理论的经典战果）。第三个最深刻：$m^\ast$ 本不该由 $f$ 函数决定（它是准粒子色散的定义），但**动量守恒**强迫它表达为 $F_1^s$——Galilean 不变的液体里，一个准粒子的运动必须拖曳周围的背流（backflow），使**总**动量恰为 $\hbar\vec k$；把电流用两种方式算（准粒子流 + 背流修正），就锁死了 $m^\ast/m = 1+F_1^s/3$。注意它顺带给出 Pomeranchuk 的第一条款：$m^\ast>0\Rightarrow F_1^s>-3$ **自动满足**——电荷 $l=1$ 形变（整体加速）永不失稳，守恒律护体。
 
 ## 4. Pomeranchuk 判据：费米液体的自我诊断
 
@@ -97,7 +97,7 @@ $$\rho(T) = \rho_0 + AT^2\qquad(\rho_0\ \text{为杂质残留})，$$
 
 - 动理学方程：准粒子的玻尔兹曼方程 + 平均场自洽（$\varepsilon[n]$）；零声 = 无碰撞极限的形状波，$s\ln\frac{s+1}{s-1} = 2+\frac{2}{F_0^s}$。
 - 求和规则三连：$\kappa$、$\chi$（含 $F_0$），$m^\ast/m = 1+F_1^s/3$（背流/动量守恒）；电荷 $l=1$ 永不失稳。
-- Pomeranchak：$F_l>-(2l+1)$；铁磁（$F_0^a=-1$ = Stoner）与向列（$F_2^s=-5$）是费米液体自我诊断的死法，Cooper 与 Mott 是判据外的另两种。
+- Pomeranchuk：$F_l>-(2l+1)$；铁磁（$F_0^a=-1$ = Stoner）与向列（$F_2^s=-5$）是费米液体自我诊断的死法，Cooper 与 Mott 是判据外的另两种。
 - Luttinger 定理：$n = 2V_F$；Oshikawa 磁通论证给出拓扑读法；破口即非费米液体的界碑。
 - 体检表：$\rho_0+AT^2$、$A/\gamma^2$、ARPES 的 $Z$ 与极点、量子振荡的体积与质量。
 
@@ -115,27 +115,27 @@ $$\rho(T) = \rho_0 + AT^2\qquad(\rho_0\ \text{为杂质残留})，$$
 
 <details markdown="1"><summary>点击显示答案</summary>
 
-**线性化**：$n = n_0(\varepsilon_{\vec k}^{(0)}) + u_{\vec k}e^{i(\vec q\cdot\vec r-\omega t)}$；能量随占据变化（平均场）：$\delta\varepsilon = \sum_{\vec k'}f_{\vec k\vec k'}u_{\vec k'}$。动理学方程（无碰撞）：
+**线性化**：$n = n_0(\varepsilon_{\vec k}^{(0)}) + u_{\vec k}e^{i(\vec q\cdot\vec r-\omega t)}$；能量随占据变化（平均场）：$\delta\varepsilon = \sum_{\vec k'}f_{\vec k\vec k'}u_{\vec k'}$。代入动理学方程（无碰撞）：平均场项 $-\nabla_{\vec r}\varepsilon\cdot\nabla_{\vec k}n_0$ 中 $\nabla_{\vec k}n_0 = -\delta(\varepsilon-\mu)\,\vec v_{\vec k}$（取 $\hbar = 1$），负负得正，移项后
 
-$$\big(\omega - \vec q\cdot\vec v_{\vec k}\big)u_{\vec k} = -\vec q\cdot\vec v_{\vec k}\,\delta(\varepsilon_{\vec k}-\mu)\,\delta\varepsilon$$
+$$\big(\omega - \vec q\cdot\vec v_{\vec k}\big)u_{\vec k} = \vec q\cdot\vec v_{\vec k}\,\delta(\varepsilon_{\vec k}-\mu)\,\delta\varepsilon$$
 
-（用 $-\partial n_0/\partial\varepsilon = \delta(\varepsilon-\mu)$）。取 $\vec q$ 沿 $z$，$s\equiv\omega/(qv_F)$，$\mu_k = \cos\theta$：
+取 $\vec q$ 沿 $z$，$s\equiv\omega/(qv_F)$，$\mu_k = \cos\theta$：
 
-$$u(\mu) = \frac{\mu}{\mu - s}\,\delta\varepsilon.$$
+$$u(\mu) = \frac{\mu}{s-\mu}\,\delta\varepsilon.$$
 
-**自洽**：$l=0$ 时 $\delta\varepsilon = f_0\,u_0$ 与角度无关，$u_0 = N(0)\,f_0\cdot\langle u\rangle_\Omega\cdot\delta\varepsilon$ 的自洽化为 $1 = F_0^s\,\big\langle\frac{\mu}{\mu-s}\big\rangle$，其中球平均
+**自洽**：$l=0$ 时 $\delta\varepsilon = f_0\sum_{\vec k'}u_{\vec k'}$ 与角度无关，自洽条件化为 $1 = F_0^s\,\big\langle\frac{\mu}{s-\mu}\big\rangle$，其中球平均（分解 $\frac{\mu}{s-\mu} = \frac{s}{s-\mu}-1$）
 
-$$\Big\langle\frac{\mu}{\mu-s}\Big\rangle = \frac12\int_{-1}^{1}\frac{\mu\,d\mu}{\mu-s} = \frac12\bigg[s\int_{-1}^{1}\frac{d\mu}{\mu-s} - 2\bigg] = \frac{s}{2}\ln\frac{s-1}{s+1} - 1.$$
+$$\Big\langle\frac{\mu}{s-\mu}\Big\rangle = \frac12\int_{-1}^{1}\frac{\mu\,d\mu}{s-\mu} = \frac12\bigg[s\int_{-1}^{1}\frac{d\mu}{s-\mu} - 2\bigg] = \frac{s}{2}\ln\frac{s+1}{s-1} - 1.$$
 
-（积分用 $\int d\mu/(\mu-s) = \ln\lvert\mu-s\rvert$；要求 $s>1$ 使分母无实轴零点——这正是"速度必须超过 $v_F$ 才能跑赢朗道阻尼"的来源，与第 6 章等离激元在连续区的命运同款。）代回：
+（积分用 $\int d\mu/(s-\mu) = -\ln\lvert s-\mu\rvert$；要求 $s>1$ 使分母无实轴零点——这正是"速度必须超过 $v_F$ 才能跑赢朗道阻尼"的来源，与第 6 章等离激元在连续区的命运同款。$s>1$ 时该平均值为正，与 $F_0^s>0$ 的自洽解相容。）代回：
 
-$$1 = F_0^s\Big[\frac{s}{2}\ln\frac{s+1}{s-1} - 1\Big]\ \Longrightarrow\ s\ln\frac{s+1}{s-1} = 2 + \frac{2}{F_0^s}. ✓$$
+$$1 = F_0^s\Big[\frac{s}{2}\ln\frac{s+1}{s-1} - 1\Big]\ \Longrightarrow\ s\ln\frac{s+1}{s-1} = 2 + \frac{2}{F_0^s}.$$
 
-**极限**：(i) $F_0^s\gg1$：右端 $\to2$；大 $s$ 展开 $\ln\frac{s+1}{s-1} = \frac{2}{s} + \frac{2}{3s^3}+\cdots$，故 $s\cdot\frac{2}{s}\big(1+\frac{1}{3s^2}\big) = 2+\frac{2}{3s^2} = 2 + \frac{2}{F_0^s}$，解得 $s = \sqrt{F_0^s/3}$ ✓。(ii) $F_0^s\to0^+$：需要 $s\ln\frac{s+1}{s-1}\to\infty$，即 $s\to1^+$（$\ln$ 发散）——极弱相互作用支起一个速度无限贴近 $v_F$ 的振荡 ✓。物理复述：这是**费米面的整体四极摆动**，位移场 $u(\mu)\propto\mu/(\mu-s)$ 在 $\mu=\pm1$（沿传播方向的前后缘）最强。
+**极限**：(i) $F_0^s\gg1$：右端 $\to2$；大 $s$ 展开 $\ln\frac{s+1}{s-1} = \frac{2}{s} + \frac{2}{3s^3}+\cdots$，故 $s\cdot\frac{2}{s}\big(1+\frac{1}{3s^2}\big) = 2+\frac{2}{3s^2} = 2 + \frac{2}{F_0^s}$，解得 $s = \sqrt{F_0^s/3}$。(ii) $F_0^s\to0^+$：需要 $s\ln\frac{s+1}{s-1}\to\infty$，即 $s\to1^+$（$\ln$ 发散）——极弱相互作用支起一个速度无限贴近 $v_F$ 的振荡。物理复述：这是**费米面的各向异性形状振荡**——纯 $F_0^s$ 下位移场 $u(\mu)\propto\mu/(s-\mu)$ 是所有分波的混合，且只在**前缘** $\mu=+1$ 附近最强（$s\to1^+$ 时尖凸成"射流"），后缘 $\mu=-1$ 处振幅仅 $\sim1/(s+1)$。
 
 </details>
 
-**2.** 推导磁化率公式 $\chi/\chi_0 = (m^\ast/m)/(1+F_0^a)$：对小自旋极化计算能量泛函的代价，说明 $F_0^a>0$（反铁磁型自旋通道作用）如何增强磁化率，并证明 Stoner 判据 $I\,N(0)>1$ 等价于 $F_0^a<-1$。
+**2.** 推导磁化率公式 $\chi/\chi_0 = (m^\ast/m)/(1+F_0^a)$：对小自旋极化计算能量泛函的代价，说明 $F_0^a<0$（铁磁型/Stoner 交换）如何增强磁化率（$F_0^a>0$ 的反铁磁型作用则压低），并证明 Stoner 判据 $I\,N(0)>1$ 等价于 $F_0^a<-1$。
 
 <details markdown="1"><summary>点击显示答案</summary>
 
@@ -158,7 +158,7 @@ $$\delta^2E_{\text{int}} = \frac12\sum_{\sigma\sigma'}f_{\sigma\sigma'}\sum_{\ve
 
 $$2N^\ast\delta\mu\big(1+F_0^a\big) = 2\mu_BBN^\ast\;\Longrightarrow\;\delta\mu = \frac{\mu_BB}{1+F_0^a},$$
 
-$$M = 2\mu_BN^\ast\delta\mu = \frac{2\mu_B^2N^\ast}{1+F_0^a}B\qquad\Longrightarrow\qquad \frac{\chi}{\chi_0} = \frac{m^\ast/m}{1+F_0^a}\qquad(\chi_0 = 2\mu_B^2N(0)). ✓$$
+$$M = 2\mu_BN^\ast\delta\mu = \frac{2\mu_B^2N^\ast}{1+F_0^a}B\qquad\Longrightarrow\qquad \frac{\chi}{\chi_0} = \frac{m^\ast/m}{1+F_0^a}\qquad(\chi_0 = 2\mu_B^2N(0)).$$
 
 **Stoner 等价**：07s 的 Stoner 交换参数 $I>0$（平行自旋**降低**能量）在本篇符号下是 $f^a = -I$，即 $F_0^a = -N(0)I$。判据 $I\,N(E_F)>1 \Leftrightarrow F_0^a\lt-1 \Leftrightarrow 1+F_0^a\lt0$——分母过零、$\chi$ 发散、极化形变能量变负：**Stoner 铁磁 = Pomeranchuk 失稳在 $l=0$ 自旋道的字面实现**。两条路（能带论的 $I\,N(E_F)$ 与液体论的 $F_0^a$）是同一枚硬币：前者用巡游能带的货币、后者用费米面相互作用的货币记账，汇率 $F_0^a = -N(0)I$。³He 的 $F_0^a\approx-0.7$：增强但未过线——顺磁液体住在离铁磁一步之遥处。
 
@@ -172,25 +172,27 @@ $$M = 2\mu_BN^\ast\delta\mu = \frac{2\mu_B^2N^\ast}{1+F_0^a}B\qquad\Longrightarr
 
 $$E(\vec u) = E(0) + \tfrac12\,Nmu^2\qquad(\text{裸质量 } m\ \text{——Galilean 变换的强制结果}).$$
 
-**准粒子账本**：漂移 = 费米面整体平移 $\delta k$，占据数变化 $\delta n_{\vec k} = -\delta k\cos\theta\,\partial n^{(0)}/\partial k_\parallel$，在费米面附近 $\partial n^{(0)}/\partial k_\parallel = -\delta(\xi)\,\hbar v_F\cos\theta$，故
+**准粒子账本**：漂移 = 费米面整体平移 $\delta k$（沿 $z$），占据数变化 $\delta n_{\vec k} = -\delta k\cos\theta\,\partial n^{(0)}/\partial k$（链式法则，投影只贡献一个 $\cos\theta$），在费米面附近 $\partial n^{(0)}/\partial k = -\delta(\xi)\,\hbar v_F$，故
 
-$$\delta n_{\vec k} = \hbar v_F\,\delta k\,\cos^2\theta\,\delta(\xi).$$
+$$\delta n_{\vec k} = \hbar v_F\,\delta k\,\cos\theta\,\delta(\xi).$$
 
-（一阶能量 $\sum\varepsilon\,\delta n$ 因粒子数守恒为零；只算二次项。）
+（一阶能量 $\sum\varepsilon\,\delta n \propto \langle\cos\theta\rangle = 0$；只算二次项。）
 
-**动能项**：$\delta^2E_{\text{kin}} = \tfrac12\sum_{\vec k}\big(\partial^2\varepsilon/\partial k_\parallel^2\big)(\delta k_\parallel)^2$ 型的壳层积分整理为（等价地：每个 $\vec k$ 处费米面向外压 $\delta\mu_{\text{loc}} = \hbar v_F\delta k\cos\theta$ 的局部压缩代价，对球面积分）：
+**动能项**：每个方向 $\hat k$ 处费米面被局部外压 $\delta\mu_{\text{loc}} = \hbar v_F\delta k\cos\theta$，局部压缩代价 $\tfrac12N^\ast(0)\,\delta\mu_{\text{loc}}^2$ 对球面积分：
 
 $$\delta^2E_{\text{kin}} = \frac{N^\ast(0)}{2}\,\hbar^2v_F^2\delta k^2\,\langle\cos^2\theta\rangle = \frac{N\hbar^2\delta k^2}{2m^\ast}.$$
 
 （数值因子核对：$\langle\cos^2\theta\rangle = \tfrac13$，且 $N^\ast v_F^2/3N = 1/m^\ast$——由 $N^\ast/N = 3m^\ast/\hbar^2k_F^2$ 与 $v_F = \hbar k_F/m^\ast$ 即得。）
 
-**相互作用项**：$\delta^2E_{\text{int}} = \tfrac12 N^{\ast2}\hbar^2v_F^2\delta k^2\,\langle\cos\theta\cos\theta'\,f(\chi)\rangle_{\theta\theta'}$。把 $f$ 按 Legendre 展开，加法定理给出**只有 $l=1$ 道存活**：
+**相互作用项**：$\delta^2E_{\text{int}} = \tfrac12 N^{\ast2}\hbar^2v_F^2\delta k^2\,\langle\cos\theta\cos\theta'\,f(\chi)\rangle_{\theta\theta'}$。把 $f$ 按 Legendre 展开 $f(\chi) = \sum_l f_l P_l(\cos\chi)$，加法定理给出 $\langle\cos\theta\,P_l(\cos\chi)\rangle_\Omega = \delta_{l1}\,\cos\theta'/3$——**只有 $l=1$ 道存活**——再对 $\Omega'$ 平均（$\langle\cos^2\theta'\rangle = 1/3$）：
 
-$$\langle\cos\theta\cos\theta'f(\chi)\rangle = \frac{f_1}{3}\ \Longrightarrow\ \delta^2E_{\text{int}} = \frac{N^\ast{}^2 f_1^s}{2}\hbar^2v_F^2\delta k^2\cdot\frac13 = \frac{N\hbar^2\delta k^2}{2m}\cdot\frac{F_1^s}{3}.$$
+$$\langle\cos\theta\cos\theta'f(\chi)\rangle = \frac{f_1^s}{9}\ \Longrightarrow\ \delta^2E_{\text{int}} = \frac{N^{\ast2} f_1^s}{18}\,\hbar^2v_F^2\delta k^2 = \frac{N\hbar^2\delta k^2}{2m^\ast}\cdot\frac{F_1^s}{3}.$$
 
-**匹配**：合计 $\delta^2E = \tfrac{N\hbar^2\delta k^2}{2}\big(\tfrac{1}{m^\ast} + \tfrac{F_1^s}{3m}\big)$。漂移速度与费米面平移的关系由**晶体动量的玻尔规则**锁定（与 $m^\ast$ 无关）：$\hbar\delta k = mu$。代入并要求 $\delta^2E\overset{!}{=}\tfrac12Nmu^2$：
+（末步用 $N^\ast v_F^2 = 3N/m^\ast$ 与 $F_1^s = N^\ast f_1^s$：$N^{\ast2}v_F^2f_1^s/18 = N F_1^s/(6m^\ast)$。）
 
-$$\frac{m}{m^\ast} + \frac{F_1^s}{3} = 1\qquad\Longrightarrow\qquad\boxed{\ \frac{m^\ast}{m} = 1+\frac{F_1^s}{3}\ }$$
+**匹配**：合计 $\delta^2E = \tfrac{N\hbar^2\delta k^2}{2m^\ast}\big(1 + \tfrac{F_1^s}{3}\big)$。漂移速度与费米面平移的关系由**晶体动量的玻尔规则**锁定（与 $m^\ast$ 无关）：$\hbar\delta k = mu$。代入并要求 $\delta^2E\overset{!}{=}\tfrac12Nmu^2$：
+
+$$\frac{m}{m^\ast}\left(1 + \frac{F_1^s}{3}\right) = 1\qquad\Longrightarrow\qquad\boxed{\ \frac{m^\ast}{m} = 1+\frac{F_1^s}{3}\ }$$
 
 **背流的物理**：准粒子的动量必须是 $\hbar\vec k$（玻尔规则），但它跑得慢（$m^\ast$）——缺失的动量藏在**周围液体的背流**里（$l=1$ 形变正是背流的泛函面孔）。电流的两种算法——"准粒子电荷 × 准粒子速度"（带 $m^\ast$）与"总电荷 × 质心速度"（带 $m$）——必须一致，就锁出了这条恒等式。破 Galilean 的体系（晶格上的电子，第 4 章）没有此约束：$m^\ast$ 独立于 $F_1^s$，两者都是独立参数。
 
@@ -214,9 +216,9 @@ $$\delta^2E_{\text{int}} = \delta^2E_{\text{kin}}\cdot\frac{F_l^{s,a}}{2l+1}.$$
 
 **合计**：
 
-$$\delta^2E = \delta^2E_{\text{kin}}\Big(1+\frac{F_l^{s,a}}{2l+1}\Big)\qquad\Longrightarrow\qquad \delta^2E>0\iff F_l^{s,a}>-(2l+1). ✓$$
+$$\delta^2E = \delta^2E_{\text{kin}}\Big(1+\frac{F_l^{s,a}}{2l+1}\Big)\qquad\Longrightarrow\qquad \delta^2E>0\iff F_l^{s,a}>-(2l+1).$$
 
-**三个特例**：(i) $l=0$ 电荷道：均匀膨胀，判据 $F_0^s>-1$ 等价于 $\kappa>0$（第 3 节公式的分母不翻号）——热力学稳定性的液体论版本。(ii) $l=1$ 电荷道：判据 $F_1^s>-3$，而 Galilean 恒等式 $m^\ast/m = 1+F_1^s/3>0$（有效质量为正）恰好保证它**恒成立**——整体加速永不失稳，动量守恒护体 ✓。(iii) 危险户：$l=0$ 自旋（铁磁）、$l=2$ 电荷（向列）——都是"负相互作用在相应角动量道压过正动能"的同一剧本。
+**三个特例**：(i) $l=0$ 电荷道：均匀膨胀，判据 $F_0^s>-1$ 等价于 $\kappa>0$（第 3 节公式的分母不翻号）——热力学稳定性的液体论版本。(ii) $l=1$ 电荷道：判据 $F_1^s>-3$，而 Galilean 恒等式 $m^\ast/m = 1+F_1^s/3>0$（有效质量为正）恰好保证它**恒成立**——整体加速永不失稳，动量守恒护体。(iii) 危险户：$l=0$ 自旋（铁磁）、$l=2$ 电荷（向列）——都是"负相互作用在相应角动量道压过正动能"的同一剧本。
 
 </details>
 
@@ -232,11 +234,9 @@ $$\Delta P = N\cdot\frac{2\pi}{L}.$$
 
 $$N\cdot\frac{2\pi}{L} = W\cdot\frac{2\pi}{L}\quad(\mathrm{mod}\ \tfrac{2\pi}{L}\ \text{的整数格})\qquad\Longrightarrow\qquad N - W\equiv0。$$
 
-**$W$ 的另一本账（绝热跟随）**：假设（费米液体假设！）穿通量过程中能隙不闭、基态不简并——基态绝热演化到 $\Phi_0$ 处的基态。对非相互作用费米海，逐态跟踪给出 $W$ = 被推过布里渊区的电子数 = 费米体积的两倍（每穿过一个 $2\pi/L$ 的态计入一次）：
+**$W$ 的另一本账（绝热跟随）**：假设（费米液体假设！）穿通量过程中能隙不闭、基态不简并——基态绝热演化到 $\Phi_0$ 处的基态。对非相互作用费米海逐态跟踪：穿入一个磁通量子把每个电子平移一个 $k$ 格点，费米球中被扫过布里渊区边界（经倒格矢折回）的电子数，按单位体积、自旋二重计数，恰好等于费米体积的两倍，即 $W = 2V_F$。
 
-$$W = 2V_F\,(2\pi)^{-3}\cdot\frac{(2\pi)^3}{\cdots} = 2V_F\ \text{（按体积归一）}.$$
-
-相互作用（费米液体）不改变绝热过程的拓扑结构（无隙闭、无简并），$W$ 作为绕数不变——故 $N = 2V_F + (\text{原胞数}\times\text{整数})$；费米液体取最平凡的分支（无奇异重排），得 $n = 2V_F$。✓
+相互作用（费米液体）不改变绝热过程的拓扑结构（无隙闭、无简并），$W$ 作为绕数不变——故 $N = 2V_F + (\text{原胞数}\times\text{整数})$；费米液体取最平凡的分支（无奇异重排），得 $n = 2V_F$。
 
 **假设用在哪**："绝热不关能隙、不遇简并"只在**每个自旋扇区有奇数电子每原胞**之类的拓扑保护情形自动成立；一般情形它是**费米液体性**的输入——正是定理的适用边界。**Mott 的违反**：电荷隙打开后，穿磁通的绝热路径可以安全地"原地踏步"（$W$ 与自由值脱钩），粒子数由整数化的局域矩/空穴承载——$n\neq2V_F$ 不再矛盾；费米体积的破缺（如某些欠掺杂铜氧化物的"小费米口袋"）因此成为 Mott 物理的实验证词（第 13 章、第 6 节的量子振荡体检）。**拓扑注记**：$W$ 是基态的绕数——与 12s 的任意子/简并一样，是"整体量对局域扰动的免疫"，费米面由此获得拓扑户口。
 
@@ -244,7 +244,7 @@ $$W = 2V_F\,(2\pi)^{-3}\cdot\frac{(2\pi)^3}{\cdots} = 2V_F\ \text{（按体积�
 
 ## 参考
 
-- Pines & Nozières《The Theory of Quantum Liquids, Vol. I》第 1–4 章：动理学方程、零声、求和规则与 Pomeranchak 的经典陈述（本篇主线）。
+- Pines & Nozières《The Theory of Quantum Liquids, Vol. I》第 1–4 章：动理学方程、零声、求和规则与 Pomeranchuk 的经典陈述（本篇主线）。
 - Leggett, Rev. Mod. Phys. 47, 331 (1975)（³He 中的费米液体）与《Lectures on condensed matter physics》（背流与 Galilean 恒等式的最清晰推导）。
 - J. M. Luttinger, Phys. Rev. 119, 1153 (1960)：定理原始文献；Oshikawa, Phys. Rev. Lett. 84, 3370 (2000)：磁通论证；Oshikawa 的拓扑综述（2018–）。
 - Kadowaki & Woods, Solid State Commun. 58, 507 (1986)：$A/\gamma^2$ 比值；Jacko et al., Nat. Phys. 5, 422 (2009)：现代重标度分析。

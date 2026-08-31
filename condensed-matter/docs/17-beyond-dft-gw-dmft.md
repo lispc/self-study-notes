@@ -76,7 +76,7 @@ $$G(\omega) = \frac{\omega}{\omega^2 - U^2/4} \qquad\Longrightarrow\qquad \Sigma
 
 两个 Hubbard 带，权重各 ½，中心 $\pm U/2$，间隔 $U$——第 13 章 4.3 节的 Hubbard 带在此获得谱函数的定量形式。$\Sigma$ 在 $\omega\to0$ 处奇异：**任何围绕有限自能的展开（HF、微扰、KS）在此地原理上失效**——这就是 DFT 判 NiO 为金属而实验是绝缘体的病理解剖。
 
-### 5.3 晶格 DMFT：自洽循环与三相点谱
+### 5.3 晶格 DMFT：自洽循环与三峰谱
 
 有限 $t$ 时，DMFT 把晶格问题折叠成一个**安德森杂质模型**（一个相互作用格点 + 自洽决定的非相互作用浴）并自洽：
 
@@ -84,7 +84,7 @@ $$G(\omega) = \frac{\omega}{\omega^2 - U^2/4} \qquad\Longrightarrow\qquad \Sigma
 2. 反解出浴格林函数 $G_0^{-1} = G_\text{loc}^{-1} + \Sigma$（Weiss 函数——第 7 章 Weiss 场的格林函数后代）；
 3. 用严格解法解杂质模型（ED：就是第 14 章的对角化；或连续时间 QMC）得新的 $\Sigma$ → 循环。
 
-收敛后的谱函数随 $U/W$ 演出 Mott 转变的完整戏码：金属相是**三相点谱**——费米面上的准粒子峰（Fermi 液体残余，宽度 $\sim ZW$）骑在上下 Hubbard 带之间；$U$ 增大，$Z \to 0$、准粒子峰坍缩，谱裂成两带留出 Mott 隙。与第 6 章（准粒子）和第 13 章（Mott）的接口在此闭环：**DMFT = 第 6 章的准粒子语言 + 第 13 章的 Hubbard 物理，装进一个可解的自洽回路**。
+收敛后的谱函数随 $U/W$ 演出 Mott 转变的完整戏码：金属相是**三峰结构**——费米面上的准粒子峰（Fermi 液体残余，宽度 $\sim ZW$）骑在上下 Hubbard 带之间；$U$ 增大，$Z \to 0$、准粒子峰坍缩，谱裂成两带留出 Mott 隙。与第 6 章（准粒子）和第 13 章（Mott）的接口在此闭环：**DMFT = 第 6 章的准粒子语言 + 第 13 章的 Hubbard 物理，装进一个可解的自洽回路**。
 
 ### 5.4 实践：DFT+DMFT
 
@@ -110,7 +110,7 @@ $$G(\omega) = \frac{\omega}{\omega^2 - U^2/4} \qquad\Longrightarrow\qquad \Sigma
 
 - 激发谱的正确货币是 $G$ 与谱函数 $A = -\pi^{-1}\mathrm{Im}G$；自能 $\Sigma$（Dyson 方程）收纳相互作用的一切修正，KS 本征值不是它的合法替身。
 - GW = $\Gamma\to1$ 的 Hedin 一级：$\Sigma = iGW$，$W$ 直接来自第 6 章 RPA；HF 是其裸库仑极限、屏蔽是其灵魂；Si 能隙 0.5 → 1.25 eV 的招牌修复。
-- DMFT = "$\Sigma$ 局域"的严格映射 + 杂质自洽；原子极限 $\Sigma = U^2/4\omega$ 劈出 Hubbard 带、解释 KS 方法的 Mott 车祸；晶格上长出三相点谱与 Mott 转变。
+- DMFT = "$\Sigma$ 局域"的严格映射 + 杂质自洽；原子极限 $\Sigma = U^2/4\omega$ 劈出 Hubbard 带、解释 KS 方法的 Mott 车祸；晶格上长出三峰结构与 Mott 转变。
 - DFT+DMFT 把第 13 章的失败名单逐项回收；GW 从弱关联端、DMFT 从强关联端包抄。
 - 方法选择的统一坐标系：在哪个变量上、以何种哲学、付多大代价做近似——没有免费的午餐，只有对口的工具。
 
@@ -140,11 +140,11 @@ $$G_0^{-1}G = 1 + \Sigma G\;\Longrightarrow\;\big(G_0^{-1} - \Sigma\big)G = 1\;\
 
 **(a)**：$\Sigma(1,2) = iG(1,2)W(1,2)$ 中令 $W \to v(\lvert\vec r_1 - \vec r_2\rvert)\delta(t_1 - t_2^+)$：
 
-$$\Sigma \to i\,G(\vec r_1,\vec r_2; t_1 - t_2^+)\,v(r_{12})\delta(t_1 - t_2) \;\propto\; -v(r_{12})\,\rho(\vec r_1,\vec r_2)\,\delta(\omega),$$
+$$\Sigma \to i\,G(\vec r_1,\vec r_2; t_1 - t_2^+)\,v(r_{12})\delta(t_1 - t_2) \;\propto\; -v(r_{12})\,\rho(\vec r_1,\vec r_2)\quad(\text{静态，与 }\omega\text{ 无关}),$$
 
 （$iG$ 在等时极限给出密度矩阵，符号规则吃掉 $i$）——正是 Fock 交换算符。HF 是 GW 的"零级屏蔽"极限。
 
-**(b)**：$W(\vec q) = v(\vec q)/\varepsilon(\vec q) = v/（1 + k_{TF}^2/q^2）$（静态、长波，第 6 章 Thomas–Fermi），自能成为屏蔽交换：短程成分被指数压低。
+**(b)**：$W(\vec q) = v(\vec q)/\varepsilon(\vec q) = v/(1 + k_{TF}^2/q^2)$（静态、长波，第 6 章 Thomas–Fermi），自能成为屏蔽交换：实空间里库仑的长程尾巴被指数压低（$W(r)\sim e^{-k_{TF}r}/r$）。
 
 **方向为什么对**：HF 能隙高估（如 NiO 的 HF 能隙 ~10 eV 级 vs 实验 ~4 eV）的根源是裸交换的非局域刚性——拿走一个电子时，交换势在所有地方同时骤变，能隙被夸大。物理上，其余电子的屏蔽会**软化**这个势：空穴周围聚起屏蔽云，有效相互作用减弱、能隙收缩。实验证据：把 Si 的 HF 能隙（>5 eV）与 LDA（0.5 eV）夹在两端，GW（1.25 eV）落在中间且贴近实验——**屏蔽恰到好处地补上 KS 低估的那块**。一句话：HF 的错与 DFT 的错方向相反，GW 用屏蔽交换站在中间——这不是巧合，是"裸 → 屏蔽 → 局域平均"谱系的自然标度。
 
@@ -160,7 +160,7 @@ $$\delta v_\text{tot} = v\rho_\text{ext} + vP_0\,\delta v_\text{tot}\;\Longright
 
 环图求和（RPA）= 这条自洽链的图语言：泡泡链几何级数，与 QFT 真空极化（[QFT 书](../../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)）同构——第 6 章已排演，本章照搬进 $W$。
 
-**TF 极限**：$P_0(q\to0,\omega\to0) = g(E_F) = 3n/2E_F$（第 3 章态密度）→ $\varepsilon(q) = 1 + k_{TF}^2/q^2$，$k_{TF}^2 = 4\pi g(E_F)$（高斯单位）。
+**TF 极限**：$P_0(q\to0,\omega\to0) = -g(E_F) = -3n/2E_F$（第 3 章态密度；静态密度响应为负）→ $\varepsilon(q) = 1 + k_{TF}^2/q^2$，$k_{TF}^2 = 4\pi g(E_F)$（高斯单位）。
 
 **长波行为**：
 
@@ -222,5 +222,5 @@ $$E_g = \omega_+(-W/2) - \omega_- (W/2) = \sqrt{U^2 + W^2/4} - W/2\;\xrightarrow
 - L. Hedin, Phys. Rev. 139, A796 (1965)：Hedin 方程组的原始文献。
 - F. Aryasetiawan & O. Gunnarsson, Rep. Prog. Phys. 61, 237 (1998)：《The GW method》综述——本章第 4 节的主线参考。
 - W. Metzner & D. Vollhardt, Phys. Rev. Lett. 62, 324 (1989)：$d\to\infty$ 与自能局域性。
-- A. Georges, G. Kotliar, W. Krauth & M. J. Rozenberg, Rev. Mod. Phys. 68, 13 (1996)：《DMFT》综述——第 5 节的权威参考（含 Hubbard-I 与三相点谱）。
+- A. Georges, G. Kotliar, W. Krauth & M. J. Rozenberg, Rev. Mod. Phys. 68, 13 (1996)：《DMFT》综述——第 5 节的权威参考（含 Hubbard-I 与三峰谱）。
 - G. Kotliar et al., Rev. Mod. Phys. 78, 865 (2006)：DFT+DMFT 电子结构方法综述（第 5.4 节）。

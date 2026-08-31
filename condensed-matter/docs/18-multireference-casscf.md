@@ -36,7 +36,7 @@ $$\dim = \binom{2l}{n}:\qquad \text{CAS(2,2)} = 6,\ \ \text{CAS(10,10)} = 184{,}
 
 CASSCF 修好了静态相关，但活性空间**之外**的动态相关（第 15 章的短程回避）一点没碰——总相关能仍缺一大块。标准补法是**在多参考波函数上做二阶微扰**（MRPT2 家族）：
 
-- **CASPT2**（Andersson–Malmqvist–Roos）：零级哈密顿取 Fock 型的对角近似，对 CAS 内外的激发做二阶；实践检验充分（光谱、势能面、过渡金属化学的半个数据库）。
+- **CASPT2**（Andersson–Malmqvist–Roos）：零级哈密顿取单粒子广义 Fock 算符（块对角），对 CAS 内外的激发做二阶；实践检验充分（光谱、势能面、过渡金属化学的半个数据库）。
 - **NEVPT2**（Angeli–Cimiraglia–Malrieu）：零级取 Dyall 哈密顿——严格介于活性空间内外之间、谱结构干净。
 
 **入侵态（intruder state）**：CASPT2 的经典病——某个外部组态的能量恰好落在参考态附近，二阶分母 $\to 0$，修正爆炸。这与 MP2 在 H₂ 解离处的发散（第 15 章自检问题 5）是同一个病的多参考复发：**能隙病不挑微扰的阶数**。NEVPT2 的 Dyall 构造从结构上排除入侵态（分母永远以活性空间能级差为底）；CASPT2 则靠能级移位（level shift）打补丁。诊断与治疗的逻辑链与第 15 章完全平行——这是"近似阶梯"叙事的又一次重演。
@@ -47,7 +47,7 @@ CASSCF 修好了静态相关，但活性空间**之外**的动态相关（第 15
 
 活性空间与第 13 章的 Hubbard/Heisenberg 语言严格接轨：$n$ 个活性电子在 $l$ 条"格点轨道"上的 CAS 计算，直接产出多态能量——**单态与三态的能级差就是磁交换常数**。以双中心体系（H₂、双核金属簇）的 CAS(2,2) 为例（自检问题 3 完整推导）：
 
-$$E(S{=}1) - E(S{=}0)\;\xrightarrow{\ \text{映射}\ }\; 4t^2/U\;\xrightarrow{\ \text{Heisenberg}\ }\; J,$
+$$E(S{=}1) - E(S{=}0)\;\xrightarrow{\ \text{映射}\ }\; 4t^2/U\;\xrightarrow{\ \text{Heisenberg}\ }\; J,$$
 
 即 Hubbard 参数从 CAS 能级差反读出来。过渡金属化学与分子磁体研究里的标准操作：CASSCF/NEVPT2 算各自旋态的能量面 → 拟合各向异性交换张量 → 输入第 7 章的自旋哈密顿量做磁动力学。**凝聚态的自旋模型与量子化学的多参考波函数，是同一枚硬币的两面**——前者把后者压缩成几个可传递的参数。
 
@@ -88,7 +88,7 @@ $$E(S{=}1) - E(S{=}0)\;\xrightarrow{\ \text{映射}\ }\; 4t^2/U\;\xrightarrow{\ 
 
 $$\binom{4}{2} = 6,\qquad \binom{12}{6} = 924,\qquad \binom{20}{10} = 184{,}756.$$
 
-CAS(2,2) 恰是第 14 章 H₂ 的六行列式空间（自旋适配后 3 个单重态 + 1 个三重态）；CAS(10,10) 已是完整 FCI 量级——活性空间到 10 轨道就能装下大多数"必须严格"的物理。
+CAS(2,2) 恰是第 14 章 H₂ 的六行列式空间（自旋适配后 3 个单重态 + 1 个三重态多重态，计及三态的三个分量恰为 6 个态）；CAS(10,10) 已是完整 FCI 量级——活性空间到 10 轨道就能装下大多数"必须严格"的物理。
 
 **冗余性分析**：CAS 的定义性质是对**占据方式的完全求和**。活性轨道内部做酉旋转 $\{\varphi^\text{act}\} \to U\{\varphi^\text{act}\}$：旋转后的每个新行列式都是旧行列式的线性组合，而 FCI 空间对线性组合封闭——**旋转后的 CAS 空间 = 原空间**，CI 系数重新优化即可复原波函数，能量不变。故活性内旋转是冗余（但要吸收进参数化避免病态）。
 
@@ -104,9 +104,9 @@ CAS(2,2) 恰是第 14 章 H₂ 的六行列式空间（自旋适配后 3 个单�
 
 $$E_\text{CASSCF} \le E_\text{RHF}\qquad(\text{同一基组、同一几何}).$$
 
-**平衡区的定量**：设 CASSCF 波函数 $|\Psi\rangle = c_0|G\rangle + c_1|U\rangle$（$G = \sigma_g^2$，$U = \sigma_u^2$）。平衡键长处 $\sigma_g$–$\sigma_u$ 能隙 $\Delta$ 大，二阶微扰给
+**平衡区的定量**：设 CASSCF 波函数 $|\Psi\rangle = c_0|G\rangle + c_1|U\rangle$（$G = \sigma_g^2$，$U = \sigma_u^2$）。平衡键长处两行列式的对角能差 $D = \langle U\lvert H\lvert U\rangle - \langle G\lvert H\lvert G\rangle \approx 2\Delta$ 大（$\Delta$ 为 $\sigma_g$–$\sigma_u$ 轨道能隙——双激发的代价是两倍轨道能隙加积分修正），二阶微扰给
 
-$$c_1 \approx -\frac{\langle U\lvert H\lvert G\rangle}{\Delta}\ \text{（小量）},\qquad E_\text{CAS} \approx E_\text{RHF} - \frac{\lvert\langle U\lvert H\lvert G\rangle\vert^2}{2\Delta - (\langle U\lvert H\lvert U\rangle - \langle G\lvert H\lvert G\rangle)}.$$
+$$c_1 \approx -\frac{\langle U\lvert H\lvert G\rangle}{D}\ \text{（小量）},\qquad E_\text{CAS} \approx E_\text{RHF} - \frac{\lvert\langle U\lvert H\lvert G\rangle\vert^2}{D}.$$
 
 这正是第 15 章 MP2 的头一项（同一对轨道的虚激发）：**CASSCF(2,2) 在平衡区自动回收了 MP2 修正中"活性对"的那一份**。其余 MP2 项（其他电子对的激发）不在 CAS(2,2) 空间内——所以 CASSCF(2,2) − RHF 是动态相关中"活性对贡献"的下界估计，全量要 CASPT2（把活性外的对激发补回来）。
 
@@ -128,7 +128,7 @@ $$t^2/U = \frac{E(S{=}1) - E(S{=}0)}{4},$$
 
 再对照 Heisenberg 有效哈密顿 $H_\text{eff} = J\,\vec S_a\cdot\vec S_b$（$J > 0$ 反铁磁）：$\langle\vec S_a\cdot\vec S_b\rangle = -3/4$（单态）、$+1/4$（三态），故
 
-$$J = E(S{=}0) - E(S{=}1)\ \Big( = \frac{4t^2}{U}\ \text{在 Hubbard 映射下} \Big).$$
+$$J = E(S{=}1) - E(S{=}0)\ \Big( = \frac{4t^2}{U}\ \text{在 Hubbard 映射下} \Big).$$
 
 **接口的意义**：多铁、分子磁体、双核金属酶的设计问题标准流程即此——CASSCF/NEVPT2 算各自旋态能面 → 读出 $J$（各向异性时读出 $D$、$E$ 张量与交换路径）→ 交给第 7 章的平均场/自旋波机器预言宏观磁性。**量子化学算的是 10 个电子的严格波函数，凝聚态物理问的是 $10^{23}$ 个自旋的集体行为，$J$ 是两个世界之间的窄接口**——而它成立的原因（低能有效理论，第 9 章重整化群思想的又一次日常应用）比接口本身更深刻。
 
@@ -148,9 +148,9 @@ $\delta \to 0$（外部组态与参考简并——**入侵**）：修正 $\to -\
 
 **NEVPT2 的免疫机制**：零级取 Dyall 哈密顿
 
-$$H_D = \sum_{i\in\text{活性}}\varepsilon_i E_{ii} + \sum_{a\in\text{外部}}\varepsilon_a E_{aa}\ +\ (\text{芯部分})，$$
+$$H_D = \sum_{c\in\text{芯}}\varepsilon_c E_{cc} + \sum_{a\in\text{外部}}\varepsilon_a E_{aa}\ +\ P_\text{CAS}\,H\,P_\text{CAS}\ +\ C,$$
 
-其中活性能级 $\varepsilon_i$ 由密度矩阵自洽决定、满足**二级佐达条件**：$H_D$ 与 $H$ 在 CAS 内的投影有相同的对角结构，且外部激发的能量分母**以活性空间的跃迁能为主项**——外部单轨道的能级简并只会让分母趋近"活性内跃迁能"，而那被 CAS 的变分保证与参考态分离（否则该轨道早该被吸进活性空间）。结构上的结论：**NEVPT2 的分母有严格正下界，入侵态不可能出现**；代价是零级哈密顿更贵、公式更长。这与第 15 章"CC 用指数结构根除大小不一致"同款：**在方法的形式里内建免疫，胜过事后打补丁**。
+其中芯/外部能级 $\varepsilon$ 由活性空间的密度矩阵自洽决定，而**活性空间内保留完整的两体哈密顿**（$H_D$ 在 CAS 内与全 $H$ 完全相同——这是 Dyall 构造的要点，保证零阶能量严格等于 CASSCF 能量）。于是外部激发的能量分母**以活性空间内的真实多体能级差为主项**：外部单轨道的能级简并只会让分母趋近"活性内跃迁能"，而那被 CAS 的变分保证与参考态分离（否则该轨道早该被吸进活性空间）。结构上的结论：**NEVPT2 的分母有严格正下界，入侵态不可能出现**；代价是零级哈密顿更贵、公式更长。这与第 15 章"CC 用指数结构根除大小不一致"同款：**在方法的形式里内建免疫，胜过事后打补丁**。
 
 </details>
 

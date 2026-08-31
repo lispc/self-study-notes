@@ -10,7 +10,7 @@
 
 ## 1. 一句话总结
 
-**$\nu = 1/m$ 的平台不是单粒子填出来的，而是相互作用凝聚出的不可压缩量子液体：Laughlin 波函数 $\prod_{i\lt j}(z_i - z_j)^m$ 用"每个电子在同伴处强制安放 $m$ 阶零点"的代数办法让库仑排斥最优化，等离子体类比证明它密度均匀、有能隙；液体的元激发携带分数电荷 $e/m$、交换相位 $\theta = \pi/m$（既非玻色也非费米——任意子的第一个实例），环面基态 $m$ 重简并且局域测量无法区分——这三件"分数化信物"标志着一类全新的序。文小刚把它命名为拓扑序：相的区别不在对称性，而在长程纠缠的模式（展开见[拓扑序](12s-topological-order.md)）；本篇则把每件信物亲手推一遍。**
+**$\nu = 1/m$ 的平台不是单粒子填出来的，而是相互作用凝聚出的不可压缩量子液体：Laughlin 波函数 $\prod_{i\lt j}(z_i - z_j)^m$ 用"每个电子在同伴处强制安放 $m$ 阶零点"的代数办法让库仑排斥最优化，等离子体类比证明它密度均匀、有能隙；液体的元激发携带分数电荷 $e/m$、交换相位 $\theta = \pi/m$（既非玻色也非费米——任意子的第一个实例），环面基态 $m$ 重简并、且局域测量无法区分——这三件"分数化信物"标志着一类全新的序。文小刚把它命名为拓扑序：相的区别不在对称性，而在长程纠缠的模式（展开见[拓扑序](12s-topological-order.md)）；本篇则把每件信物亲手推一遍。**
 
 ## 2. 从简并泥潭到量子液体
 
@@ -60,7 +60,7 @@ $$\gamma_C = \oint_C \mathrm{Im}\,\Big\langle\Psi_{z_0}\Big\lvert\,\nabla_{z_0}\
 
 $$\boxed{\;\theta = \frac{\pi}{m}\;}$$
 
-$m = 1$ 回到费米的 $\pi$（准孔即空穴）；$m = 3$ 给 $\theta = \pi/3$。统计角的连续取值（0 到 π 之间任意）就是**任意子（anyon）**——二维世界独有的自由度（三维里编织群的拓扑只有 0/π 两档，二维的辫群给了连续谱，见 12s）。
+$m = 1$ 回到费米的 $\pi$（准孔即空穴）；$m = 3$ 给 $\theta = \pi/3$。统计角的连续取值（0 到 π 之间任意）就是**任意子（anyon）**——二维世界独有的自由度（三维里交换退化为置换群、只允许 0/π 两档；二维的辫群才给出连续谱，见 12s）。
 
 ## 6. 环面上的 $m$ 重简并：拓扑信物之三
 
@@ -75,7 +75,7 @@ $m = 1$ 回到费米的 $\pi$（准孔即空穴）；$m = 3$ 给 $\theta = \pi/3
 
 **层级与复合费米子**（一段话）：$\nu = 1/3$ 之外的平台（$2/5, 3/7, \dots$）由 Jain 的复合费米子图像统一：给每个电子绑上 $2k$ 个磁通量子，剩下的"复合粒子"在有效场 $B^* = B - 2k n\Phi_0$ 里填整数 Landau 能级 $\nu^* = p$，换算回去
 
-$$\nu = \frac{p}{2kp + 1}\qquad(1/3 = \tfrac{1}{2\cdot1+1},\ 2/5 = \tfrac{2}{2+1},\dots)$$
+$$\nu = \frac{p}{2kp + 1}\qquad(1/3 = \tfrac{1}{2\cdot1+1},\ 2/5 = \tfrac{2}{2\cdot2+1},\dots)$$
 
 ——分数态 = 复合费米子的整数态，第 11 章的全部机器在新的"粒子"上重演。非阿贝尔的下一站在 $\nu = 5/2$：那里的准孔是**非阿贝尔任意子**（交换 = 融合空间里的矩阵而非相位），属于 12s 的领土。
 
@@ -95,7 +95,7 @@ $$\nu = \frac{p}{2kp + 1}\qquad(1/3 = \tfrac{1}{2\cdot1+1},\ 2/5 = \tfrac{2}{2+1
 | 载流子 | 电子 $e$ | 准粒子 $\pm e/m$ |
 | 交换相位 | $\pi$（费米） | $\pi/m$（任意子） |
 | 环面简并 | 1 | $m$ |
-| 序的类型 | 能带拓扑（SPT） | 内禀拓扑序（12s） |
+| 序的类型 | 能带拓扑（invertible 自由费米子相，无需对称保护） | 内禀拓扑序（12s） |
 
 ## 自检问题
 
@@ -119,7 +119,7 @@ $$\Delta Q = \frac{e}{m}\qquad(\text{每 }\Phi_0).$$
 
 **配分函数**：取 $\lvert\Psi_m\rvert^2 = \prod_{i\lt j}\lvert z_i - z_j\rvert^{2m}e^{-\sum\lvert z_i\rvert^2/2\ell_B^2}$，写为 $e^{-\beta V}$：
 
-$$V = -\underbrace{\sum_{i\lt j}q^2\ln\lvert z_i - z_j\rvert}_{\text{二维库仑排斥}} + \underbrace{\sum_i \frac{q^2\,\lvert z_i\rvert^2}{4m\ell_B^2}}_{\text{背景吸引}}，\qquad \beta q^2 = 2m.$$
+$$V = -\underbrace{\sum_{i\lt j}q^2\ln\lvert z_i - z_j\rvert}_{\text{二维库仑排斥}} + \underbrace{\sum_i \frac{q^2\,\lvert z_i\rvert^2}{4m\ell_B^2}}_{\text{背景吸引}},\qquad \beta q^2 = 2m.$$
 
 核对第二项：$e^{-\beta q^2\lvert z\rvert^2/4m\ell_B^2} = e^{-2m\lvert z\rvert^2/4m\ell_B^2} = e^{-\lvert z\rvert^2/2\ell_B^2}$ ✓。
 
@@ -169,9 +169,13 @@ $$\Big\langle\sum_i \frac{1}{z_i - z_0}\Big\rangle = \frac{1}{2\ell_B^2}\Big\lan
 
 $$\Big\langle\sum_i \frac{1}{z_i - z_0}\Big\rangle = -\frac{\bar z_0}{2m\ell_B^2}.$$
 
-**Berry 相位**：$\gamma_C = \oint \mathrm{Im}\big\langle\sum_i (z_i - z_0)^{-1}\big\rangle\,dz_0$。圆形回路 $z_0 = re^{i\theta'}$（包围均匀密度面积 $A = \pi r^2$）：
+**Berry 相位**：$z_0$ 以两种方式进入归一化态 $\lvert\Psi_{z_0}\rangle$——全纯的准孔因子与归一化常数。等离子体类比给出 $\mathcal N(z_0) \propto e^{-\lvert z_0\rvert^2/2m\ell_B^2}$（准孔像电荷 $1/m$ 的粒子一样感受磁场），故联络的两个分量都要收进来：
 
-$$\gamma = \int_0^{2\pi}\mathrm{Im}\Big[-\frac{re^{-i\theta'}}{2m\ell_B^2}\Big]\,i\,re^{i\theta'}d\theta' = \int_0^{2\pi}\frac{r^2}{2m\ell_B^2}d\theta' = \frac{\pi r^2}{m\ell_B^2} = \frac{A}{m\ell_B^2}.$$
+$$\gamma_C = i\oint\Big[\big\langle\Psi\big\lvert\partial_{z_0}\big\lvert\Psi\big\rangle\,dz_0 + \big\langle\Psi\big\lvert\partial_{\bar z_0}\big\lvert\Psi\big\rangle\,d\bar z_0\Big],\qquad \big\langle\Psi\big\lvert\partial_{z_0}\big\lvert\Psi\big\rangle = -\frac{\bar z_0}{2m\ell_B^2} - \frac12\,\partial_{z_0}\ln\mathcal N = -\frac{\bar z_0}{4m\ell_B^2}$$
+
+（$\big\langle\Psi\big\lvert\partial_{\bar z_0}\big\lvert\Psi\big\rangle = +\frac{z_0}{4m\ell_B^2}$ 为其复共轭）。圆形回路 $z_0 = re^{i\theta'}$（包围均匀密度面积 $A = \pi r^2$）：$dz_0 = ire^{i\theta'}d\theta'$、$d\bar z_0 = -ire^{-i\theta'}d\theta'$，两项各贡献 $-ir^2/(4m\ell_B^2)\,d\theta'$：
+
+$$\gamma = i\int_0^{2\pi}\Big(-\frac{ir^2}{2m\ell_B^2}\Big)\,d\theta' = \frac{\pi r^2}{m\ell_B^2} = \frac{A}{m\ell_B^2}.$$
 
 用 $N_{\text{enc}} = \rho_0 A = A/(2\pi m\ell_B^2)$ 改写：$\gamma = 2\pi N_{\text{enc}}$ ✓（数值上恰是"围住 $N$ 个电子相位 $2\pi N$"——单个电子的整数相位不携带分数信息）。
 
