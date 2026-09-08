@@ -8,6 +8,11 @@
 
 ## 目录
 
+### 第〇部分：多体量子力学工具箱（前置语言）
+
+- 0a. [二次量子化：多体问题的母语](docs/00a-second-quantization.md)：Fock 空间与粒子数表象、产生湮灭算符、场算符、算符的二次量子化翻译
+- 0b. [线性响应与 Kubo 公式：理论与实验之间的桥](docs/00b-linear-response-kubo.md)：密度矩阵与热平均、Kubo 公式、涨落–耗散定理、响应函数对应表
+
 ### 第一部分：结构与无相互作用电子（骨架）
 
 1. 晶体结构：晶格与基元、倒格子、Brillouin 区、X 射线衍射 *(待写)*
@@ -43,6 +48,8 @@
 
 ## 与 QFT 书的接口
 
+- 第〇部分 0a（二次量子化）←→ [谐振子代数解法](../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
+- 第〇部分 0b（线性响应）←→ [微扰论](../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)（含时微扰论与费米黄金定则是 Kubo 公式的直接前身）
 - 第 2 章（声子）←→ [谐振子代数解法](../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
 - 第 6 章（Fermi 液体）←→ [一圈修正与重整化](../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)（准粒子与穿衣粒子）
 - 第 7、8 章（磁性、超导）←→ 自发对称性破缺、Goldstone、希格斯机制（[电弱统一](../qft-sm/docs/stage-06-standard-model/02-electroweak-unification.md)）
