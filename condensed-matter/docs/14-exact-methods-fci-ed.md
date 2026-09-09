@@ -1,7 +1,7 @@
 # 多电子问题与精确解：基组、FCI 与对角化
 
 > 路线图位置：第四部分（多电子问题怎么算）· 第 14 章
-> 前置知识：第 6 章[相互作用电子气](06-interacting-electron-gas.md)（二次量子化、Slater 行列式、Hartree–Fock 变分——本章把它的语言推广到任意基组）；量子力学的变分原理与微扰论（[QFT 书微扰论笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)）；第 2 章 Born–Oppenheimer 近似的量级论证；第 4 章[能带论](04-band-theory.md)（平面波与倒空间）。
+> 前置知识：第 6 章[相互作用电子气](06-interacting-electron-gas.md)（二次量子化、Slater 行列式、Hartree–Fock 变分——本章把它的语言推广到任意基组）；量子力学的变分原理与微扰论（[量子力学书微扰论笔记](../../quantum-mechanics/docs/07-perturbation-theory.md)）；第 2 章 Born–Oppenheimer 近似的量级论证；第 4 章[能带论](04-band-theory.md)（平面波与倒空间）。
 > 学习目标：会写出一般基组下的电子哈密顿量并数清积分与未知数的个数；理解 Slater 行列式空间的维数灾难（指数墙）与 Slater–Condon 规则带来的稀疏性；会在最小基组上亲手做完 H₂ 的严格解（FCI），并看清 RHF 解离错误的根源——静态相关；知道分子的 FCI 与晶格模型的严格对角化（ED）是同一件事，以及 QMC 为什么接不了班（符号问题）。
 >
 > 记号约定：从本篇起，第四部分采用**原子单位**（$\hbar = m_e = e = 4\pi\varepsilon_0 = 1$；长度单位 Bohr，能量单位 Hartree，$1\ \mathrm{Ha} = 27.2$ eV）——量子化学与电子结构文献的标准约定。$M$ 为自旋轨道态数，$N$ 为电子数，$N_\mathrm{o} = N$、$N_\mathrm{v} = M - N$ 为占据/空轨道数。

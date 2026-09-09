@@ -1,7 +1,7 @@
 # 能带论：Bloch 定理与金属/绝缘体之分
 
 > 本书位置：第一部分「结构与无相互作用电子」· 第 4 章
-> 前置知识：定态薛定谔方程、定态微扰论（尤其简并微扰论，见 QFT 书的[微扰论笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)）；晶格、倒格子与 Brillouin 区的基本概念（本书第 1 章，待写——本篇对用到的事实做最小回顾，不妨碍阅读）。
+> 前置知识：定态薛定谔方程、定态微扰论（尤其简并微扰论，见量子力学书的[微扰论笔记](../../quantum-mechanics/docs/07-perturbation-theory.md)）；晶格、倒格子与 Brillouin 区的基本概念（本书第 1 章，待写——本篇对用到的事实做最小回顾，不妨碍阅读）。
 > 学习目标：能从平移对称性出发证明 Bloch 定理；在近自由电子与紧束缚两个相反极限下分别推出能带与能隙；用"每带 2N 个态"的计数判断金属与绝缘体，并理解二价金属为何例外；掌握有效质量与空穴的概念。
 
 本篇保留 $\hbar$ 与 $k_B$（本书约定，与 QFT 书的自然单位不同）。三维与一维记号混用，转到一维处会注明。
@@ -105,7 +105,7 @@ $$\langle\vec k'\rvert V\lvert\vec k\rangle = \begin{cases} V_{\vec k'-\vec k}, 
 
 ### 4.2 非简并修正与区边界简并
 
-对一般的 $k$，$E^0(k)$ 与所有 $E^0(k-G)$ 都相差 $O(1)$，非简并微扰论适用（公式见[微扰论笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)第 3 节）：一阶修正为零（$V_{\vec 0}$ 已去掉），二阶修正
+对一般的 $k$，$E^0(k)$ 与所有 $E^0(k-G)$ 都相差 $O(1)$，非简并微扰论适用（公式见[微扰论笔记](../../quantum-mechanics/docs/07-perturbation-theory.md)第 3 节）：一阶修正为零（$V_{\vec 0}$ 已去掉），二阶修正
 
 $$E^{(2)}(k) = \sum_{G\neq 0}\frac{\lvert V_G\rvert^2}{E^0(k)-E^0(k-G)} = O\!\left(\frac{\lvert V_G\rvert^2}{E}\right),$$
 

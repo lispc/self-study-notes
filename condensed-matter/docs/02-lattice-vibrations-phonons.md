@@ -1,7 +1,7 @@
 # 晶格振动与声子
 
 > 本书位置：凝聚态物理入门导论 · 第 2 章
-> 前置知识：经典力学的简正模概念；本科量子力学，尤其是[谐振子的产生/湮灭算符解法](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)（本篇的量子化部分整段是它的直接应用）。
+> 前置知识：经典力学的简正模概念；本科量子力学，尤其是[谐振子的产生/湮灭算符解法](../../quantum-mechanics/docs/04-harmonic-oscillator-ladder.md)（本篇的量子化部分整段是它的直接应用）。
 > 学习目标：从一维单原子链的运动方程出发，完整推导色散关系 $\omega(k) = 2\sqrt{\kappa/m}\,\lvert\sin(ka/2)\rvert$；理解 Brillouin 区、群速度与长波极限的声速；把格波正则量子化，看清声子作为"格波量子"的精确含义；说清楚准动量 $\hbar k$ 为什么不是真动量。
 
 约定：本篇**保留 $\hbar$ 与玻尔兹曼常数 $k_B$**（不取自然单位），这样所有公式都可以直接代入数值估算。$k_B$ 在热容一节首次出场。
@@ -137,7 +137,7 @@ $u_n$、$p_n$ 为实量意味着 $Q_k^\dagger = Q_{-k}$、$P_k^\dagger = P_{-k}$
 
 $$H = \sum_k \left[\frac{P_k P_{-k}}{2m} + \frac{m\omega_k^2}{2}\,Q_k Q_{-k}\right], \qquad \omega_k \equiv 2\sqrt{\frac{\kappa}{m}}\,\Big\lvert\sin\frac{ka}{2}\Big\rvert.$$
 
-即 $N$ 个耦合振子严格等价于 $N$ 个**独立的**简正模振子（$k$ 与 $-k$ 配对是一个复振子的实部虚部）。如果你做过 QFT 笔记里[耦合振子链对角化](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)那一节，这一步应该完全眼熟——连公式都是同一套。
+即 $N$ 个耦合振子严格等价于 $N$ 个**独立的**简正模振子（$k$ 与 $-k$ 配对是一个复振子的实部虚部）。如果你做过 量子力学书笔记里[耦合振子链对角化](../../quantum-mechanics/docs/04-harmonic-oscillator-ladder.md)那一节，这一步应该完全眼熟——连公式都是同一套。
 
 ### 5.2 正则量子化与产生/湮灭算符
 

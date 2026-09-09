@@ -1,6 +1,6 @@
 # 微扰论：从定态修正到费米黄金定则
 
-> 路线图位置：第 2 阶段（量子力学）· 近似方法
+> 路线图位置：量子力学书 · 第三部分（近似方法）· 第 07 篇
 > 前置知识：薛定谔方程、谐振子的升降算符解法、氢原子能级与简并、线性代数（本征值问题、对角化）。
 > 学习目标：掌握非简并与简并定态微扰论的公式和推导骨架；理解三种绘景与 Dyson 级数；把费米黄金定则从 sinc² 极限完整推出来；看清"QFT 里算散射截面"本质上就是这套含时微扰论的相对论升级版。
 
@@ -262,7 +262,7 @@ $$\Gamma_{i\to f} = \frac{2\pi}{\hbar}\,\lvert W_{fi}\rvert^2\,\rho(E_f = E_i + 
 - **Dyson 级数 = $S$ 矩阵**。第 5.2 节的时序指数在 QFT 里就是 $S = T\exp\!\big[-i\int \mathcal H_I\,d^4x\big]$，逐级展开、用 Wick 定理收缩，每一项对应一组费曼图——**费曼规则无非是"一路微扰下去"的系统化记账术**。
 - **矩阵元 $\lvert V_{fi}\rvert^2$ → $\lvert\mathcal M\rvert^2$**。相互作用哈密顿量的矩阵元换成 Lorentz 不变振幅，黄金定则的"矩阵元平方乘相空间"结构一字不改。
 
-一个具体的锚点：在 [QED 笔记](../stage-04-qft-core/05-qed.md)中算出的
+一个具体的锚点：在 [QED 笔记](../../qft-sm/docs/stage-04-qft-core/05-qed.md)中算出的
 
 $$\frac{d\sigma}{d\Omega}\Big(e^+e^-\to\mu^+\mu^-\Big) = \frac{\alpha^2}{4s}\big(1+\cos^2\theta\big),\qquad \sigma = \frac{4\pi\alpha^2}{3s},$$
 

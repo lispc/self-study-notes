@@ -1,7 +1,7 @@
 # 强关联浅尝：Mott 绝缘体、Hubbard 模型与高温超导悬案
 
 > 本书位置：凝聚态物理入门导论第 13 章（第三部分：现代专题）。
-> 前置知识：[能带论](04-band-theory.md)（紧束缚、金属/绝缘体判据）、[磁性](07-magnetism.md)（交换作用、Heisenberg 模型）、定态微扰论（[QFT 书第 2 阶段笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md) 的第 3 节正好是我们需要的工具）、二次量子化记号。
+> 前置知识：[能带论](04-band-theory.md)（紧束缚、金属/绝缘体判据）、[磁性](07-magnetism.md)（交换作用、Heisenberg 模型）、定态微扰论（[量子力学书微扰论笔记](../../quantum-mechanics/docs/07-perturbation-theory.md) 的第 3 节正好是我们需要的工具）、二次量子化记号。
 > 学习目标：说清能带论为什么会失败（Mott 的论证）；写出 Hubbard 模型并在三个极限下把它解掉；从二阶微扰论完整推出超交换 $J=4t^2/U$；知道掺杂、重费米子、高温超导各自"难在哪"，以及数值方法在这场持久战中的角色。
 
 ---
@@ -91,7 +91,7 @@ $t=0$ 时格点之间完全脱耦，每个格点独立。单个格点的 Hilbert
 
 $$H_{\text{eff}} = J \sum_{\langle ij\rangle} \left( \vec S_i \cdot \vec S_j - \tfrac14\, n_i n_j \right), \qquad J = \frac{4t^2}{U} > 0.$$
 
-这就是[第 7 章](07-magnetism.md)提到的**超交换**（superexchange）机制的微观出处：磁性绝缘体里没有巡游电子，相邻自旋却通过"虚拟地跳到对方格点再跳回来"获得反铁磁耦合。下面用二阶简并微扰论完整推导。微扰论的框架（$H = H_0 + V$，能量修正逐级展开）见[量子力学阶段的微扰论笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)；这里把方法用在格点模型上。
+这就是[第 7 章](07-magnetism.md)提到的**超交换**（superexchange）机制的微观出处：磁性绝缘体里没有巡游电子，相邻自旋却通过"虚拟地跳到对方格点再跳回来"获得反铁磁耦合。下面用二阶简并微扰论完整推导。微扰论的框架（$H = H_0 + V$，能量修正逐级展开）见[量子力学书的微扰论笔记](../../quantum-mechanics/docs/07-perturbation-theory.md)；这里把方法用在格点模型上。
 
 ### 5.1 两个格点的精确设定
 

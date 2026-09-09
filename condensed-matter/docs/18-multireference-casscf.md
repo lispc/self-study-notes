@@ -1,7 +1,7 @@
 # 多参考与 CASSCF：静态相关的正面强攻
 
 > 路线图位置：第四部分（多电子问题怎么算）· 第 18 章
-> 前置知识：[第 14 章](14-exact-methods-fci-ed.md)（FCI、H₂ 显微镜与静态相关的定义）；[第 15 章](15-post-hf-mp2-cc.md)（单参考方法的疆界——本章正是那条边界的另一侧）；第 13 章[强关联浅尝](13-strong-correlations.md)（Hubbard 模型、超交换——活性空间语言的多电子版）；[QFT 书微扰论](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)（简并微扰：活性空间就是它的系统化）。
+> 前置知识：[第 14 章](14-exact-methods-fci-ed.md)（FCI、H₂ 显微镜与静态相关的定义）；[第 15 章](15-post-hf-mp2-cc.md)（单参考方法的疆界——本章正是那条边界的另一侧）；第 13 章[强关联浅尝](13-strong-correlations.md)（Hubbard 模型、超交换——活性空间语言的多电子版）；[量子力学书微扰论](../../quantum-mechanics/docs/07-perturbation-theory.md)（简并微扰：活性空间就是它的系统化）。
 > 学习目标：理解"活性空间"这一多电子方法的中心概念（芯/活性/空轨道三分法与 CAS(n,l) 记号）；理解 CASSCF = 活性空间内 FCI + 轨道自洽优化的双重变分，及其与 RHF/RASSCF 的谱系；会数活性空间的维数（它如何既救了 FCI 又复制了指数墙）；理解 CASPT2/NEVPT2 如何在多参考之上再补动态相关、入侵态是什么病；知道 CAS 与 Heisenberg 模型的换算（多参考计算直接产出磁交换常数）；了解活性空间的选择是一门艺术与 DMRG 作 CAS 求解器的现代出路（第 20 章接口）。
 >
 > 记号约定：原子单位（同第 14 章）。CAS(n, l)：$n$ 个活性电子、$l$ 条活性轨道。

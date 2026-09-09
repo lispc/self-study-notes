@@ -1,7 +1,7 @@
 # 线性响应与 Kubo 公式：理论与实验之间的桥
 
-> 本书位置：凝聚态物理入门导论 · 第〇部分（多体量子力学工具箱）· 第 2 章。本章是"理论计算"与"实验测量"之间的通用接口，直接前置：[第 6 章 相互作用电子气](06-interacting-electron-gas.md)（屏蔽与 RPA）、第 10 章（量子输运）、[第 11 章 量子 Hall 效应](11-quantum-hall-effect.md)与[第 12 章 拓扑物态](12-topological-phases.md)（电导的 Kubo 表达式是 TKNN 的入口）、[第 19 章 激发态方法](19-excited-states.md)（响应函数的极点 = 激发能）。
-> 前置知识：[第〇部分第 1 章 二次量子化](00a-second-quantization.md)（产生湮灭算符与多体算符的语言）；含时微扰论（[QFT 书微扰论笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)，尤其是费米黄金定则）。不需要先修统计力学：密度矩阵与系综的概念在第 3 节自备。
+> 路线图位置：量子力学书 · 第四部分（多体语言）· 第 10 篇。本篇是"理论计算"与"实验测量"之间的通用接口，也是凝聚态书多章的直接前置：[凝聚态书第 6 章 相互作用电子气](../../condensed-matter/docs/06-interacting-electron-gas.md)（屏蔽与 RPA）、凝聚态书第 10 章（量子输运，待写）、[第 11 章 量子 Hall 效应](../../condensed-matter/docs/11-quantum-hall-effect.md)与[第 12 章 拓扑物态](../../condensed-matter/docs/12-topological-phases.md)（电导的 Kubo 表达式是 TKNN 的入口）、[第 19 章 激发态方法](../../condensed-matter/docs/19-excited-states.md)（响应函数的极点 = 激发能）。
+> 前置知识：[第 09 篇 二次量子化](09-second-quantization.md)（产生湮灭算符与多体算符的语言）；含时微扰论（[第 07 篇 微扰论](07-perturbation-theory.md)，尤其是费米黄金定则）。不需要先修统计力学：密度矩阵与系综的概念在第 3 节自备。
 > 学习目标：说清为什么凝聚态实验测的都是响应函数；掌握密度矩阵与热平均的最小工具箱；完整推导 Kubo 公式（迟滞响应函数 = 平衡态对易子关联函数）；理解因果性如何推出 Kramers–Kronig 关系与谱（Lehmann）表示、虚部为何是耗散；掌握涨落–耗散定理及其经典极限；在四个例子（Drude 电导、自旋磁化率、介电函数与 Thomas–Fermi 屏蔽、中子散射与动态结构因子）中认出同一台机器。
 
 ---
@@ -119,7 +119,7 @@ $$\mathrm{Re}\,\chi^R(\omega) = \frac{1}{\pi}\,\mathrm{P}\!\int_{-\infty}^{\inft
 
 $$\chi^R_{AB}(\omega) = \frac{1}{Z}\sum_{m,n}\frac{\big(e^{-\beta E_m}-e^{-\beta E_n}\big)\,A_{mn}B_{nm}}{\omega + E_m - E_n + i\eta}, \qquad A_{mn} \equiv \langle m\rvert A\lvert n\rangle.$$
 
-响应函数是 $\omega$ 的有理函数，**极点在激发能 $\omega = E_n - E_m$ 处**（实轴下方无穷小）。这就是"算响应 = 算激发谱"的严格版，也是[第 19 章](19-excited-states.md)激发态方法的统一出发点：那里用 TDHF/RPA、EOM-CC、TD-DFT、BSE 算的都是这个对象在不同近似下的极点。
+响应函数是 $\omega$ 的有理函数，**极点在激发能 $\omega = E_n - E_m$ 处**（实轴下方无穷小）。这就是"算响应 = 算激发谱"的严格版，也是[第 19 章](../../condensed-matter/docs/19-excited-states.md)激发态方法的统一出发点：那里用 TDHF/RPA、EOM-CC、TD-DFT、BSE 算的都是这个对象在不同近似下的极点。
 
 取虚部（用 $1/(x+i\eta) = \mathrm{P}(1/x) - i\pi\delta(x)$）：
 
@@ -187,7 +187,7 @@ RPA 层级（只保留电子气对总势的独立响应）$\chi = \chi_0/(1-v\ch
 
 $$\varepsilon(q,0) = 1 + \frac{k_{TF}^2}{q^2}, \qquad k_{TF}^2 = 4\pi e^2 N(E_F),$$
 
-屏蔽势 $v/\varepsilon = 4\pi e^2/(q^2+k_{TF}^2)$——正是[第 6 章](06-interacting-electron-gas.md) §4 的 Thomas–Fermi 屏蔽（Yukawa 势）。换句话说：**Thomas–Fermi 理论 = 密度线性响应的静态长波极限**；而第 6 章 §6 的等离激元是同一响应函数在 $\varepsilon(q,\omega)=0$ 处的动力学极点。静态与动力学、屏蔽与集体振荡，统一在 $\chi^R_{nn}(q,\omega)$ 一个对象里。
+屏蔽势 $v/\varepsilon = 4\pi e^2/(q^2+k_{TF}^2)$——正是[第 6 章](../../condensed-matter/docs/06-interacting-electron-gas.md) §4 的 Thomas–Fermi 屏蔽（Yukawa 势）。换句话说：**Thomas–Fermi 理论 = 密度线性响应的静态长波极限**；而第 6 章 §6 的等离激元是同一响应函数在 $\varepsilon(q,\omega)=0$ 处的动力学极点。静态与动力学、屏蔽与集体振荡，统一在 $\chi^R_{nn}(q,\omega)$ 一个对象里。
 
 ### 7.4 动态结构因子与中子散射
 
@@ -197,7 +197,7 @@ $$\frac{d^2\sigma}{d\Omega\,dE'} = \frac{k'}{k}\,b^2\,S(q,\omega), \qquad S(q,\o
 
 由涨落–耗散定理 $S(q,\omega) = 2\chi''_{nn}(q,\omega)/(1-e^{-\beta\omega})$：**散射实验直接"看见"密度响应的吸收谱**。因子 $1/(1-e^{-\beta\omega})$ 是细致平衡：$\omega<0$（中子从体系取能）一侧被 $e^{-\beta\omega}$ 压低——低温下体系没有热涨落可以上交能量。磁散射截面同理正比于自旋–自旋关联函数 $S^{zz}(q,\omega)$。
 
-**一个预告**：把 Kubo 公式用于横向电导 $\sigma_{xy}$（$\vec j$ 对垂直方向 $\vec E$ 的响应），对有能隙体系可把电流–电流关联改写成占据态 Berry 曲率在 Brillouin 区上的积分——$\sigma_{xy}$ 精确量子化为整数乘 $e^2/h$，这个整数就是陈数（TKNN）。响应函数不只是"近似计算的工具"，它自身的拓扑性质就是物理：这是[第 11 章](11-quantum-hall-effect.md)与[第 12 章](12-topological-phases.md)的入口。
+**一个预告**：把 Kubo 公式用于横向电导 $\sigma_{xy}$（$\vec j$ 对垂直方向 $\vec E$ 的响应），对有能隙体系可把电流–电流关联改写成占据态 Berry 曲率在 Brillouin 区上的积分——$\sigma_{xy}$ 精确量子化为整数乘 $e^2/h$，这个整数就是陈数（TKNN）。响应函数不只是"近似计算的工具"，它自身的拓扑性质就是物理：这是[第 11 章](../../condensed-matter/docs/11-quantum-hall-effect.md)与[第 12 章](../../condensed-matter/docs/12-topological-phases.md)的入口。
 
 ## 小结
 
@@ -307,7 +307,7 @@ $$\overline{P} = -\omega F_0^2\,\mathrm{Im}\,\chi^R(\omega)\cdot\frac12 = \frac{
 
 $$\overline{P} = \frac{\pi F_0^2}{2}\,\frac{1}{Z}\sum_{m,n}\big(e^{-\beta E_m}-e^{-\beta E_n}\big)\,\lvert B_{mn}\rvert^2\,\omega\,\delta(\omega+E_m-E_n) = \frac{\omega}{2}\,F_0^2\,\chi''(\omega),$$
 
-末等号正是 5.2 节 $\chi''$ 的 Lehmann 和。两侧逐项相同 $\blacksquare$——这也把本章与 [QFT 书微扰论笔记](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)的黄金定则接上了：Kubo 公式 = 对所有末态求和、对初态做热平均的黄金定则。
+末等号正是 5.2 节 $\chi''$ 的 Lehmann 和。两侧逐项相同 $\blacksquare$——这也把本章与 [第 07 篇 微扰论](07-perturbation-theory.md)的黄金定则接上了：Kubo 公式 = 对所有末态求和、对初态做热平均的黄金定则。
 
 </details>
 

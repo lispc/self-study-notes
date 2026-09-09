@@ -1,7 +1,7 @@
 # HF 之后：相关能、MP2 与耦合簇
 
 > 路线图位置：第四部分（多电子问题怎么算）· 第 15 章
-> 前置知识：[第 14 章](14-exact-methods-fci-ed.md)（FCI、H₂ 显微镜、静态相关）；第 6 章[相互作用电子气](06-interacting-electron-gas.md)（HF 变分、交换穴、RPA 环图）；[QFT 书微扰论](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)与[一圈重整化](../../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)（费曼图、Wick 定理的语言）。
+> 前置知识：[第 14 章](14-exact-methods-fci-ed.md)（FCI、H₂ 显微镜、静态相关）；第 6 章[相互作用电子气](06-interacting-electron-gas.md)（HF 变分、交换穴、RPA 环图）；[量子力学书微扰论](../../quantum-mechanics/docs/07-perturbation-theory.md)与[一圈重整化](../../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)（费曼图、Wick 定理的语言）。
 > 学习目标：理解相关能的定义与量级（1% 的能量、100% 的化学）；会推 Brillouin 定理与 MP2 能量公式，并把 Goldstone 图认作 QFT 费曼图的凝聚态表亲；会用一个两能级模型亲手证明截断 CI 不大小一致而耦合簇严格大小一致；理解 $e^T$ 拟设为何自动包含断开的高阶激发（这是 CC 精度的来源）、CCSD(T) 为什么叫黄金标准、代价 $N^6/N^7$ 如何把它挡在固体门外。
 >
 > 记号约定：原子单位（同第 14 章）。$i,j,k,l$ 计占据自旋轨道，$a,b,c,d$ 计空轨道，$p,q,r,s$ 通用；$\Phi_0$ 为 HF 基态行列式；$\Phi_{ij}^{ab}$ 为双激发行列式。

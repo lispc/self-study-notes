@@ -26,7 +26,7 @@
 
 不要单独憋半年学数学，按需补：
 
-- **群论基础**：群的定义、[SO(3)/SU(2) 与角动量的关系](docs/stage-00-math/01-so3-su2-and-angular-momentum.md)、李群/李代数的概念。初期只需"会用"，严格的表示论后面再补。
+- **群论基础**：群的定义、[SO(3)/SU(2) 与角动量的关系](../quantum-mechanics/docs/02-so3-su2-and-angular-momentum.md)、李群/李代数的概念。初期只需"会用"，严格的表示论后面再补。
 - **张量与指标运算**：爱因斯坦求和约定、闵可夫斯基度规 η_μν、逆变/协变指标。这是 QFT 的日常书写语言，一周就能上手。
 - **变分原理**：泛函导数、欧拉–拉格朗日方程（在经典力学的拉格朗日形式里自然学到）。
 
@@ -44,13 +44,13 @@
 
 ## 第 2 阶段：量子力学（3–6 个月，最关键的一关）
 
-QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空中楼阁。需要达到：
+QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空中楼阁。**本阶段的笔记已独立成书《量子力学》，见 [quantum-mechanics/README.md](../quantum-mechanics/README.md)**。需要达到：
 
 - 希尔伯特空间、算符、狄拉克记号烂熟
-- 角动量理论（SU(2) 的物理化身）（[笔记](docs/stage-02-quantum-mechanics/02-angular-momentum.md)；补充材料：[氢原子与电子亚层](docs/stage-02-quantum-mechanics/02s-hydrogen-and-subshells.md)）
-- 微扰论（含时微扰论、费米黄金定则——QFT 里算截面就是它的推广）（[笔记](docs/stage-02-quantum-mechanics/03-perturbation-theory.md)）
-- 散射理论基本概念（[笔记](docs/stage-02-quantum-mechanics/04-scattering-theory.md)）
-- 谐振子的产生/湮灭算符解法（**QFT 本质上是无穷多个谐振子**）（[笔记](docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)）
+- 角动量理论（SU(2) 的物理化身）（[笔记](../quantum-mechanics/docs/05-angular-momentum.md)；补充材料：[氢原子与电子亚层](../quantum-mechanics/docs/06-hydrogen-and-subshells.md)、[旧量子论](../quantum-mechanics/docs/01-old-quantum-theory.md)、[矩阵力学解氢原子](../quantum-mechanics/docs/06s-hydrogen-matrix-mechanics.md)）
+- 微扰论（含时微扰论、费米黄金定则——QFT 里算截面就是它的推广）（[笔记](../quantum-mechanics/docs/07-perturbation-theory.md)）
+- 散射理论基本概念（[笔记](../quantum-mechanics/docs/08-scattering-theory.md)）
+- 谐振子的产生/湮灭算符解法（**QFT 本质上是无穷多个谐振子**）（[笔记](../quantum-mechanics/docs/04-harmonic-oscillator-ladder.md)）
 
 教材：Griffiths《量子力学概论》入门，之后 Shankar 或 Sakurai《现代量子力学》。
 
@@ -59,7 +59,7 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 ## 第 3 阶段：经典场论 + 相对论量子力学（1–2 个月，过渡桥梁）
 
 - 场的拉格朗日形式：从弦的振动推广到场；诺特流、能动张量（[笔记](docs/stage-03-relativistic-qm/02-lagrangian-field-theory.md)）
-- Klein–Gordon 方程、Dirac 方程（作为"相对论量子力学的尝试"引入；理解它们的困难——负能量解、多粒子问题——正是 QFT 存在的理由）（[笔记](docs/stage-03-relativistic-qm/01-klein-gordon-and-dirac.md)）
+- Klein–Gordon 方程、Dirac 方程（作为"相对论量子力学的尝试"引入；理解它们的困难——负能量解、多粒子问题——正是 QFT 存在的理由）（[笔记](docs/stage-03-relativistic-qm/01-klein-gordon-and-dirac.md)；Dirac 方程的氢原子精确解见[量子力学书](../quantum-mechanics/docs/06s2-dirac-hydrogen.md)）
 - 电磁学的协变形式（F_μν、规范势）（[笔记](docs/stage-03-relativistic-qm/03-covariant-electromagnetism.md)）
 
 这一阶段一般已并入 QFT 教材的前几章（如 Peskin 第 2–3 章），不必单独啃书。
@@ -74,7 +74,7 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 4. **S 矩阵与截面**：LSZ 约化公式，算出第一个真实物理量——散射截面
 5. **QED**：旋量场 + 光子场 + 规范不变性；算康普顿散射、e⁺e⁻ → μ⁺μ⁻（[笔记](docs/stage-04-qft-core/05-qed.md)）
 6. **一圈修正**：发散、正规化、**重整化**（QFT 思想上最深的部分；Wilson 的有效理论视角是现代的正确理解）（[笔记](docs/stage-04-qft-core/06-one-loop-renormalization.md)）
-7. **路径积分表述**（可与传统算符形式平行学）（[笔记](docs/stage-04-qft-core/07-path-integral.md)）
+7. **路径积分表述**（可与传统算符形式平行学）（[笔记](docs/stage-04-qft-core/07-path-integral.md)；补充材料：[路径积分解氢原子](../quantum-mechanics/docs/06s3-coulomb-path-integral.md)）
 
 教材（按难度排）：
 
@@ -131,7 +131,7 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
 
 ## 学习笔记与本地预览
 
-学习笔记在 `docs/` 下，按阶段组织（`docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序，留有空位便于插入）。已完成的笔记链接已直接挂在上面的路线图条目上（条目标注"笔记"的即是）。
+学习笔记在 `docs/` 下，按阶段组织（`docs/stage-XX-主题/NN-文档名.md`，编号按路线图阶段内的学习顺序，留有空位便于插入）。已完成的笔记链接已直接挂在上面的路线图条目上（条目标注"笔记"的即是）。原第 0 阶段的群论笔记与第 2 阶段的全部笔记已独立成[量子力学书](../quantum-mechanics/README.md)，本书不再保留这两个 stage 目录。
 
 笔记含 LaTeX 公式（MathJax 渲染）和可折叠的自检答案，建议用自带的服务器在浏览器中阅读：
 

@@ -104,7 +104,7 @@ $$\vec\Omega_\pm = \mp\,\frac{\hat B}{2 B^2},$$
 
 $$\gamma_\pm = \mp\,\frac{\Omega_{\text{立体角}}}{2},$$
 
-恰是回路张的立体角的一半。这个"$1/2$"与自旋 $1/2$ 的 SU(2) 双重覆盖同出一源（见 [QFT 书的 SO(3)/SU(2) 笔记](../../qft-sm/docs/stage-00-math/01-so3-su2-and-angular-momentum.md)）。能级简并点 $B=0$ 是曲率的奇点——这个图像在第 5 节理解陈数时还会回来。
+恰是回路张的立体角的一半。这个"$1/2$"与自旋 $1/2$ 的 SU(2) 双重覆盖同出一源（见 [量子力学书的 SO(3)/SU(2) 笔记](../../quantum-mechanics/docs/02-so3-su2-and-angular-momentum.md)）。能级简并点 $B=0$ 是曲率的奇点——这个图像在第 5 节理解陈数时还会回来。
 
 </details>
 

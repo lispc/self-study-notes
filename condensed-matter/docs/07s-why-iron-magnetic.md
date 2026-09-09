@@ -1,7 +1,7 @@
 # 补充材料：为什么铁有磁性而铜、铝没有
 
 > 本书位置：凝聚态物理入门导论 第 7 章补充材料（配套正文：[磁性](07-magnetism.md)，下文简称"第 7 章"）。
-> 前置知识：第 7 章（交换作用、Curie–Weiss 定律、平均场）；第 3 章[金属自由电子气](03-free-electron-gas.md)（费米海与 Pauli 顺磁的来源）；第 4 章[能带论](04-band-theory.md)（紧束缚、态密度、金属/绝缘体判据）；量子力学的角动量相加与全同粒子（可参看[角动量理论](../../qft-sm/docs/stage-02-quantum-mechanics/02-angular-momentum.md)第 6 节）；电子亚层与原子组态（$3d^64s^2$ 这类记号的来历）见 QFT 书[氢原子与电子亚层](../../qft-sm/docs/stage-02-quantum-mechanics/02s-hydrogen-and-subshells.md)。
+> 前置知识：第 7 章（交换作用、Curie–Weiss 定律、平均场）；第 3 章[金属自由电子气](03-free-electron-gas.md)（费米海与 Pauli 顺磁的来源）；第 4 章[能带论](04-band-theory.md)（紧束缚、态密度、金属/绝缘体判据）；量子力学的角动量相加与全同粒子（可参看[角动量理论](../../quantum-mechanics/docs/05-angular-momentum.md)第 6 节）；电子亚层与原子组态（$3d^64s^2$ 这类记号的来历）见量子力学书[氢原子与电子亚层](../../quantum-mechanics/docs/06-hydrogen-and-subshells.md)。
 > 学习目标：会把"某元素为什么有/没有磁性"拆成两道可检验的门槛——原子有没有固有磁矩（Hund 定则 + 未满内壳层）、交换作用能不能把矩排齐（Stoner 判据 $I\,N(E_F) > 1$）；能推 Stoner 判据与 Pauli 顺磁磁化率；能解释铜为何是净抗磁、铝为何只弱弱顺磁；认识 Cr/Mn 与稀土 Gd 这两个"有矩却不铁磁/铁磁但机制不同"的变体。
 >
 > 记号约定：本书保留 $k_B$ 与 $\hbar$。$N(E_F)$ 一律指**每原子、每自旋**的费米面态密度（单位 states/eV），$I$ 为 Stoner 交换参数（单位 eV），$m = n_\uparrow - n_\downarrow$ 为每原子的自旋不平衡电子数，$\mu_B$ 为玻尔磁子。

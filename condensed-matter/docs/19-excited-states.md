@@ -1,7 +1,7 @@
 # 激发态：线性响应、TD-DFT、EOM-CC 与 BSE
 
 > 路线图位置：第四部分（多电子问题怎么算）· 第 19 章
-> 前置知识：[第 15 章](15-post-hf-mp2-cc.md)（耦合簇与 $\bar H$ 机器）、[第 16 章](16-dft.md)（KS 框架与失灵清单）、[第 17 章](17-beyond-dft-gw-dmft.md)（格林函数、GW 与准粒子谱）；第 3 章[金属自由电子气](03-free-electron-gas.md)（费米海与响应的语言）；[QFT 书微扰论](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)（含时微扰与费米黄金定则——线性响应的经典母体）。
+> 前置知识：[第 15 章](15-post-hf-mp2-cc.md)（耦合簇与 $\bar H$ 机器）、[第 16 章](16-dft.md)（KS 框架与失灵清单）、[第 17 章](17-beyond-dft-gw-dmft.md)（格林函数、GW 与准粒子谱）；第 3 章[金属自由电子气](03-free-electron-gas.md)（费米海与响应的语言）；[量子力学书微扰论](../../quantum-mechanics/docs/07-perturbation-theory.md)（含时微扰与费米黄金定则——线性响应的经典母体）。
 > 学习目标：理解激发态的正确语言是**响应函数**（微扰的极点 = 激发能），而非"基态方法的激发版"；会推 TDHF/RPA 的本征值结构并用它算出 H₂ 的单态激发能（电子–空穴库仑吸引压低激发能、交换造成单–三态劈裂的机制）；理解 EOM-CC 把 $\bar H$ 的激发本征值直接当成激发态（与第 15 章机器的无缝衔接）；掌握 TD-DFT 的 Runge–Gross 定位、Casida 方程与核 $f_{xc}$ 的地位、以及三大经典失败（电荷转移、双重激发、Rydberg 态）；认识 BSE = GW 准粒子 + 电子–空穴梯形图（固体光学的第三根支柱），并会画三大方法的分工表。
 >
 > 记号约定：原子单位（同第 14 章）。激发能记 $\omega$；$i,j$ 占据、$a,b$ 空轨道（沿第 15 章约定）。
@@ -14,7 +14,7 @@
 
 ## 2. 统一语言：线性响应
 
-含时微扰论（[QFT 书](../../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)第 4–5 节的费米黄金定则）的老结论：弱外场 $V(t) = v\,e^{-i\omega t}$ 下，跃迁速率 $\propto\lvert\langle n\rvert v\lvert0\rangle\vert^2\delta(\omega - \omega_{n0})$。系统化地把"对一切末态求和"后的可观测量写成
+含时微扰论（[量子力学书](../../quantum-mechanics/docs/07-perturbation-theory.md)第 4–5 节的费米黄金定则）的老结论：弱外场 $V(t) = v\,e^{-i\omega t}$ 下，跃迁速率 $\propto\lvert\langle n\rvert v\lvert0\rangle\vert^2\delta(\omega - \omega_{n0})$。系统化地把"对一切末态求和"后的可观测量写成
 
 $$\delta\langle A\rangle(\omega) = \sum_B \chi_{AB}(\omega)\,v_B(\omega),$$
 

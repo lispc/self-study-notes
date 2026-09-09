@@ -1,6 +1,6 @@
 # 凝聚态物理入门导论
 
-> 面向有本科量子力学基础的自学者。主线观点：**凝聚态物理是场论思想的应用现场**——声子是场量子化、Fermi 液体是准粒子、超导是自发对称性破缺、临界现象是重整化群。本书与[量子场论路线图](../qft-sm/README.md)的笔记大量互相引用。
+> 面向有本科量子力学基础的自学者（量子力学基础需要补的话，见[量子力学书](../quantum-mechanics/README.md)）。主线观点：**凝聚态物理是场论思想的应用现场**——声子是场量子化、Fermi 液体是准粒子、超导是自发对称性破缺、临界现象是重整化群。本书与[量子场论路线图](../qft-sm/README.md)的笔记大量互相引用。
 >
 > 参考书主线：Kittel《固体物理导论》打底 + Ashcroft & Mermin 查细节；拓扑部分参考 Asbóth 短讲义、Bernevig《Topological Insulators》。
 
@@ -10,8 +10,7 @@
 
 ### 第〇部分：多体量子力学工具箱（前置语言）
 
-- 0a. [二次量子化：多体问题的母语](docs/00a-second-quantization.md)：Fock 空间与粒子数表象、产生湮灭算符、场算符、算符的二次量子化翻译
-- 0b. [线性响应与 Kubo 公式：理论与实验之间的桥](docs/00b-linear-response-kubo.md)：密度矩阵与热平均、Kubo 公式、涨落–耗散定理、响应函数对应表
+前置语言（二次量子化、线性响应与 Kubo 公式）已移至[量子力学书](../quantum-mechanics/README.md)的第 09、10 篇。
 
 ### 第一部分：结构与无相互作用电子（骨架）
 
@@ -45,12 +44,14 @@
 19. [激发态方法](docs/19-excited-states.md)：线性响应与 RPA、EOM-CC、TD-DFT 与 Casida 方程、Bethe–Salpeter
 20. [DMRG 与张量网络](docs/20-dmrg-tensor-networks.md)：纠缠面积律、矩阵乘积态、扫掠变分、化学活性空间（[补充材料：一维的无费米面世界——Luttinger 液体与玻色化](docs/20s-luttinger-liquid.md)）
 21. [嵌入方法](docs/21-embedding-methods.md)：QM/MM、DFT+U、子系统 DFT、DMET——分而治之收官
+22. [量子蒙特卡洛](docs/22-qmc.md)：VMC 与 Slater–Jastrow、DMC 虚时投影、符号问题与固定节点近似、Ceperley–Alder 电子气数据
+23. 从半经验到力场与机器学习势：半经验方法（xTB）、分子力场、神经网络波函数与 ML 势 *(待写)*
 
-## 与 QFT 书的接口
+## 与量子力学书、QFT 书的接口
 
-- 第〇部分 0a（二次量子化）←→ [谐振子代数解法](../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
-- 第〇部分 0b（线性响应）←→ [微扰论](../qft-sm/docs/stage-02-quantum-mechanics/03-perturbation-theory.md)（含时微扰论与费米黄金定则是 Kubo 公式的直接前身）
-- 第 2 章（声子）←→ [谐振子代数解法](../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
+- [二次量子化](../quantum-mechanics/docs/09-second-quantization.md)（量子力学书第 09 篇）←→ [谐振子代数解法](../quantum-mechanics/docs/04-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
+- [线性响应与 Kubo 公式](../quantum-mechanics/docs/10-linear-response-kubo.md)（量子力学书第 10 篇）←→ [微扰论](../quantum-mechanics/docs/07-perturbation-theory.md)（含时微扰论与费米黄金定则是 Kubo 公式的直接前身）
+- 第 2 章（声子）←→ [谐振子代数解法](../quantum-mechanics/docs/04-harmonic-oscillator-ladder.md)、[标量场量子化](../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)
 - 第 6 章（Fermi 液体）←→ [一圈修正与重整化](../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)（准粒子与穿衣粒子）
 - 第 7、8 章（磁性、超导）←→ 自发对称性破缺、Goldstone、希格斯机制（[电弱统一](../qft-sm/docs/stage-06-standard-model/02-electroweak-unification.md)）
 - 第 9 章（重整化群）←→ [Wilson 有效理论视角](../qft-sm/docs/stage-04-qft-core/06-one-loop-renormalization.md)

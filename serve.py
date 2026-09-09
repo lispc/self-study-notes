@@ -18,6 +18,7 @@ PORT = int(os.environ.get("PORT", "9000"))
 
 # 书名目录 → (书的显示名, 一句话描述)
 BOOKS = {
+    "quantum-mechanics": ("量子力学", "从旧量子论到多体语言——QFT 与凝聚态的共同上游"),
     "qft-sm": ("量子场论与标准模型 · 自学路线图", "从数学补课到标准模型拉氏量"),
     "condensed-matter": ("凝聚态物理入门导论", "从晶格振动到拓扑物态——场论思想的应用现场"),
     "digital-design": ("数字电路设计", "从逻辑门到一颗五级流水 RISC-V 核"),
@@ -25,8 +26,6 @@ BOOKS = {
 
 # 书的 docs 内子目录 → (阶段标题, 一句话描述)；未收录的子目录按目录名原样显示
 STAGES = {
-    "qft-sm/docs/stage-00-math": ("第 0 阶段 · 数学补课", "群论、指标运算、变分原理——按需补的数学工具"),
-    "qft-sm/docs/stage-02-quantum-mechanics": ("第 2 阶段 · 量子力学", "最关键的一关：角动量、微扰论、散射、谐振子代数解法"),
     "qft-sm/docs/stage-03-relativistic-qm": ("第 3 阶段 · 过渡桥梁", "经典场论与相对论量子力学：QFT 的语言与动机"),
     "qft-sm/docs/stage-04-qft-core": ("第 4 阶段 · QFT 核心", "量子化 → 费曼图 → QED → 重整化 → 路径积分"),
     "qft-sm/docs/stage-05-symmetry-group-theory": ("第 5 阶段 · 对称性与群论", "李群表示、整体/规范对称、自发对称性破缺"),

@@ -1,7 +1,7 @@
 # 二次量子化：多体问题的母语
 
-> 本书位置：凝聚态物理入门导论 · 第〇部分（多体量子力学工具箱）· 第 1 章。本章是全书后续几乎所有章节的语言基础，直接前置：[第 2 章 晶格振动与声子](02-lattice-vibrations-phonons.md)、[第 6 章 相互作用电子气](06-interacting-electron-gas.md)、[第 13 章 强关联](13-strong-correlations.md)、[第 14 章 精确方法](14-exact-methods-fci-ed.md)。
-> 前置知识：单粒子量子力学（态矢、算符、表象变换）；谐振子的代数解法（升降算符 $a,a^\dagger$，见 QFT 书笔记[谐振子阶梯算符](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)）。
+> 路线图位置：量子力学书 · 第四部分（多体语言）· 第 09 篇。本篇也是凝聚态书后续章节的语言基础：[凝聚态书第 2 章 晶格振动与声子](../../condensed-matter/docs/02-lattice-vibrations-phonons.md)、[第 6 章 相互作用电子气](../../condensed-matter/docs/06-interacting-electron-gas.md)、[第 13 章 强关联](../../condensed-matter/docs/13-strong-correlations.md)、[第 14 章 精确方法](../../condensed-matter/docs/14-exact-methods-fci-ed.md)。
+> 前置知识：单粒子量子力学（态矢、算符、表象变换）；谐振子的代数解法（升降算符 $a,a^\dagger$，见本书[第 04 篇 谐振子阶梯算符](04-harmonic-oscillator-ladder.md)）。
 > 学习目标：理解为什么多体问题必须放弃 $N$ 体波函数语言；掌握 Fock 空间、产生湮灭算符与场算符的构造及（反）对易代数；会把任意单体、两体算符翻译成二次量子化形式；在三个贯穿全书的例子（凝胶模型、Hubbard 模型、晶格振动）中认出这套语言。
 
 ---
@@ -20,7 +20,7 @@ $$\Psi(\vec x_1,\cdots,\vec x_N) = \frac{1}{\sqrt{N!}}\sum_{P}(\pm1)^{P}\,\varph
 
 这个形式在原理上完备，在实践上却是灾难，原因有二。
 
-**灾难一：随 $N$ 指数膨胀。** 行列式展开有 $N!$ 项；更根本地，若在 $M$ 个单粒子轨道里放 $N$ 个费米子，独立的反对称态有 $\binom{M}{N}$ 个。取 $M=2N$（一个很穷的基组），$\binom{2N}{N}\sim 4^N/\sqrt{\pi N}$——$N=50$ 时已达 $10^{29}$ 量级。一摩尔电子的体系（$N\sim 10^{23}$）连写下波函数都是奢望。这就是[第 14 章](14-exact-methods-fci-ed.md)精确对角化方法永远打不破的"指数墙"。
+**灾难一：随 $N$ 指数膨胀。** 行列式展开有 $N!$ 项；更根本地，若在 $M$ 个单粒子轨道里放 $N$ 个费米子，独立的反对称态有 $\binom{M}{N}$ 个。取 $M=2N$（一个很穷的基组），$\binom{2N}{N}\sim 4^N/\sqrt{\pi N}$——$N=50$ 时已达 $10^{29}$ 量级。一摩尔电子的体系（$N\sim 10^{23}$）连写下波函数都是奢望。这就是[第 14 章](../../condensed-matter/docs/14-exact-methods-fci-ed.md)精确对角化方法永远打不破的"指数墙"。
 
 **灾难二：粒子数可变的系统根本没有固定 $N$ 的波函数。** 晶体里的声子可以被晶格热激发源源不断地产生和吸收；金属被光照后电子–空穴对成对出现；超导体的 BCS 基态是不同库珀对数态的相干叠加，粒子数本身有涨落。对这些系统，"先固定 $N$ 再写波函数"的第一步就走不通。
 
@@ -49,7 +49,7 @@ Fock 空间的结构已经回应了第 2 节的灾难二：不同 $N$ 的扇区�
 
 ### 4.1 玻色子：谐振子代数的自然推广
 
-回忆[谐振子的阶梯算符](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)：$[a,a^\dagger]=1$，$\hat n=a^\dagger a$ 的本征态 $\lvert n\rangle$ 满足 $a^\dagger\lvert n\rangle=\sqrt{n+1}\,\lvert n+1\rangle$、$a\lvert n\rangle=\sqrt n\,\lvert n-1\rangle$。二次量子化做的只是宣布：**每个单粒子模 $\alpha$ 都是一个独立的"谐振子"，其"激发量子数"就是该轨道上的粒子数**。于是对每个模定义 $a_\alpha, a_\alpha^\dagger$，满足
+回忆[谐振子的阶梯算符](04-harmonic-oscillator-ladder.md)：$[a,a^\dagger]=1$，$\hat n=a^\dagger a$ 的本征态 $\lvert n\rangle$ 满足 $a^\dagger\lvert n\rangle=\sqrt{n+1}\,\lvert n+1\rangle$、$a\lvert n\rangle=\sqrt n\,\lvert n-1\rangle$。二次量子化做的只是宣布：**每个单粒子模 $\alpha$ 都是一个独立的"谐振子"，其"激发量子数"就是该轨道上的粒子数**。于是对每个模定义 $a_\alpha, a_\alpha^\dagger$，满足
 
 $$[a_\alpha, a_\beta^\dagger] = \delta_{\alpha\beta}, \qquad [a_\alpha, a_\beta] = [a_\alpha^\dagger, a_\beta^\dagger] = 0,$$
 
@@ -71,7 +71,7 @@ $$\{c_\alpha, c_\beta^\dagger\} = \delta_{\alpha\beta}, \qquad \{c_\alpha, c_\be
 
 $$c_\alpha\lvert\cdots,n_\alpha,\cdots\rangle = (-1)^{S_\alpha}\,n_\alpha\,\lvert\cdots,0,\cdots\rangle, \qquad S_\alpha = \sum_{\beta<\alpha}n_\beta,$$
 
-即把 $\alpha$ 轨道上的粒子"取出来"要越过它前面的 $S_\alpha$ 个粒子，每越过一个费米子贡献一个负号（这条符号链在一维系统里就是 Jordan–Wigner 弦，[第 20 章](20-dmrg-tensor-networks.md)的 Luttinger 液体部分会再遇到）。以后凡涉及费米子算符的交换次序，符号都不能丢——本书大量推导的全部"艺术性"就在于伺候好这些负号。
+即把 $\alpha$ 轨道上的粒子"取出来"要越过它前面的 $S_\alpha$ 个粒子，每越过一个费米子贡献一个负号（这条符号链在一维系统里就是 Jordan–Wigner 弦，[第 20 章](../../condensed-matter/docs/20-dmrg-tensor-networks.md)的 Luttinger 液体部分会再遇到）。以后凡涉及费米子算符的交换次序，符号都不能丢——本书大量推导的全部"艺术性"就在于伺候好这些负号。
 
 ## 5. 场算符：连续空间的产生湮灭算符
 
@@ -89,7 +89,7 @@ $$\hat\psi(\vec x) = \frac{1}{\sqrt V}\sum_{\vec k} e^{i\vec k\cdot\vec x}\,c_{\
 
 $c_{\vec k}$ 与 $\hat\psi(\vec x)$ 互为傅里叶变换，（反）对易关系在两边形式不变（自检题 5）。
 
-两个常用的场算符组合：密度算符 $\hat n(\vec x) = \hat\psi^\dagger(\vec x)\hat\psi(\vec x)$，其积分 $\int d^3x\,\hat n(\vec x) = \sum_\alpha c_\alpha^\dagger c_\alpha = \hat N$ 正是总粒子数；密度涨落 $\delta\hat n(\vec x) = \hat n(\vec x) - \langle\hat n(\vec x)\rangle$ 的傅里叶分量将是[第 6 章](06-interacting-electron-gas.md)里屏蔽与等离激元理论的主角。
+两个常用的场算符组合：密度算符 $\hat n(\vec x) = \hat\psi^\dagger(\vec x)\hat\psi(\vec x)$，其积分 $\int d^3x\,\hat n(\vec x) = \sum_\alpha c_\alpha^\dagger c_\alpha = \hat N$ 正是总粒子数；密度涨落 $\delta\hat n(\vec x) = \hat n(\vec x) - \langle\hat n(\vec x)\rangle$ 的傅里叶分量将是[第 6 章](../../condensed-matter/docs/06-interacting-electron-gas.md)里屏蔽与等离激元理论的主角。
 
 ## 6. 算符的二次量子化翻译
 
@@ -134,7 +134,7 @@ $$\hat V = \frac12\sum_{\alpha\beta\gamma\delta}\langle\alpha\beta\lvert v\rvert
 
 $$\hat H = \sum_{\vec k\sigma}\varepsilon_{\vec k}\,c_{\vec k\sigma}^\dagger c_{\vec k\sigma} + \frac{1}{2V}\sum_{\vec q\neq 0}\sum_{\vec k\vec k'}\sum_{\sigma\sigma'} v(\vec q)\;c_{\vec k+\vec q,\sigma}^\dagger c_{\vec k'-\vec q,\sigma'}^\dagger c_{\vec k'\sigma'} c_{\vec k\sigma}, \qquad v(\vec q) = \frac{4\pi e^2}{q^2}.$$
 
-相互作用项的图像：两个电子 $\vec k,\vec k'$ 散射，转移动量 $\vec q$（自旋在库仑散射中不变）。相互作用**在动量空间对角化**（每个 $\vec q$ 分量独立），这正是平面波基的威力。[第 6 章](06-interacting-electron-gas.md)的全部工作——Hartree–Fock、RPA、等离激元——就是对这个哈密顿量的逐级近似。
+相互作用项的图像：两个电子 $\vec k,\vec k'$ 散射，转移动量 $\vec q$（自旋在库仑散射中不变）。相互作用**在动量空间对角化**（每个 $\vec q$ 分量独立），这正是平面波基的威力。[第 6 章](../../condensed-matter/docs/06-interacting-electron-gas.md)的全部工作——Hartree–Fock、RPA、等离激元——就是对这个哈密顿量的逐级近似。
 
 ### 7.2 紧束缚模型与 Hubbard 模型
 
@@ -142,7 +142,7 @@ $$\hat H = \sum_{\vec k\sigma}\varepsilon_{\vec k}\,c_{\vec k\sigma}^\dagger c_{
 
 $$\hat H_{\text{tb}} = -t\sum_{\langle ij\rangle,\sigma}\left(c_{i\sigma}^\dagger c_{j\sigma} + c_{j\sigma}^\dagger c_{i\sigma}\right), \qquad \hat H_{\text{Hubbard}} = \hat H_{\text{tb}} + U\sum_i \hat n_{i\uparrow}\hat n_{i\downarrow}.$$
 
-紧束缚模型的基态（半满时是金属）可由能带理论完全解出；加上 Hubbard $U$ 项后，$t\ll U$ 时电子被钉在格点上形成 Mott 绝缘体——[第 13 章](13-strong-correlations.md)的主题。注意这个模型只有"两个参数 $t,U$"，却是凝聚态物理至今未解决的最难问题之一；它同时也是[第 14 章](14-exact-methods-fci-ed.md)精确对角化和[第 20 章](20-dmrg-tensor-networks.md)张量网络方法的试金石。
+紧束缚模型的基态（半满时是金属）可由能带理论完全解出；加上 Hubbard $U$ 项后，$t\ll U$ 时电子被钉在格点上形成 Mott 绝缘体——[第 13 章](../../condensed-matter/docs/13-strong-correlations.md)的主题。注意这个模型只有"两个参数 $t,U$"，却是凝聚态物理至今未解决的最难问题之一；它同时也是[第 14 章](../../condensed-matter/docs/14-exact-methods-fci-ed.md)精确对角化和[第 20 章](../../condensed-matter/docs/20-dmrg-tensor-networks.md)张量网络方法的试金石。
 
 ### 7.3 晶格振动：一堆玻色模
 
@@ -150,7 +150,7 @@ $$\hat H_{\text{tb}} = -t\sum_{\langle ij\rangle,\sigma}\left(c_{i\sigma}^\dagge
 
 $$\hat H_{\text{ph}} = \sum_{\vec q\lambda}\omega_{\vec q\lambda}\left(a_{\vec q\lambda}^\dagger a_{\vec q\lambda} + \frac12\right), \qquad [a_{\vec q\lambda}, a_{\vec q'\lambda'}^\dagger] = \delta_{\vec q\vec q'}\delta_{\lambda\lambda'},$$
 
-每个模 $(\vec q,\lambda)$ 就是一个谐振子，其量子就是声子。声子数不守恒（热激发随意产生），所以玻色型产生湮灭算符不是选择而是必须——[第 2 章](02-lattice-vibrations-phonons.md)将从头推导这个式子。
+每个模 $(\vec q,\lambda)$ 就是一个谐振子，其量子就是声子。声子数不守恒（热激发随意产生），所以玻色型产生湮灭算符不是选择而是必须——[第 2 章](../../condensed-matter/docs/02-lattice-vibrations-phonons.md)将从头推导这个式子。
 
 三个例子合起来传达一个信息：**二次量子化哈密顿量是"模型"的标准书写格式**。剩下整本书的工作，都可以概括为对这样的 $\hat H$ 求基态、激发谱与响应函数。
 
@@ -245,7 +245,7 @@ $$\langle0|c_\beta c_\gamma c_\mu^\dagger c_\nu c_\alpha^\dagger c_\beta^\dagger
 
 （其余三项因 $\gamma\neq\alpha,\beta$ 全部消失），故 $\langle\Phi'|\hat T|\Phi\rangle = t_{\gamma\alpha} = \langle\gamma|t|\alpha\rangle$。
 
-**这就是 Slater–Condon 规则的雏形**：两个行列式只差一个自旋轨道（$\alpha\to\gamma$）时，单体算符矩阵元等于该替换轨道的单粒子矩阵元，"旁观"轨道 $\beta$ 无贡献；相差两个及以上轨道时矩阵元为零（同法可证）。这条规则是[第 14 章](14-exact-methods-fci-ed.md) FCI/ED 在行列式基下组装哈密顿量矩阵的基本构件——那里每个矩阵元都是这样一场产生湮灭算符的搬运游戏。
+**这就是 Slater–Condon 规则的雏形**：两个行列式只差一个自旋轨道（$\alpha\to\gamma$）时，单体算符矩阵元等于该替换轨道的单粒子矩阵元，"旁观"轨道 $\beta$ 无贡献；相差两个及以上轨道时矩阵元为零（同法可证）。这条规则是[第 14 章](../../condensed-matter/docs/14-exact-methods-fci-ed.md) FCI/ED 在行列式基下组装哈密顿量矩阵的基本构件——那里每个矩阵元都是这样一场产生湮灭算符的搬运游戏。
 
 </details>
 
@@ -269,7 +269,7 @@ $$N = 2V\int_{\lvert\vec k\rvert<k_F}\frac{d^3k}{(2\pi)^3} = \frac{V k_F^3}{3\pi
 
 $$\frac{E_0}{N} = \frac{k_F^5/(10\pi^2 m)}{k_F^3/(3\pi^2)} = \frac{3k_F^2}{10m} = \frac35\cdot\frac{k_F^2}{2m} = \frac35\,\varepsilon_F, \qquad \varepsilon_F \equiv \frac{k_F^2}{2m}.$$
 
-平均每个电子的能量是费米能的 $3/5$——不是 0！这就是[第 3 章](03-free-electron-gas.md) Sommerfeld 理论的出发点：Pauli 原理迫使电子堆到 $\varepsilon_F$（典型金属几个 eV，对应 $T_F\sim 10^4$ K），自由电子气是高度简并的量子液体。恢复 $\hbar$ 只需 $\varepsilon_F = \hbar^2 k_F^2/2m$。整个推导里"填费米球"这个一次量子化里需要论证一步的操作，在二次量子化中只是"能量最低的占据数构型"一句废话——新语言的记账优势可见一斑。
+平均每个电子的能量是费米能的 $3/5$——不是 0！这就是[第 3 章](../../condensed-matter/docs/03-free-electron-gas.md) Sommerfeld 理论的出发点：Pauli 原理迫使电子堆到 $\varepsilon_F$（典型金属几个 eV，对应 $T_F\sim 10^4$ K），自由电子气是高度简并的量子液体。恢复 $\hbar$ 只需 $\varepsilon_F = \hbar^2 k_F^2/2m$。整个推导里"填费米球"这个一次量子化里需要论证一步的操作，在二次量子化中只是"能量最低的占据数构型"一句废话——新语言的记账优势可见一斑。
 
 </details>
 
@@ -300,5 +300,5 @@ $$[\hat\psi(\vec x),\hat\psi^\dagger(\vec x')]_\mp = \frac{1}{V}\sum_{\vec k\vec
 - Fetter & Walecka《Quantum Theory of Many-Particle Systems》第 1 章（Second Quantization）——Fock 空间、产生湮灭算符与算符翻译规则的系统推导，本章的主参考。
 - Mahan《Many-Particle Physics》第 3 版第 1 章（Introductory Material）——二次量子化与 Green 函数的衔接，风格直截了当。
 - Bruus & Flensberg《Many-Body Quantum Theory in Condensed Matter Physics》第 1–2 章——凝聚态导向的现代表述，电子、声子、光子的产生湮灭算符统一处理。
-- Schrieffer《Theory of Superconductivity》附录——场算符形式的 BCS 理论原文用法，可与[超导](08-superconductivity.md)一章对照。
-- 交叉参考：QFT 书笔记[谐振子阶梯算符](../../qft-sm/docs/stage-02-quantum-mechanics/05-harmonic-oscillator-ladder.md)（代数方法的单模热身）、[标量场正则量子化](../../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)（同一代数在场论中的再次出现）。
+- Schrieffer《Theory of Superconductivity》附录——场算符形式的 BCS 理论原文用法，可与[超导](../../condensed-matter/docs/08-superconductivity.md)一章对照。
+- 交叉参考：本书[谐振子阶梯算符](04-harmonic-oscillator-ladder.md)（代数方法的单模热身）、[标量场正则量子化](../../qft-sm/docs/stage-04-qft-core/01-scalar-field-quantization.md)（同一代数在场论中的再次出现）。
