@@ -197,7 +197,7 @@ $$\frac{d^2\sigma}{d\Omega\,dE'} = \frac{k'}{k}\,b^2\,S(q,\omega), \qquad S(q,\o
 
 由涨落–耗散定理 $S(q,\omega) = 2\chi''_{nn}(q,\omega)/(1-e^{-\beta\omega})$：**散射实验直接"看见"密度响应的吸收谱**。因子 $1/(1-e^{-\beta\omega})$ 是细致平衡：$\omega<0$（中子从体系取能）一侧被 $e^{-\beta\omega}$ 压低——低温下体系没有热涨落可以上交能量。磁散射截面同理正比于自旋–自旋关联函数 $S^{zz}(q,\omega)$。
 
-**一个预告**：把 Kubo 公式用于横向电导 $\sigma_{xy}$（$\vec j$ 对垂直方向 $\vec E$ 的响应），对有能隙体系可把电流–电流关联改写成占据态 Berry 曲率在 Brillouin 区上的积分——$\sigma_{xy}$ 精确量子化为整数乘 $e^2/h$，这个整数就是陈数（TKNN）。响应函数不只是"近似计算的工具"，它自身的拓扑性质就是物理：这是[第 11 章](../../condensed-matter/docs/11-quantum-hall-effect.md)与[第 12 章](../../condensed-matter/docs/12-topological-phases.md)的入口。
+**一个预告**：把 Kubo 公式用于横向电导 $\sigma_{xy}$（$\vec j$ 对垂直方向 $\vec E$ 的响应），对有能隙体系可把电流–电流关联改写成占据态 Berry 曲率在 Brillouin 区上的积分——$\sigma_{xy}$ 精确量子化为整数乘 $e^2/h$，这个整数就是陈数（TKNN）。响应函数不只是"近似计算的工具"，它自身的拓扑性质就是物理：Berry 曲率的量子力学地基在本书[第 13 篇 绝热定理与 Berry 相位](13-adiabatic-berry-phase.md)，多体的下半场是凝聚态书[第 11 章](../../condensed-matter/docs/11-quantum-hall-effect.md)与[第 12 章](../../condensed-matter/docs/12-topological-phases.md)。
 
 ## 小结
 

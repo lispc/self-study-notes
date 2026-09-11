@@ -26,7 +26,8 @@ BOOKS = {
 
 # 书的 docs 内子目录 → (阶段标题, 一句话描述)；未收录的子目录按目录名原样显示
 STAGES = {
-    "qft-sm/docs/stage-03-relativistic-qm": ("第 3 阶段 · 过渡桥梁", "经典场论与相对论量子力学：QFT 的语言与动机"),
+    "qft-sm/docs/stage-03-relativistic-qm": ("第 3 阶段 · 经典场论与相对论量子力学",
+                                              "过渡桥梁：QFT 的语言与动机。阶段编号承接路线图 0–6：第 0–2 阶段（数学/分析力学/量子力学）不设笔记目录，量子力学已独立成书"),
     "qft-sm/docs/stage-04-qft-core": ("第 4 阶段 · QFT 核心", "量子化 → 费曼图 → QED → 重整化 → 路径积分"),
     "qft-sm/docs/stage-05-symmetry-group-theory": ("第 5 阶段 · 对称性与群论", "李群表示、整体/规范对称、自发对称性破缺"),
     "qft-sm/docs/stage-06-standard-model": ("第 6 阶段 · 标准模型", "Yang–Mills → 电弱统一 → QCD → 逐项读懂拉氏量"),

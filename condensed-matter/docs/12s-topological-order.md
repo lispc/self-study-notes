@@ -1,7 +1,7 @@
 # 补充材料：拓扑序——长程纠缠、规范结构与弦网
 
 > 本书位置：凝聚态物理入门导论 第 12 章补充材料（配套正文：[拓扑物态入门](12-topological-phases.md)，下文简称"第 12 章"——正文的能带拓扑是本篇的一半世界，另一半在这里）。
-> 前置知识：[分数量子霍尔效应与任意子](11s-fractional-quantum-hall.md)（三件分数化信物，本篇的出发样本）；第 7 章（Landau 对称性破缺范式——本篇要超越的对象）；第 20 章[DMRG 与张量网络](20-dmrg-tensor-networks.md)（纠缠熵与面积律——本篇的核心量具，未读可先接受结论）；第 13 章（自旋液体）；[QFT 书整体对称 vs 规范对称](../../qft-sm/docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)（规范结构的直觉）。
+> 前置知识：[分数量子霍尔效应与任意子](11s-fractional-quantum-hall.md)（三件分数化信物，本篇的出发样本）；第 7 章（Landau 对称性破缺范式——本篇要超越的对象）；第 20 章[DMRG 与张量网络](20-dmrg-tensor-networks.md)（纠缠熵与面积律——本篇的核心量具，未读可先接受结论）；第 13 章（自旋液体）；[QFT 书整体对称 vs 规范对称](../../qft-sm/docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)（规范结构的直觉）；[量子力学书第 14s2 篇 量子计算初步](../../quantum-mechanics/docs/14s2-quantum-computing.md)（量子比特、纠错与表面码——toric code 的信息科学一侧，正文"拓扑量子计算"一节的另一条入口）。
 > 学习目标：理解为什么 Landau 范式（序参量 + 对称性）对分数量子霍尔态失效、"拓扑序"作为新分类纲领的确切含义（文小刚：序 = 长程纠缠的模式）；会完整求解 toric code（对易投影子、环面四重简并、$e/m/\varepsilon$ 任意子、互半子统计、指数稳定性）；会推拓扑纠缠熵 $S = \alpha L - \gamma$ 并对 toric code 算出 $\gamma = \ln 2$；会用 $K$ 矩阵写出阿贝尔霍尔态的有效理论（$\nu$、统计角、$|\det K|$ 简并度）并验证它复述 11s 的全部结论；分清 SPT（短程纠缠 + 对称性，第 12 章正文全在此列）与内禀拓扑序（长程纠缠）；认识弦网凝聚纲领与拓扑量子计算。
 >
 > 记号约定：沿本书保留 $\hbar$；纠缠熵取自然对数。Toric code 的自旋 1/2 放在正方格子的**边**上。

@@ -225,9 +225,9 @@ $$\mathcal H_{AB} = \mathcal H_A \otimes \mathcal H_B,$$
 
 基矢 $|a_i\rangle \otimes |b_j\rangle$，维数相乘：$\dim\mathcal H_{AB} = \dim\mathcal H_A \cdot \dim\mathcal H_B$。两个自旋 $1/2$：$\mathbb C^2 \otimes \mathbb C^2 = \mathbb C^4$，基 $\{|{\uparrow\uparrow}\rangle, |{\uparrow\downarrow}\rangle, |{\downarrow\uparrow}\rangle, |{\downarrow\downarrow}\rangle\}$。
 
-张量积里藏着量子力学最反常的资源：一般态 $\sum_{ij}c_{ij}|a_i\rangle|b_j\rangle$ **不能**写成 $|\phi\rangle_A \otimes |\chi\rangle_B$ 的乘积形式——这就是纠缠（如单态 $(|{\uparrow\downarrow}\rangle - |{\downarrow\uparrow}\rangle)/\sqrt 2$）。只测子系统 $A$ 时，合法语言正是第 8 节的约化密度矩阵 $\rho_A = \operatorname{Tr}_B\rho$——纯态总系统的子系统可以是混态，这是密度矩阵不可或缺的第二个理由。
+张量积里藏着量子力学最反常的资源：一般态 $\sum_{ij}c_{ij}|a_i\rangle|b_j\rangle$ **不能**写成 $|\phi\rangle_A \otimes |\chi\rangle_B$ 的乘积形式——这就是纠缠（如单态 $(|{\uparrow\downarrow}\rangle - |{\downarrow\uparrow}\rangle)/\sqrt 2$）。只测子系统 $A$ 时，合法语言正是第 8 节的约化密度矩阵 $\rho_A = \operatorname{Tr}_B\rho$——纯态总系统的子系统可以是混态，这是密度矩阵不可或缺的第二个理由（纠缠的定量刻画——Schmidt 分解与纠缠熵——见第 14s 篇[量子信息初步](14s-quantum-information.md)）。
 
-**全同粒子**：交换两个全同粒子物理态不变，要求多体态空间只取张量积的（反）对称子空间——玻色子取对称、费米子取反对称（Pauli 原理由此而来）。逐个施密特正交化的"一次量子化"写法在粒子数一多时就笨重不堪，更高效的记账方式是把态空间换成 Fock 空间、把算符换成产生湮灭算符——那是第 09 篇（[二次量子化](09-second-quantization.md)）的全部动机。
+**全同粒子**：交换两个全同粒子物理态不变，要求多体态空间只取张量积的（反）对称子空间——玻色子取对称、费米子取反对称（Pauli 原理由此而来；完整展开见[第 05s 篇 全同粒子与对称化公设](05s-identical-particles.md)）。逐个施密特正交化的"一次量子化"写法在粒子数一多时就笨重不堪，更高效的记账方式是把态空间换成 Fock 空间、把算符换成产生湮灭算符——那是第 09 篇（[二次量子化](09-second-quantization.md)）的全部动机。
 
 ## 10. 接口：这套语法往后通到哪里
 

@@ -1,7 +1,7 @@
 # 二次量子化：多体问题的母语
 
 > 路线图位置：量子力学书 · 第四部分（多体语言）· 第 09 篇。本篇也是凝聚态书后续章节的语言基础：[凝聚态书第 2 章 晶格振动与声子](../../condensed-matter/docs/02-lattice-vibrations-phonons.md)、[第 6 章 相互作用电子气](../../condensed-matter/docs/06-interacting-electron-gas.md)、[第 13 章 强关联](../../condensed-matter/docs/13-strong-correlations.md)、[第 14 章 精确方法](../../condensed-matter/docs/14-exact-methods-fci-ed.md)。
-> 前置知识：单粒子量子力学（态矢、算符、表象变换）；谐振子的代数解法（升降算符 $a,a^\dagger$，见本书[第 04 篇 谐振子阶梯算符](04-harmonic-oscillator-ladder.md)）。
+> 前置知识：单粒子量子力学（态矢、算符、表象变换）；全同粒子与对称化公设、Slater 行列式（[第 05s 篇](05s-identical-particles.md)——本篇第 2 节的出发点）；谐振子的代数解法（升降算符 $a,a^\dagger$，见本书[第 04 篇 谐振子阶梯算符](04-harmonic-oscillator-ladder.md)）。
 > 学习目标：理解为什么多体问题必须放弃 $N$ 体波函数语言；掌握 Fock 空间、产生湮灭算符与场算符的构造及（反）对易代数；会把任意单体、两体算符翻译成二次量子化形式；在三个贯穿全书的例子（凝胶模型、Hubbard 模型、晶格振动）中认出这套语言。
 
 ---
