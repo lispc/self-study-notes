@@ -69,9 +69,9 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 主线逻辑：
 
 1. **标量场量子化**：自由场 = 无穷多谐振子，粒子是场的激发（[笔记](docs/stage-04-qft-core/01-scalar-field-quantization.md)）
-2. **传播子与因果性**：费曼传播子
-3. **相互作用 + 微扰论**：Wick 定理、**费曼图与费曼规则**（从这里开始你会"算"了）
-4. **S 矩阵与截面**：LSZ 约化公式，算出第一个真实物理量——散射截面
+2. **传播子与因果性**：费曼传播子（[笔记](docs/stage-04-qft-core/02-propagators-and-causality.md)）
+3. **相互作用 + 微扰论**：Wick 定理、**费曼图与费曼规则**（从这里开始你会"算"了）（[笔记](docs/stage-04-qft-core/03-interactions-and-feynman-rules.md)）
+4. **S 矩阵与截面**：LSZ 约化公式，算出第一个真实物理量——散射截面（[笔记](docs/stage-04-qft-core/04-s-matrix-lsz-cross-sections.md)）
 5. **QED**：旋量场 + 光子场 + 规范不变性；算康普顿散射、e⁺e⁻ → μ⁺μ⁻（[笔记](docs/stage-04-qft-core/05-qed.md)）
 6. **一圈修正**：发散、正规化、**重整化**（QFT 思想上最深的部分；Wilson 的有效理论视角是现代的正确理解）（[笔记](docs/stage-04-qft-core/06-one-loop-renormalization.md)）
 7. **路径积分表述**（可与传统算符形式平行学）（[笔记](docs/stage-04-qft-core/07-path-integral.md)；补充材料：[路径积分解氢原子](../quantum-mechanics/docs/06s3-coulomb-path-integral.md)）
@@ -88,7 +88,7 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 - 李群/李代数，SU(2)、SU(3) 的表示论
 - [整体对称 vs 规范对称](docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)
-- 自发对称性破缺、Goldstone 定理、Higgs 机制
+- 自发对称性破缺、Goldstone 定理、Higgs 机制（[笔记](docs/stage-05-symmetry-group-theory/03-ssb-goldstone-higgs.md)）
 
 教材：Georgi《Lie Algebras in Particle Physics》，或 Schwartz/Peskin 相关章节。
 

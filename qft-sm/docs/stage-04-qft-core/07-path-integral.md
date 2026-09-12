@@ -174,6 +174,8 @@ $$\langle 0|T\,\varphi_1\varphi_2\varphi_3\varphi_4|0\rangle
 
 ## 6. 相互作用：费曼图从展开中长出来
 
+（同一套费曼规则的**算符形式**推导见[第 03 篇](03-interactions-and-feynman-rules.md)：Dyson 级数 + Wick 定理；本篇换路径积分语言把它们重新长出来，两套语言的对照是极好的复习。）
+
 加入相互作用，以 $\lambda\varphi^4$ 为例，$\mathcal{L}_{\mathrm{int}} = -\frac{\lambda}{4!}\varphi^4$。被积函数里 $e^{i\int\mathcal{L}_{\mathrm{int}}}$ 中的 $\varphi(x)$ 可以替换成对源的导数 $\varphi \to \frac{1}{i}\frac{\delta}{\delta J}$ 并提到积分号外：
 
 $$Z[J] = \mathcal{N}\ \exp\Big\{ i\int d^4x\ \mathcal{L}_{\mathrm{int}}\Big[ \frac{1}{i}\frac{\delta}{\delta J(x)} \Big] \Big\}\ Z_0[J],$$

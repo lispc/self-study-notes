@@ -1,7 +1,7 @@
 # 电弱统一：SU(2)×U(1)、希格斯机制与 W/Z/光子质量谱
 
 > 路线图位置：第 6 阶段（标准模型）· 第 2 篇——电弱理论的核心构造
-> 前置知识：第 4 阶段的量子场论基础（路径积分、传播子、费曼规则）、本阶段 [01-yang-mills.md](01-yang-mills.md)（非阿贝尔规范场的构造）、[../stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md](../stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)（整体对称 vs 规范对称、Goldstone 定理）。
+> 前置知识：第 4 阶段的量子场论基础（路径积分、传播子、费曼规则）、本阶段 [01-yang-mills.md](01-yang-mills.md)（非阿贝尔规范场的构造）、[../stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md](../stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)（整体对称 vs 规范对称）与[../stage-05-symmetry-group-theory/03-ssb-goldstone-higgs.md](../stage-05-symmetry-group-theory/03-ssb-goldstone-higgs.md)（Goldstone 定理与 Higgs 机制的一般理论）。
 > 学习目标：从四费米理论的危机出发，亲手推出 Glashow–Weinberg–Salam 理论的质量谱——$M_W$、$M_Z$、弱混合角 $\theta_W$、无质量光子，以及 Yukawa 耦合如何给出费米子质量。
 
 ---
@@ -116,7 +116,7 @@ $$D_\mu L = \Big(\partial_\mu - i g\,\frac{\sigma^i}{2}W^i_\mu + i\,\frac{g'}{2}
 
 ## 4. 希格斯机制热身：Abel 模型
 
-先看最简版本，把"规范场怎么吃 Goldstone 模式"演算一遍，再上电弱正餐。
+先看最简版本，把"规范场怎么吃 Goldstone 模式"演算一遍，再上电弱正餐（一般理论——Goldstone 定理、计数、Elitzur 定理、自由度账本——见[第 5 阶段第 3 篇](../stage-05-symmetry-group-theory/03-ssb-goldstone-higgs.md)，此处保留快速复演）。
 
 取一个复标量场 $\phi$ 加 U(1) 规范场 $A_\mu$：
 

@@ -104,7 +104,7 @@ $$\alpha = \frac{e^2}{4\pi} \approx \frac{1}{137},$$
 
 ## 4. QED 费曼规则（速查）
 
-由上面的拉氏量经正则量子化 + Wick 定理可推出以下规则（推导见前面的微扰论笔记，这里直接取用）。约定所有动量沿线流向取定。
+由上面的拉氏量经正则量子化 + Wick 定理可推出以下规则（标量情形的逐步推导见[第 03 篇](03-interactions-and-feynman-rules.md)：Dyson 级数 → Wick 定理 → 费曼规则字典；旋量场与光子场把外线因子换成旋量与极化矢量，骨架不变，这里直接取用）。约定所有动量沿线流向取定。
 
 | 对象 | 规则 |
 | --- | --- |
@@ -189,7 +189,7 @@ $$t = -\frac{s}{2}(1-\cos\theta), \qquad u = -\frac{s}{2}(1+\cos\theta), \qquad 
 
 $$\frac14\sum_{\text{spins}}|\mathcal M|^2 = e^4\big(1+\cos^2\theta\big).$$
 
-$2\to2$ 无质量末态的微分截面公式为
+$2\to2$ 无质量末态的微分截面公式为（相空间与流强的完整推导见[第 04 篇](04-s-matrix-lsz-cross-sections.md)自检第 3 题）
 
 $$\frac{d\sigma}{d\Omega} = \frac{1}{64\pi^2 s}\,\overline{|\mathcal M|^2},$$
 
