@@ -16,6 +16,7 @@
 - [第 4 阶段：量子场论核心（主战场）](#第-4-阶段量子场论核心612-个月主战场)
 - [第 5 阶段：对称性与群论补课](#第-5-阶段对称性与群论补课与第-4-阶段后期并行)
 - [第 6 阶段：标准模型本身](#第-6-阶段标准模型本身36-个月)
+- [第 7 阶段：现代振幅方法选学（前沿导览）](#第-7-阶段现代振幅方法选学前沿导览)
 - [实用建议](#实用建议)
 - [最小书单](#最小书单)
 - [终点自测](#终点自测)
@@ -104,6 +105,15 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 教材：Schwartz 后半本；Cheng & Li《Gauge Theory of Elementary Particle Physics》；Griffiths《Introduction to Elementary Particles》（偏现象学，可当先导读物）。
 
+## 第 7 阶段：现代振幅方法选学（前沿导览）
+
+主线到此已经完整。本阶段是**选学支线**：标准模型建成之后，21 世纪的场论学家在忙什么？两篇导览，不需要超对称背景，树级 + 导览级别：
+
+1. **多胶子振幅的隐秘简单性**：为什么纯胶子树图用费曼图算会组合爆炸、用旋量螺旋度（spinor-helicity）却只有一行 Parke–Taylor 公式（[笔记](docs/stage-07-amplitudes/01-spinor-helicity-parke-taylor.md)）
+2. **N=4 超对称 Yang–Mills**：为什么这个"不真实"的理论被称为 21 世纪的氢原子——严格共形、可积、正几何与 AdS/CFT 的导览（[笔记](docs/stage-07-amplitudes/02-n4-sym-hydrogen-atom.md)）
+
+选读教材：Elvang & Huang《Scattering Amplitudes in Gauge Theory and Gravity》（第 1–3 章对应第 1 篇，第 4–5 章对应第 2 篇）；计算导向可补 Dixon 的 TASI 讲义（hep-ph/9601359）。
+
 ---
 
 ## 实用建议
@@ -127,6 +137,8 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
 群论/对称性补课（并行）
         ↓
 标准模型（Yang–Mills → 电弱 → QCD → 组装）
+        ↓（选学支线）
+现代振幅方法导览（旋量螺旋度与 Parke–Taylor → N=4 SYM）
 ```
 
 ## 学习笔记与本地预览

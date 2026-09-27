@@ -11,6 +11,8 @@ import http.server
 import markdown
 import os
 import posixpath
+import re
+import unicodedata
 import urllib.parse
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -24,14 +26,8 @@ BOOKS = {
     "digital-design": ("数字电路设计", "从逻辑门到一颗五级流水 RISC-V 核"),
 }
 
-# 书的 docs 内子目录 → (阶段标题, 一句话描述)；未收录的子目录按目录名原样显示
-STAGES = {
-    "qft-sm/docs/stage-03-relativistic-qm": ("第 3 阶段 · 经典场论与相对论量子力学",
-                                              "过渡桥梁：QFT 的语言与动机。阶段编号承接路线图 0–6：第 0–2 阶段（数学/分析力学/量子力学）不设笔记目录，量子力学已独立成书"),
-    "qft-sm/docs/stage-04-qft-core": ("第 4 阶段 · QFT 核心", "量子化 → 费曼图 → QED → 重整化 → 路径积分"),
-    "qft-sm/docs/stage-05-symmetry-group-theory": ("第 5 阶段 · 对称性与群论", "李群表示、整体/规范对称、自发对称性破缺"),
-    "qft-sm/docs/stage-06-standard-model": ("第 6 阶段 · 标准模型", "Yang–Mills → 电弱统一 → QCD → 逐项读懂拉氏量"),
-}
+# 书的目录页 /<书>/ 直接渲染该书的 README.md（目录单源维护；新增笔记只需同步 README），
+# 并在末尾自动列出 docs/ 下未被 README 收录的笔记作为兜底检查。
 
 PAGE = """<!DOCTYPE html>
 <html lang="zh">
@@ -80,14 +76,31 @@ window.MathJax = {{ tex: {{ inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
 </html>"""
 
 
+def _github_slug(value, separator):
+    """GitHub 风格标题锚点：小写、去标点（保留中日韩文字与连字符）、空格转连字符。
+
+    toc 扩展默认的 slugify 会把 CJK 字符剥光，导致 README 里 GitHub 风格的
+    目录锚点（如 #第-4-阶段量子场论核心612-个月主战场）全部失效；换成这个。"""
+    value = unicodedata.normalize("NFKC", value).lower()
+    value = re.sub(r"[^\w\- ]", "", value, flags=re.UNICODE)
+    return value.replace(" ", separator)
+
+
+def _render_markdown(text):
+    return markdown.markdown(
+        text,
+        extensions=["fenced_code", "tables", "toc", "md_in_html", "pymdownx.arithmatex"],
+        extension_configs={
+            "pymdownx.arithmatex": {"generic": True},
+            "toc": {"slugify": _github_slug},
+        },
+    )
+
+
 def render_md(path):
     with open(path, encoding="utf-8") as f:
         text = f.read()
-    body = markdown.markdown(
-        text,
-        extensions=["fenced_code", "tables", "toc", "md_in_html", "pymdownx.arithmatex"],
-        extension_configs={"pymdownx.arithmatex": {"generic": True}},
-    )
+    body = _render_markdown(text)
     title = os.path.basename(path)
     rel = os.path.relpath(path, BASE)
     book = rel.split(os.sep, 1)[0]
@@ -121,53 +134,63 @@ def render_home():
     return PAGE.format(title="学习仓库", content="\n".join(parts))
 
 
-def render_book(book):
-    """单本书的目录页：docs/ 下按 stage 子目录（或平铺）列出全部笔记。"""
-    book_title, book_desc = BOOKS[book]
-    docs_root = os.path.join(BASE, book, "docs")
-    tree = {}  # rel_dir -> [file names]
-    for dirpath, _dirnames, filenames in os.walk(docs_root):
-        rel_dir = os.path.relpath(dirpath, BASE)
-        mds = sorted(f for f in filenames if f.endswith(".md"))
-        if mds:
-            tree[rel_dir] = mds
+def _unlinked_notes(book, readme_text):
+    """docs/ 下未被 README 链接的 .md 文件（返回仓库根相对路径，有序）。"""
+    book_root = os.path.join(BASE, book)
+    missing = []
+    for dirpath, _dirnames, filenames in os.walk(os.path.join(book_root, "docs")):
+        for name in sorted(filenames):
+            if not name.endswith(".md"):
+                continue
+            full = os.path.join(dirpath, name)
+            rel_in_book = os.path.relpath(full, book_root).replace(os.sep, "/")
+            if rel_in_book not in readme_text:
+                missing.append(os.path.relpath(full, BASE).replace(os.sep, "/"))
+    return missing
 
-    parts = [f'<nav><a href="/">&larr; 书库</a></nav>',
-             f"<h1>{html.escape(book_title)}</h1>",
-             f'<p class="desc">{html.escape(book_desc)} · <a href="/{book}/README.md">路线图 README</a></p>']
-    for rel_dir in sorted(tree):
-        stage_title, stage_desc = STAGES.get(rel_dir, (None, ""))
-        if stage_title:  # 有阶段划分的书
-            parts.append(f'<section class="stage"><h2>{html.escape(stage_title)}</h2>')
-            if stage_desc:
-                parts.append(f'<p class="desc">{html.escape(stage_desc)}</p>')
-        parts.append('<ul class="files">')
-        for name in tree[rel_dir]:
-            rel = f"{rel_dir}/{name}"
-            url = urllib.parse.quote(rel)
-            title = html.escape(_doc_title(os.path.join(BASE, rel)))
-            parts.append(f'<li><a href="/{url}">{title}</a><span class="fname">{html.escape(name)}</span></li>')
-        parts.append("</ul>")
-        if stage_title:
-            parts.append("</section>")
+
+def render_book(book):
+    """单本书的目录页 = 直接渲染该书 README.md；末尾附 README 未收录的笔记清单（若有）。"""
+    book_title = BOOKS[book][0]
+    with open(os.path.join(BASE, book, "README.md"), encoding="utf-8") as f:
+        text = f.read()
+    parts = ['<nav><a href="/">&larr; 书库</a></nav>', _render_markdown(text)]
+    unlinked = _unlinked_notes(book, text)
+    if unlinked:
+        items = "\n".join(
+            f'<li><a href="/{urllib.parse.quote(rel)}">{html.escape(_doc_title(os.path.join(BASE, rel)))}</a>'
+            f'<span class="fname">{html.escape(rel)}</span></li>'
+            for rel in unlinked)
+        parts.append('<h2>README 未收录的笔记</h2>\n'
+                     '<p class="desc">以下文件存在于 docs/ 但未被 README 链接——'
+                     '按仓库约定新增笔记需同步 README，请补上链接。</p>\n'
+                     f'<ul class="files">\n{items}\n</ul>')
     return PAGE.format(title=book_title, content="\n".join(parts))
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        path = urllib.parse.unquote(self.path.split("?", 1)[0])
-        path = posixpath.normpath(path).lstrip("/")
+        raw = urllib.parse.unquote(self.path.split("?", 1)[0])
+        path = posixpath.normpath(raw).lstrip("/")
         if path in ("", "."):
             return self._send(render_home())
-        book = path.rstrip("/")
-        if book in BOOKS:
-            return self._send(render_book(book))
+        if path.rstrip("/") in BOOKS:
+            if not raw.endswith("/"):
+                # 书目录页渲染 README.md，其相对链接依赖尾斜杠才能正确解析
+                return self._redirect(f"/{path.rstrip('/')}/")
+            return self._send(render_book(path.rstrip("/")))
         full = os.path.realpath(os.path.join(BASE, path))
         if not full.startswith(os.path.realpath(BASE) + os.sep):
             return self._send("403 Forbidden", status=403, content_type="text/plain; charset=utf-8")
         if os.path.isfile(full) and full.endswith(".md"):
             return self._send(render_md(full))
         return self._send("404 Not Found", status=404, content_type="text/plain; charset=utf-8")
+
+    def _redirect(self, location):
+        self.send_response(301)
+        self.send_header("Location", location)
+        self.send_header("Content-Length", "0")
+        self.end_headers()
 
     def _send(self, body, status=200, content_type="text/html; charset=utf-8"):
         data = body.encode("utf-8")
