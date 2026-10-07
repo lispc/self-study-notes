@@ -157,7 +157,7 @@ $$\boxed{\;\sigma = \frac{e^2\tau}{3}\,g(E_F)v_F^2 = \frac{ne^2\tau}{m}\;}$$
 
 $$k_F\,l \gg 1.$$
 
-室温 Cu 有 $k_Fl\sim5\times10^2$，半经典图像舒适成立。当无序或强关联把 $l$ 压向格点间距（$k_Fl\to1$），用电阻率翻译过来恰是 $\rho\sim1\ \mathrm{m\Omega\cdot cm}$ 的"饱和"尺度——越过此线，干涉与 Anderson 局域化登场，玻尔兹曼方程整体失效，那是量子输运的疆域（第 10 章，待写；其微观语言 Kubo/格林函数已在量子力学书[第 10 篇](../../quantum-mechanics/docs/10-linear-response-kubo.md)备好）。
+室温 Cu 有 $k_Fl\sim5\times10^2$，半经典图像舒适成立。当无序或强关联把 $l$ 压向格点间距（$k_Fl\to1$），用电阻率翻译过来恰是 $\rho\sim1\ \mathrm{m\Omega\cdot cm}$ 的"饱和"尺度——越过此线，干涉与 Anderson 局域化登场，玻尔兹曼方程整体失效，那是量子输运的疆域（[第 10 章](10-quantum-transport.md)；其微观语言 Kubo/格林函数已在量子力学书[第 10 篇](../../quantum-mechanics/docs/10-linear-response-kubo.md)备好）。
 
 ## 5. 与后续章节的接口
 
@@ -165,7 +165,7 @@ $$k_F\,l \gg 1.$$
 - **第 6 章（相互作用电子气）**：凝胶模型就是给这片海加上库仑作用；交换积分在费米球内进行（交换穴半径 $\sim k_F^{-1}$）、Thomas–Fermi 屏蔽由 $g(E_F)$ 出发、Fermi 液体把"费米面 + 准粒子"结构整体继承——$\gamma$ 的增强即 $m^*/m$。
 - **第 7 章/07s**：RKKY 以费米海为媒介（$2k_F$ 振荡来自直径 $2k_F$ 的费米球）、Stoner 铁磁 = 交换对抗"极化费米海的动能代价"、Pauli 顺磁的账本。
 - **第 8 章（超导）**：Cooper 问题 = "费米海对任意弱的配对吸引不稳定"——对数发散正源于费米面态密度为常数；BCS 波函数是费米海的重新组织。
-- **第 10 章（量子输运，待写）**：第 4.5 节的玻尔兹曼方程在 $k_Fl\sim1$ 处封顶；越过 Ioffe–Regel 判据后由 Landauer 公式与电导量子化接替。
+- **[第 10 章 量子输运](10-quantum-transport.md)**：第 4.5 节的玻尔兹曼方程在 $k_Fl\sim1$ 处封顶；越过 Ioffe–Regel 判据后由 Landauer 公式与电导量子化接替。
 - **第 11 章（量子霍尔）**：强磁场把费米球切成 Landau 能级；填充因子 $\nu$ = 每能级装了几层海面。
 - **第 13 章（强关联）**：重费米子的 $\gamma$ 千倍增强 = 费米海概念在强相互作用下被拉伸到极限仍在工作的证据（也是它快要失效的警报）。
 
@@ -173,7 +173,7 @@ $$k_F\,l \gg 1.$$
 
 - 态计数：周期边界 → 每个 $\vec k$ 态占 $(2\pi/L)^3$，自旋 ×2；Pauli 填充 → 费米球，$k_F = (3\pi^2n)^{1/3}$，$g(E)\propto\sqrt E$，$g(E_F) = 3n/2E_F$。
 - 量级：$E_F\sim$ 数 eV，$T_F\sim10^4$ K $\gg$ 熔点，$v_F\sim10^6$ m/s，$k_F^{-1}\sim$ Å。金属永远是简并的；一切响应只来自费米面 $k_BT$ 薄层。
-- 输运的半经典骨架（§4.5）：玻尔兹曼方程 + 弛豫时间近似给出 $\sigma=\tfrac{e^2\tau}{3}g(E_F)v_F^2=ne^2\tau/m$（"费米面散射、全体导电"的公式和解）；漂移速度 $v_d\sim10^{-4}$ m/s $\ll v_F$；$l=v_F\tau$，$D=\tfrac13v_F^2\tau$；适用边界 $k_Fl\gg1$（Ioffe–Regel），之外属量子输运（第 10 章）。
+- 输运的半经典骨架（§4.5）：玻尔兹曼方程 + 弛豫时间近似给出 $\sigma=\tfrac{e^2\tau}{3}g(E_F)v_F^2=ne^2\tau/m$（"费米面散射、全体导电"的公式和解）；漂移速度 $v_d\sim10^{-4}$ m/s $\ll v_F$；$l=v_F\tau$，$D=\tfrac13v_F^2\tau$；适用边界 $k_Fl\gg1$（Ioffe–Regel），之外属量子输运（[第 10 章](10-quantum-transport.md)）。
 - Drude vs Sommerfeld 账本：
 
 | | Drude（经典） | Sommerfeld（费米海） |

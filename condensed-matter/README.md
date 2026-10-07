@@ -29,7 +29,7 @@
 
 ### 第三部分：现代专题
 
-10. 量子输运浅尝：Landauer 公式、电导量子化 *(待写)*
+10. [量子输运浅尝](docs/10-quantum-transport.md)：三个长度尺度、Landauer 公式与接触电阻、点接触的电导量子化、弱局域化与 Anderson 标度理论
 11. [量子 Hall 效应](docs/11-quantum-hall-effect.md)：Landau 能级、精确量子化、边缘态、Laughlin 论证（[补充材料：分数量子霍尔效应与任意子](docs/11s-fractional-quantum-hall.md)）
 12. [拓扑物态入门](docs/12-topological-phases.md)：Berry 相、SSH 模型、TKNN/Chern 数、拓扑绝缘体（[补充材料：拓扑序——长程纠缠、规范结构与弦网](docs/12s-topological-order.md)）
 13. [强关联浅尝](docs/13-strong-correlations.md)：Mott 绝缘体、Hubbard 模型、超交换、高温超导悬案

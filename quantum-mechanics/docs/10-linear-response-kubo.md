@@ -1,6 +1,6 @@
 # 线性响应与 Kubo 公式：理论与实验之间的桥
 
-> 路线图位置：量子力学书 · 第四部分（多体语言）· 第 10 篇。本篇是"理论计算"与"实验测量"之间的通用接口，也是凝聚态书多章的直接前置：[凝聚态书第 6 章 相互作用电子气](../../condensed-matter/docs/06-interacting-electron-gas.md)（屏蔽与 RPA）、凝聚态书第 10 章（量子输运，待写）、[第 11 章 量子 Hall 效应](../../condensed-matter/docs/11-quantum-hall-effect.md)与[第 12 章 拓扑物态](../../condensed-matter/docs/12-topological-phases.md)（电导的 Kubo 表达式是 TKNN 的入口）、[第 19 章 激发态方法](../../condensed-matter/docs/19-excited-states.md)（响应函数的极点 = 激发能）。
+> 路线图位置：量子力学书 · 第四部分（多体语言）· 第 10 篇。本篇是"理论计算"与"实验测量"之间的通用接口，也是凝聚态书多章的直接前置：[凝聚态书第 6 章 相互作用电子气](../../condensed-matter/docs/06-interacting-electron-gas.md)（屏蔽与 RPA）、[凝聚态书第 10 章 量子输运](../../condensed-matter/docs/10-quantum-transport.md)（Landauer 公式——Drude 电导的动理学读法）、[第 11 章 量子 Hall 效应](../../condensed-matter/docs/11-quantum-hall-effect.md)与[第 12 章 拓扑物态](../../condensed-matter/docs/12-topological-phases.md)（电导的 Kubo 表达式是 TKNN 的入口）、[第 19 章 激发态方法](../../condensed-matter/docs/19-excited-states.md)（响应函数的极点 = 激发能）。
 > 前置知识：[第 09 篇 二次量子化](09-second-quantization.md)（产生湮灭算符与多体算符的语言）；含时微扰论（[第 07 篇 微扰论](07-perturbation-theory.md)，尤其是费米黄金定则）。不需要先修统计力学：密度矩阵与系综的概念在第 3 节自备。
 > 学习目标：说清为什么凝聚态实验测的都是响应函数；掌握密度矩阵与热平均的最小工具箱；完整推导 Kubo 公式（迟滞响应函数 = 平衡态对易子关联函数）；理解因果性如何推出 Kramers–Kronig 关系与谱（Lehmann）表示、虚部为何是耗散；掌握涨落–耗散定理及其经典极限；在四个例子（Drude 电导、自旋磁化率、介电函数与 Thomas–Fermi 屏蔽、中子散射与动态结构因子）中认出同一台机器。
 
