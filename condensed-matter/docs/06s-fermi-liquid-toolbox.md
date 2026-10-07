@@ -18,7 +18,7 @@
 
 $$\frac{\partial n}{\partial t} + \frac{\partial\varepsilon}{\partial\vec k}\cdot\nabla_{\!\vec r}\,n - \frac{\partial\varepsilon}{\partial\vec r}\cdot\nabla_{\!\vec k}\,n = I_{\text{coll}}[n],$$
 
-与第 3 章 Drude 的玻尔兹曼方程**形似而神不同**：这里的 $\varepsilon[\vec k; n]$ 本身是占据数的泛函——准粒子推挤会改变彼此的能量（$f$ 函数进场），碰撞积分 $I_{\text{coll}}$ 的弛豫时间由第 6 章的相空间论证 $\tau^{-1}\propto(\varepsilon-E_F)^2+\pi^2(k_BT)^2$ 提供。两个极限：
+与[第 3 章](03-free-electron-gas.md) §4.5 的玻尔兹曼方程**形似而神不同**：这里的 $\varepsilon[\vec k; n]$ 本身是占据数的泛函——准粒子推挤会改变彼此的能量（$f$ 函数进场），碰撞积分 $I_{\text{coll}}$ 的弛豫时间由第 6 章的相空间论证 $\tau^{-1}\propto(\varepsilon-E_F)^2+\pi^2(k_BT)^2$ 提供。两个极限：
 
 - **流体力学极限**（$\omega\tau\ll1$，碰撞频繁）：局域平衡，输运是扩散型的——普通声波（第一声）；
 - **无碰撞极限**（$\omega\tau\gg1$，低温高频）：$I_{\text{coll}}\to0$，但方程依然非平凡——因为 $f$ 函数的**平均场回复力**独自支撑振荡。这就是零声。

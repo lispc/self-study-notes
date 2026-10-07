@@ -1,8 +1,8 @@
 # 金属自由电子气：Drude、Sommerfeld 与费米海
 
 > 路线图位置：第一部分（结构与无相互作用电子）· 第 3 章
-> 前置知识：本科量子力学（一维势阱的驻波量子化、Pauli 原理）；统计力学基础（巨正则系综与 Fermi–Dirac 分布——本篇直接取用，推导不作要求）；第 2 章[晶格振动与声子](02-lattice-vibrations-phonons.md)的 k 空间模式计数经验（同一套手艺）。
-> 学习目标：会做 k 空间态计数（周期边界条件 → 每个态占 $(2\pi/L)^3$）；会推 $k_F = (3\pi^2 n)^{1/3}$、$E_F$、态密度 $g(E)\propto\sqrt E$，并记住量级账（$E_F\sim$ 数 eV、$T_F\sim 10^4$ K、$v_F\sim 10^6$ m/s）；理解简并判据 $T\ll T_F$ 为什么让室温金属仍是彻底量子化的"费米海"，以及为什么"只有费米面附近 $k_BT$ 薄层内的电子参与一切"；会用 Sommerfeld 展开推出电子比热 $C=\gamma T$ 与 Pauli 顺磁的常数磁化率，看清 Drude 经典图像的三场灾难如何被逐一修复。
+> 前置知识：本科量子力学（一维势阱的驻波量子化、Pauli 原理）；统计力学基础（巨正则系综与 Fermi–Dirac 分布——本篇直接取用，推导与逻辑地基见量子力学书[第 09s 篇](../../quantum-mechanics/docs/09s-fermi-dirac-derivation.md)）；第 2 章[晶格振动与声子](02-lattice-vibrations-phonons.md)的 k 空间模式计数经验（同一套手艺）。
+> 学习目标：会做 k 空间态计数（周期边界条件 → 每个态占 $(2\pi/L)^3$）；会推 $k_F = (3\pi^2 n)^{1/3}$、$E_F$、态密度 $g(E)\propto\sqrt E$，并记住量级账（$E_F\sim$ 数 eV、$T_F\sim 10^4$ K、$v_F\sim 10^6$ m/s）；理解简并判据 $T\ll T_F$ 为什么让室温金属仍是彻底量子化的"费米海"，以及为什么"只有费米面附近 $k_BT$ 薄层内的电子参与一切"；会用 Sommerfeld 展开推出电子比热 $C=\gamma T$ 与 Pauli 顺磁的常数磁化率，看清 Drude 经典图像的三场灾难如何被逐一修复；会用弛豫时间近似下的玻尔兹曼方程把 $\sigma=ne^2\tau/m$ 微观地推出来，并说出半经典输运的适用边界 $k_Fl\gg1$。
 >
 > 记号约定：本书保留 $\hbar$ 与 $k_B$；电磁量用高斯单位制书写（磁化率公式中不出现 $\mu_0$；07s 章改用 SI 单位制，公式相差一个 $\mu_0$ 因子，数值结论一致）。$n$ 为传导电子数密度，$g(E)$ 为单位体积总态密度（含自旋二重），$N(E_F)$ 在磁性等上下文中指单位体积或每原子态密度，用时注明。
 
@@ -125,12 +125,47 @@ $$L \equiv \frac{\kappa}{\sigma T} = \frac{\pi^2}{3}\left(\frac{k_B}{e}\right)^{
 
 与室温实验高度吻合——Drude 当年靠记错因子 2 "蒙中"的数值，如今有了推导。同时 $\tau$ 的微观来源也清楚了：散射者是声子（第 2 章）与杂质，Drude 设想的"撞离子实"并不存在（周期阵列根本不散射 Bloch 波，第 4 章）；低温纯金属中 $\tau$ 长到自由程 mm–cm——**灾难三修复**。
 
+### 4.5 玻尔兹曼输运方程：半经典图像的定量骨架与适用边界
+
+第 4.4 节解释了 $\sigma = ne^2\tau/m$ 为什么幸存，但只是定性论证。把这套图像写成可以计算的方程，就是**玻尔兹曼输运方程**：电子由半经典分布函数 $f(\vec r,\vec k,t)$（$t$ 时刻、$\vec r$ 附近、$\vec k$ 态的占据数）描述，"自由飞行 + 外力驱动"的漂移项等于碰撞项：
+
+$$\frac{\partial f}{\partial t} + \vec v_{\vec k}\cdot\nabla_{\!\vec r} f + \frac{\vec F}{\hbar}\cdot\nabla_{\!\vec k} f = \left(\frac{\partial f}{\partial t}\right)_{\!\mathrm{coll}}, \qquad \vec v_{\vec k} = \frac{1}{\hbar}\nabla_{\vec k}\varepsilon_{\vec k},\quad \vec F = -e\vec E.$$
+
+微观散射理论全部藏在碰撞项里；最粗的一档近似——**弛豫时间近似（RTA）**——假设碰撞把局部分布以时间常数 $\tau$ 拉回平衡：$(\partial f/\partial t)_{\mathrm{coll}} = -(f-f_0)/\tau$。对均匀直流电场，稳态（$\partial_t f=0$、$\nabla_{\vec r}f=0$）下留到一阶：
+
+$$\delta f \equiv f - f_0 = \frac{e\tau}{\hbar}\,\vec E\cdot\nabla_{\!\vec k}f_0 = e\tau\,(\vec E\cdot\vec v_{\vec k})\,\frac{\partial f_0}{\partial\varepsilon},$$
+
+（第二步是链式法则）。**$\delta f$ 正比于 $\partial f_0/\partial\varepsilon \approx -\delta(\varepsilon-E_F)$：对平衡的偏离全部集中在费米面上**——第 3.3 节"只有薄层参与输运"的总纲在此方程化。电流为
+
+$$\vec j = -2e\int\!\frac{d^3k}{(2\pi)^3}\,\vec v_{\vec k}\,\delta f = \frac{e^2\tau}{3}\,\vec E\int_0^\infty\! d\varepsilon\,g(\varepsilon)\,v^2(\varepsilon)\left(-\frac{\partial f_0}{\partial\varepsilon}\right) = \frac{e^2\tau}{3}\,g(E_F)v_F^2\,\vec E,$$
+
+（各向同性给出 $\langle v_iv_j\rangle = \delta_{ij}v^2/3$；自旋因子 2 吸收进 $g(\varepsilon)$；末步用 $-\partial f_0/\partial\varepsilon\to\delta(\varepsilon-E_F)$。）于是
+
+$$\boxed{\;\sigma = \frac{e^2\tau}{3}\,g(E_F)v_F^2 = \frac{ne^2\tau}{m}\;}$$
+
+（末等号用 $g(E_F)=3n/2E_F$ 与 $E_F=mv_F^2/2$）。第 4.4 节的定性说法由此变成定量结构：散射只在费米面（$\delta$ 函数），但 $g(E_F)v_F^2\propto n$——**"表面散射、全体导电"在公式层面和解**。
+
+这个方程是后续一切输运理论的零级近似：它与 Kubo 公式（量子力学书[第 10 篇](../../quantum-mechanics/docs/10-linear-response-kubo.md) §7.1）是同一对象的两种语言——这里是"分布被电场推歪、被碰撞拉回"的动理学图像，那里是"电流–电流关联函数以 $\tau$ 衰减"的平衡涨落图像；Fermi 液体里它升级为含平均场自洽的 Landau–Silin 动理学方程（[06s](06s-fermi-liquid-toolbox.md) §2）。
+
+三组尺度账，用来安放"电子热运动"的正确直觉：
+
+- **漂移速度极小**：Cu 通电流密度 $j=1\ \mathrm{A/mm^2}$ 时 $v_d = j/(ne)\sim7\times10^{-5}$ m/s——导电只是给各向同性的巨快运动（$v_F\sim10^6$ m/s）加上一个 $\sim10^{-10}$ 量级的微小偏置（$\delta f$ 的那一点倾斜），"电子满世界飞奔导电"的直觉图像全错。
+- **平均自由程** $l = v_F\tau$：室温 Cu（$\sigma\approx6\times10^7$ S/m）给出 $\tau\sim2.5\times10^{-14}$ s、$l\sim40$ nm（数百个格点）；低温纯金属 $\tau$ 更长，$l$ 达 mm–cm（第 4.4 节灾难三的修复）。
+- **扩散而非弹道**：多次散射后电子的净位移按扩散律增长，扩散系数 $D = \tfrac13 v_F^2\tau$——自检问题 5 里热导的动理学公式 $\kappa=\tfrac13 C_Vv_F^2\tau = C_VD$ 正是它的热输运化身。
+
+**适用边界**：把电子同时赋予近似确定的 $\vec r$ 与 $\vec k$ 是有代价的——波包的动量展宽须 $\Delta k\ll k_F$（实空间延展远大于原子间距），且散射不能频繁到波包刚形成就被打碎，即 $l\gg\lambda_F$（费米波长 $\lambda_F=2\pi/k_F$）。两条合并为一个无量纲判据（**Ioffe–Regel 判据**）
+
+$$k_F\,l \gg 1.$$
+
+室温 Cu 有 $k_Fl\sim5\times10^2$，半经典图像舒适成立。当无序或强关联把 $l$ 压向格点间距（$k_Fl\to1$），用电阻率翻译过来恰是 $\rho\sim1\ \mathrm{m\Omega\cdot cm}$ 的"饱和"尺度——越过此线，干涉与 Anderson 局域化登场，玻尔兹曼方程整体失效，那是量子输运的疆域（第 10 章，待写；其微观语言 Kubo/格林函数已在量子力学书[第 10 篇](../../quantum-mechanics/docs/10-linear-response-kubo.md)备好）。
+
 ## 5. 与后续章节的接口
 
 - **第 4 章（能带论）**：周期势把费米球扭曲成费米面；金属/绝缘体判据 = "$E_F$ 落在带内还是带隙里"；态密度的 van Hove 奇点挂在能带极值上；空穴作为"满带中的空位"正式登场。
 - **第 6 章（相互作用电子气）**：凝胶模型就是给这片海加上库仑作用；交换积分在费米球内进行（交换穴半径 $\sim k_F^{-1}$）、Thomas–Fermi 屏蔽由 $g(E_F)$ 出发、Fermi 液体把"费米面 + 准粒子"结构整体继承——$\gamma$ 的增强即 $m^*/m$。
 - **第 7 章/07s**：RKKY 以费米海为媒介（$2k_F$ 振荡来自直径 $2k_F$ 的费米球）、Stoner 铁磁 = 交换对抗"极化费米海的动能代价"、Pauli 顺磁的账本。
 - **第 8 章（超导）**：Cooper 问题 = "费米海对任意弱的配对吸引不稳定"——对数发散正源于费米面态密度为常数；BCS 波函数是费米海的重新组织。
+- **第 10 章（量子输运，待写）**：第 4.5 节的玻尔兹曼方程在 $k_Fl\sim1$ 处封顶；越过 Ioffe–Regel 判据后由 Landauer 公式与电导量子化接替。
 - **第 11 章（量子霍尔）**：强磁场把费米球切成 Landau 能级；填充因子 $\nu$ = 每能级装了几层海面。
 - **第 13 章（强关联）**：重费米子的 $\gamma$ 千倍增强 = 费米海概念在强相互作用下被拉伸到极限仍在工作的证据（也是它快要失效的警报）。
 
@@ -138,6 +173,7 @@ $$L \equiv \frac{\kappa}{\sigma T} = \frac{\pi^2}{3}\left(\frac{k_B}{e}\right)^{
 
 - 态计数：周期边界 → 每个 $\vec k$ 态占 $(2\pi/L)^3$，自旋 ×2；Pauli 填充 → 费米球，$k_F = (3\pi^2n)^{1/3}$，$g(E)\propto\sqrt E$，$g(E_F) = 3n/2E_F$。
 - 量级：$E_F\sim$ 数 eV，$T_F\sim10^4$ K $\gg$ 熔点，$v_F\sim10^6$ m/s，$k_F^{-1}\sim$ Å。金属永远是简并的；一切响应只来自费米面 $k_BT$ 薄层。
+- 输运的半经典骨架（§4.5）：玻尔兹曼方程 + 弛豫时间近似给出 $\sigma=\tfrac{e^2\tau}{3}g(E_F)v_F^2=ne^2\tau/m$（"费米面散射、全体导电"的公式和解）；漂移速度 $v_d\sim10^{-4}$ m/s $\ll v_F$；$l=v_F\tau$，$D=\tfrac13v_F^2\tau$；适用边界 $k_Fl\gg1$（Ioffe–Regel），之外属量子输运（第 10 章）。
 - Drude vs Sommerfeld 账本：
 
 | | Drude（经典） | Sommerfeld（费米海） |

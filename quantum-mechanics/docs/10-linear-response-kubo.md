@@ -55,6 +55,8 @@ $$\rho_0 = \frac{e^{-\beta H_0}}{Z}, \qquad Z = \mathrm{Tr}\,e^{-\beta H_0}.$$
 
 零温极限 $\beta\to\infty$ 只保留基态，$\rho_0\to\lvert0\rangle\langle0\rvert$，本章一切公式退化为基态期待值的形式。
 
+为什么热平衡态取 Boltzmann 权重、它能否从薛定谔方程本身推出来——不能：系综是独立于动力学的统计假设（与对称化公设并列），其来历、辩护路线与 Fermi–Dirac 分布的推导见[第 09s 篇](09s-fermi-dirac-derivation.md)。
+
 密度矩阵的演化由 von Neumann 方程 $i\partial_t\rho = [H,\rho]$ 给出（薛定谔方程的直接推论；注意它与 Heisenberg 算符方程 $i\partial_t A = -[H,A]$ 差一个符号）。平衡态 $\rho_0$ 与 $H_0$ 对易，因而是定态——这正是下节微扰展开的支点。
 
 ## 4. Kubo 公式的推导
