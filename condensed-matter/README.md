@@ -14,11 +14,11 @@
 
 ### 第一部分：结构与无相互作用电子（骨架）
 
-1. 晶体结构：晶格与基元、倒格子、Brillouin 区、X 射线衍射 *(待写)*
+1. [晶体结构](docs/01-crystal-structure.md)：晶格与基元、倒格子、Brillouin 区、X 射线衍射
 2. [晶格振动与声子](docs/02-lattice-vibrations-phonons.md)：单/双原子链、声子量子化、热容（Einstein/Debye）
 3. [金属自由电子气](docs/03-free-electron-gas.md)：Drude、Sommerfeld、费米海与态密度
 4. [能带论](docs/04-band-theory.md)：Bloch 定理、近自由电子、紧束缚、金属/绝缘体判据
-5. 半导体浅尝：有效质量、载流子统计、pn 结 *(待写)*
+5. [半导体浅尝](docs/05-semiconductors.md)：有效质量、载流子统计、pn 结
 
 ### 第二部分：相互作用、序与相变（核心物理）
 
@@ -45,7 +45,7 @@
 20. [DMRG 与张量网络](docs/20-dmrg-tensor-networks.md)：纠缠面积律、矩阵乘积态、扫掠变分、化学活性空间（[补充材料：一维的无费米面世界——Luttinger 液体与玻色化](docs/20s-luttinger-liquid.md)）
 21. [嵌入方法](docs/21-embedding-methods.md)：QM/MM、DFT+U、子系统 DFT、DMET——分而治之收官
 22. [量子蒙特卡洛](docs/22-qmc.md)：VMC 与 Slater–Jastrow、DMC 虚时投影、符号问题与固定节点近似、Ceperley–Alder 电子气数据
-23. 从半经验到力场与机器学习势：半经验方法（xTB）、分子力场、神经网络波函数与 ML 势 *(待写)*
+23. [从半经验到力场与机器学习势](docs/23-semiempirical-ml.md)：半经验方法（xTB）、分子力场、神经网络波函数与 ML 势
 
 ## 与量子力学书、QFT 书的接口
 

@@ -184,7 +184,7 @@ $K=1$ 检验：$x^{-1}$ ✓。边界情形只有一个独立场组合存活，�
 
 $$\langle\rho_{2k_F}(x)\rho_{2k_F}^\dagger(0)\rangle\propto\lvert x\rvert^{-2K}，$$
 
-乘上 $\cos2k_Fx$ 的振荡 ✓——**指数由 $K$ 连续调节**：强斥力（$K\ll1$）下 $2k_F$ 关联衰减极慢，电荷序的长程倾向被放大（与第 6 章 Peierls/CDW 的 $2k_F$ 物理同源；一维在任意排斥下 $2k_F$ 响应发散——Peierls 不稳定性，本篇未展开的支线）。
+乘上 $\cos2k_Fx$ 的振荡 ✓——**指数由 $K$ 连续调节**：强斥力（$K\ll1$）下 $2k_F$ 关联衰减极慢，电荷序的长程倾向被放大（与第 6 章 Lindhard 函数的 $2k_F$ 物理同源；一维在任意排斥下 $2k_F$ 响应发散——Peierls 不稳定性，正文展开见[第 13 章](13-strong-correlations.md) §9）。
 
 **(c)** $N(\omega) = -\tfrac1\pi\mathrm{Im}\,G^R(\omega)|_{x=0}$：对 $G(x)\propto x^{-\eta}$（$\eta = \tfrac12(K+K^{-1})$）做傅里叶/Abel 变换到时间域再取边界值，标准幂律变换给
 
