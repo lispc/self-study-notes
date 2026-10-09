@@ -41,6 +41,7 @@
 
 9. [二次量子化：多体问题的母语](docs/09-second-quantization.md)：Fock 空间与粒子数表象、产生湮灭算符、场算符、算符的二次量子化翻译
    - 9s. [Fermi–Dirac 分布从哪来：对称化公设、系综假设与逻辑地基](docs/09s-fermi-dirac-derivation.md)：薛定谔方程之外的两块基石、巨正则与微正则两条推导、相互作用下的 $Z$ 修正、热化问题
+   - 9s2. [二次量子化严格吗：表示唯一性、有界性与无穷自由度的坑](docs/09s2-second-quantization-rigor.md)：Fock 空间是显式构造而非口诀、Stone–von Neumann 与 Jordan–Wigner 唯一性定理、费米子有界/玻色子无界、不等价表示与 van Hove 现象、Haag 定理与 C*-代数指针
 10. [线性响应与 Kubo 公式：理论与实验之间的桥](docs/10-linear-response-kubo.md)：密度矩阵与热平均、Kubo 公式、涨落–耗散定理、响应函数对应表
 
 ### 第五部分：外场、对称性与几何相位

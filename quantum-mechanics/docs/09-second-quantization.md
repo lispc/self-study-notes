@@ -178,6 +178,7 @@ $$\langle 0\rvert\,\hat\psi_1\hat\psi_2^\dagger\hat\psi_3\hat\psi_4^\dagger\,\rv
 - 场算符 $\hat\psi(\vec x)=\sum_\alpha\varphi_\alpha(\vec x)c_\alpha$ 是位置空间的产生湮灭算符；换基 = 对 $\hat\psi$ 换展开，（反）对易关系形式不变。
 - 算符翻译规则：单体 $\to c^\dagger c$，两体 $\to c^\dagger c^\dagger cc$（湮灭端反序）。算符不依赖 $N$，态才携带 $N$。
 - 凝胶模型、Hubbard 模型、晶格振动分别示范了动量基、格点基、玻色模三种典型用法，它们是第 6、13、2 章的入口。
+- 这套语言在数学上有多严格？有限自由度下"多体 ≡ 满足（反）对易关系的算符代数"是定理（表示唯一性），无穷自由度才开始有坑——见补充材料 [9s2：二次量子化严格吗](09s2-second-quantization-rigor.md)。
 
 ## 自检问题
 

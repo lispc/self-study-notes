@@ -77,6 +77,7 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 5. **QED**：旋量场 + 光子场 + 规范不变性；算康普顿散射、e⁺e⁻ → μ⁺μ⁻（[笔记](docs/stage-04-qft-core/05-qed.md)）
 6. **一圈修正**：发散、正规化、**重整化**（QFT 思想上最深的部分；Wilson 的有效理论视角是现代的正确理解）（[笔记](docs/stage-04-qft-core/06-one-loop-renormalization.md)）
 7. **路径积分表述**（可与传统算符形式平行学）（[笔记](docs/stage-04-qft-core/07-path-integral.md)；补充材料：[路径积分解氢原子](../quantum-mechanics/docs/06s3-coulomb-path-integral.md)）
+8. **严格性回望（选学）**：哪些四维量子场论真的存在——构造性场论战役、四维 $\phi^4$ 的平凡性、Yang–Mills 千禧年难题的精确卡点（[笔记](docs/stage-04-qft-core/08-constructive-qft-triviality.md)）
 
 教材（按难度排）：
 
