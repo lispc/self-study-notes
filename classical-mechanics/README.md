@@ -12,7 +12,7 @@
 
 ### 第〇部分：牛顿力学的重审
 
-1. 牛顿力学回顾与批判：质点系与守恒律、约束与广义坐标、虚位移与 d'Alembert 原理——为什么牛顿形式不够用
+1. [牛顿力学回顾与批判](docs/01-newtonian-mechanics-review.md)：质点系与守恒律、约束与广义坐标、虚位移与 d'Alembert 原理——为什么牛顿形式不够用
 2. 中心力场：Kepler 问题的完整解法、轨道分类、Runge–Lenz 矢量（它的量子化身见[量子力学书 06s](../quantum-mechanics/docs/06s-hydrogen-matrix-mechanics.md)）
 3. 刚体运动：欧拉角、惯量张量、陀螺——转动群的力学现身（群语言见[量子力学书第 02 篇](../quantum-mechanics/docs/02-so3-su2-and-angular-momentum.md)）
 
