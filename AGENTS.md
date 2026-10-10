@@ -1,6 +1,6 @@
 # AGENTS.md
 
-QFT/量子力学/凝聚态/数字电路自学讲义仓库（"学习仓库"）。主要内容：根 `README.md`（书库入口）+ 五本书各自一个顶层目录（`quantum-mechanics/`、`thermal-physics/`、`qft-sm/`、`condensed-matter/`、`digital-design/`，各含 `README.md` 路线图与 `docs/` 笔记）+ `serve.py`（本地预览服务器）。笔记为简体中文，含 LaTeX 公式。
+QFT/量子力学/凝聚态/数字电路自学讲义仓库（"学习仓库"）。主要内容：根 `README.md`（书库入口）+ 七本书各自一个顶层目录（`classical-mechanics/`、`electrodynamics/`、`quantum-mechanics/`、`thermal-physics/`、`qft-sm/`、`condensed-matter/`、`digital-design/`，各含 `README.md` 路线图与 `docs/` 笔记）+ `serve.py`（本地预览服务器）。笔记为简体中文，含 LaTeX 公式。
 
 ## 目录与文件约定
 
@@ -10,9 +10,11 @@ QFT/量子力学/凝聚态/数字电路自学讲义仓库（"学习仓库"）。
 - 凝聚态书笔记路径：`condensed-matter/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。
 - 数字电路书笔记路径：`digital-design/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位；含 ```verilog / ```bash 代码块。物理书的单位/度规约定不适用于本书。
 - 热统书笔记路径：`thermal-physics/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。本书 $k_B$ 默认显式保留（不取自然单位），熵、温度公式以含 $k_B$ 的形式书写，首次出现说明；上游是量子力学书，下游是凝聚态书与 QFT 书。
-- 新增笔记后必须同步该书 README：QFT 书在对应路线图条目末尾加 `（[笔记](docs/...)）` 链接；量子力学书、凝聚态书、数字电路书和热统书把目录条目改为链接。`/<书>/` 目录页就是 README 渲染出来的，漏同步的笔记会出现在目录页底部的"README 未收录的笔记"清单里。
+- 理论力学书笔记路径：`classical-mechanics/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。本书是仓库物理线的起点书（下游链：电动力学 → 量子力学 → 热统 → QFT/凝聚态）。
+- 电动力学书笔记路径：`electrodynamics/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。**单位制：高斯制主线**（Maxwell 方程组的无 $4\pi\varepsilon_0$ 形式，首次出现说明），SI 对照收进附录章；狭义相对论收官章与 QFT 书 stage-03 的协变电磁学笔记衔接，注意内容不重复。
+- 新增笔记后必须同步该书 README：QFT 书在对应路线图条目末尾加 `（[笔记](docs/...)）` 链接；量子力学书、凝聚态书、数字电路书、热统书、理论力学书和电动力学书把目录条目改为链接。`/<书>/` 目录页就是 README 渲染出来的，漏同步的笔记会出现在目录页底部的"README 未收录的笔记"清单里。
 - 跨书引用用相对路径（如凝聚态笔记引用 QFT 笔记：`../../qft-sm/docs/stage-XX/...`）。
-- `serve.py` 是两层结构：`/` 书库首页只列书（`BOOKS` 字典，现有五本书）；`/<书>/` 目录页直接渲染该书的 `README.md`（目录单源维护，不另做自动文件罗列），页尾自动附"README 未收录的笔记"兜底清单；新增书时在 `BOOKS` 加一行即可。另外：`/<书>`（无尾斜杠）会 301 到 `/<书>/`，README 里的相对链接依赖这个尾斜杠。
+- `serve.py` 是两层结构：`/` 书库首页只列书（`BOOKS` 字典，现有七本书）；`/<书>/` 目录页直接渲染该书的 `README.md`（目录单源维护，不另做自动文件罗列），页尾自动附"README 未收录的笔记"兜底清单；新增书时在 `BOOKS` 加一行即可。另外：`/<书>`（无尾斜杠）会 301 到 `/<书>/`，README 里的相对链接依赖这个尾斜杠。
 
 ## 笔记格式模板
 
