@@ -1,6 +1,6 @@
 # 理论力学
 
-> 面向学过普通物理力学与微积分的自学者，是仓库全部物理书的起点（下游链：本书 → [电动力学](../electrodynamics/README.md) → [量子力学](../quantum-mechanics/README.md) → [热统](../thermal-physics/README.md) → [QFT](../qft-sm/README.md)/[凝聚态](../condensed-matter/README.md)）。主线观点：**理论力学是量子理论的对口预科**——拉格朗日与哈密顿形式不是解题技巧，而是量子化的入口：Poisson 括号是正则对易子的经典对应，Hamilton–Jacobi 方程是薛定谔方程的经典极限，Noether 定理是 QFT 对称性思想的源头，刘维尔定理是统计力学相空间语言的地基。叙事走"对称性第一性原理"路线：从 Galileo 相对性原理与时空的均匀、各向同性**推出**拉氏量，而不是写出牛顿方程再包装；后半本逐步几何化（正则变换、辛结构），以混沌与 KAM 收尾——那是经典力学最现代的部分，也是统计力学"平衡从何而来"的力学前身。
+> 面向学过普通物理力学与微积分的自学者，是仓库全部物理书的起点（下游链：本书 → [电动力学](../electrodynamics/README.md) → [广义相对论](../general-relativity/README.md)（与[量子力学](../quantum-mechanics/README.md)并行）→ [热统](../thermal-physics/README.md) → [QFT](../qft-sm/README.md)/[凝聚态](../condensed-matter/README.md)）。主线观点：**理论力学是量子理论的对口预科**——拉格朗日与哈密顿形式不是解题技巧，而是量子化的入口：Poisson 括号是正则对易子的经典对应，Hamilton–Jacobi 方程是薛定谔方程的经典极限，Noether 定理是 QFT 对称性思想的源头，刘维尔定理是统计力学相空间语言的地基。叙事走"对称性第一性原理"路线：从 Galileo 相对性原理与时空的均匀、各向同性**推出**拉氏量，而不是写出牛顿方程再包装；后半本逐步几何化（正则变换、辛结构），以混沌与 KAM 收尾——那是经典力学最现代的部分，也是统计力学"平衡从何而来"的力学前身。
 >
 > 参考主线教材：Landau & Lifshitz 卷 1《力学》（主线骨架，极简而深刻）；Goldstein《Classical Mechanics》（查细节与例题）；Arnold《经典力学的数学方法》（几何化部分的进阶读物）。
 
@@ -27,6 +27,7 @@
 9. 哈密顿方程与 Poisson 括号：Legendre 变换、相空间、括号代数——正则对易子的经典对应（量子化见[量子力学书第 03 篇](../quantum-mechanics/docs/03-formalism-hilbert-dirac.md)）
 10. 正则变换与辛结构：生成函数、辛形式与相空间体积元、刘维尔定理——[热统书](../thermal-physics/README.md)系综理论的相空间地基
 11. Hamilton–Jacobi 方程：作用量作为生成函数、作用量–角变量、绝热不变量——旧量子论 Sommerfeld 量子化规则（[量子力学书第 01 篇](../quantum-mechanics/docs/01-old-quantum-theory.md)）与 WKB（[07s 篇](../quantum-mechanics/docs/07s-variational-and-wkb.md)）的源头
+12. 约束系统与 Dirac 理论：拉格朗日乘子、第一类/第二类约束、Dirac 括号、参数化粒子玩具模型——处理规范冗余与约束系统的正则语言（[广义相对论书](../general-relativity/README.md)的 ADM 形式与[QFT 书第 9 阶段](../qft-sm/README.md)协变相空间的共同前置）
 
 ### 第三部分：深入与现代
 
@@ -41,3 +42,4 @@
 - 通向[量子力学书](../quantum-mechanics/README.md)的三座桥：Hamilton–Jacobi → 旧量子论与 WKB；Poisson 括号 → 正则对易子；刚体转动 → 角动量与 SU(2)。
 - 通向[热统书](../thermal-physics/README.md)的两座桥：刘维尔定理与相空间 → 系综与 Boltzmann 熵；混沌与 KAM → 各态历经与热化。
 - 通向[QFT 书](../qft-sm/README.md)：经典场引子是 [stage-03 经典场论笔记](../qft-sm/docs/stage-03-relativistic-qm/02-lagrangian-field-theory.md)的非相对论版；Noether 定理是 QFT 全书的对称性母机。
+- 通向[广义相对论书](../general-relativity/README.md)：第 9、10 章的哈密顿与辛语言，加上第 12 章的约束理论，是 ADM 形式、协变相空间乃至全部量子引力纲领的经典入口。

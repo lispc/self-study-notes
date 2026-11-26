@@ -44,3 +44,4 @@
 - 下游第一站是[量子力学书](../quantum-mechanics/README.md)：经典电动力学预言黑体辐射的紫外灾难，正是[旧量子论](../quantum-mechanics/docs/01-old-quantum-theory.md)（以及[热统书](../thermal-physics/README.md)光子气体一章）的开场；氢原子的经典辐射坍缩同样是量子力学的接生婆。
 - 通向[QFT 书](../qft-sm/README.md)：[协变电磁学](../qft-sm/docs/stage-03-relativistic-qm/03-covariant-electromagnetism.md)与本书第 12 章衔接；规范自由在那里升级为规范原理（[整体对称与规范对称](../qft-sm/docs/stage-05-symmetry-group-theory/02-global-vs-gauge-symmetry.md)、[Yang–Mills](../qft-sm/docs/stage-06-standard-model/01-yang-mills.md)）；第 15 章辐射反作用的经典困难是 QED 的存在理由。
 - 与[热统书](../thermal-physics/README.md)：黑体辐射是经典统计与经典场的碰撞现场。
+- 并行下游是[广义相对论书](../general-relativity/README.md)：第三部分（Lorentz 变换、四维矢量与张量记号）是它微分几何部分的语言起点——狭义相对论就是"度规取 $\eta$ 的特例"，广义相对论把 $\eta$ 换成动力学度规。

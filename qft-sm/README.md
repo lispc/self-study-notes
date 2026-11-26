@@ -18,6 +18,7 @@
 - [第 6 阶段：标准模型本身](#第-6-阶段标准模型本身36-个月)
 - [第 7 阶段：现代振幅方法选学（前沿导览）](#第-7-阶段现代振幅方法选学前沿导览)
 - [第 8 阶段：量子引力选学（前沿导览）](#第-8-阶段量子引力选学前沿导览)
+- [第 9 阶段：代数量子引力专题（选学）](#第-9-阶段代数量子引力专题选学)
 - [实用建议](#实用建议)
 - [最小书单](#最小书单)
 - [终点自测](#终点自测)
@@ -80,6 +81,8 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 8. **严格性回望（选学）**：哪些四维量子场论真的存在——构造性场论战役、四维 $\phi^4$ 的平凡性、Yang–Mills 千禧年难题的精确卡点（[笔记](docs/stage-04-qft-core/08-constructive-qft-triviality.md)）
 9. **格点场论（选学）**：路径积分的另一种算法——与微扰论平行的非微扰路线；Wilson 作用量、强耦合展开与面积律、费米子 doubling、Monte Carlo 与连续极限（[笔记](docs/stage-04-qft-core/09-lattice-field-theory.md)）
 
+补充材料（待写）：**相空间路径积分与算符排序**——$\int\mathcal{D}q\,\mathcal{D}p\;e^{i\int(p\dot q-H)}$ 的相空间形式、Weyl 排序与 Moyal 星积、Schwinger–Dyson 方程与接触项。把第 10 节"诚实声明"悬置的排序问题正面讲清，并兑现[路径积分解氢原子](../quantum-mechanics/docs/06s3-coulomb-path-integral.md)里"中点处方"两处承认引用的账；是[第 9 阶段](#第-9-阶段代数量子引力专题选学)的算符语言前置。
+
 教材（按难度排）：
 
 - **入门**：Schwartz《Quantum Field Theory and the Standard Model》——现代、清楚、直奔计算；或 Srednicki（结构干净）
@@ -126,6 +129,19 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 选读教材：Zwiebach《A First Course in String Theory》前 14 章；概念问题读 Rovelli《Quantum Gravity》；渐近安全读 Reuter & Saueressig。任何一家的系统学习都是以学期计的独立支线，不属于本书主线。
 
+读完导览想继续深入，走[第 9 阶段](#第-9-阶段代数量子引力专题选学)专题；几何与经典前置见[广义相对论书](../general-relativity/README.md)（第 7、8、10、11、12 章）。
+
+## 第 9 阶段：代数量子引力专题（选学）
+
+第 8 阶段是"地图"（各家回答了什么、卡在哪），本阶段是"专题"：沿其中最活跃的一条线——因果菱形/零锥上的代数量子引力——把语言补齐。**目标样例**：能读懂 Chandrasekaran《An algebraic quantization of gravity from the null cone》（arXiv:2611.34924）的正文 §1–§6 与附录 A–C 的论证逻辑（附录 D 可只看结论）。前置：第 4 阶段路径积分及其补充材料、第 5 阶段规范对称性、第 8 阶段两篇、[广义相对论书](../general-relativity/README.md)第 7、8、10、11、12 章、[理论力学书](../classical-mechanics/README.md)约束章、[量子力学书 9s2](../quantum-mechanics/docs/09s2-second-quantization-rigor.md)（C*-代数与 GNS 的指针）。
+
+1. **弯曲时空量子场论与半经典引力**：真空不唯一与 Bogoliubov 变换、Unruh/Hawking 效应、单圈有效作用量、Schwinger–Keldysh（in-in）形式与接触项、KMS 条件与热态、半经典 Einstein 方程（待写）
+2. **QFT 中的算子代数**：von Neumann 代数与型分类、GNS 构造在场论中的使用、纯态延拓与型 I 因子——量子引力子区域代数的语言（待写）
+3. **JT 引力与引力时钟**：dilaton、二维因果菱形的完整量子化与粘合——四维纲领的二维热身（待写）
+4. **零锥正则引力与黑洞熵**：特征数据的正则结构、引力时钟与面积算符的离散谱、Bekenstein–Hawking 熵及其对数修正、跃迁振幅在有限 $G_N$ 下的绝对收敛性（待写）
+
+**自检里程碑**：能复述"解约束 → 约化相空间 → 辛形式只剩边界项"的链条；能说出目标样例论文四个结论（振幅绝对收敛、因果菱形 Hilbert 空间有限维、BH 熵对数修正、半经典 Einstein 方程）各自用到的每件前置工具来自哪篇笔记。
+
 ---
 
 ## 实用建议
@@ -152,6 +168,7 @@ QFT 核心（量子化 → 费曼图 → QED → 重整化）
         ↓（选学支线）
 现代振幅方法导览（旋量螺旋度与 Parke–Taylor → N=4 SYM）
 量子引力导览（为什么引力难量子化 → 候选理论地图）
+代数量子引力专题（弯曲时空 QFT → 算子代数 → JT 引力 → 零锥正则引力）
 ```
 
 ## 学习笔记与本地预览
