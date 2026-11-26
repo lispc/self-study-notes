@@ -113,9 +113,9 @@ $$H_\xi=\int_{\partial\Sigma}\left(\boldsymbol Q_\xi-i_\xi\boldsymbol\theta\righ
 
 **Komar 质量**（自检 4 的出发点）：
 
-$$M_{\rm Komar}=\frac{1}{4\pi G_N}\int_S\star\,\mathrm{d}\xi .$$
+$$\boxed{\;M_{\rm Komar}=-\frac{1}{8\pi G_N}\oint_S\star\,\mathrm{d}\xi\;}$$
 
-对 Schwarzschild、$\xi=\partial_t$、$S$ 为大球面，给出 $M$。因子之所以不是 $\frac{1}{8\pi G}$，是因为这里取了 $(\star d\xi)_{ab}=\epsilon_{abcd}\nabla^c\xi^d$（自检 4 显式算出）。
+对 Schwarzschild、$\xi=\partial_t$、$S$ 为向外定向的大球面，$\oint\star\,\mathrm{d}\xi=-8\pi G_NM$，故给出 $M$（第 4 章自检 5 把这个积分逐项算出来了）。**符号与因子 2 都来自约定**：$\star$ 的定义、$S$ 的定向、$\xi$ 的归一化，三者任一改变都会改公式。**对齐办法**：用 Schwarzschild 与"向外定向"校准一次，之后照抄。
 
 ## 5. 视界与 Wald 熵
 
@@ -203,7 +203,7 @@ $$\boxed{\;S_{\rm Wald}=\frac{2\pi}{\kappa}\cdot\frac{\kappa A}{8\pi G_N}=\frac{
 - 协变相空间 = 解空间；$\delta\boldsymbol L=\boldsymbol E\cdot\delta\phi+\mathrm{d}\boldsymbol\theta$ 定义预辛势，$\boldsymbol\omega=\delta\boldsymbol\theta$ 自动时空闭合。
 - $\Omega=\int_\Sigma\boldsymbol\omega$ 与 $\Sigma$ 无关（Stokes + $\mathrm{d}\omega=0$）——相空间不依赖时间。
 - 对称性 $\xi$ 的 Hamilton 变分是边界积分 $\delta H_\xi=\int_{\partial\Sigma}(\delta Q_\xi-i_\xi\theta)$；引力中 Hamiltonian 在约束面上化为边界荷。
-- Komar 质量 $M=\frac{1}{4\pi G}\int_S\star d\xi$；Wald 熵 $S_{\rm Wald}=2\pi\oint Q_\xi=\frac{A}{4G}$。
+- Komar 质量 $M_{\rm Komar}=-\frac{1}{8\pi G_N}\oint_S\star\,\mathrm{d}\xi$（Schwarzschild 校准见第 4 章自检 5）；Wald 熵 $S_{\rm Wald}=2\pi\oint Q_\xi=\frac{A}{4G}$。
 - 有边界时切向 diffeo 不再纯规范 ⇒ 边缘模（边界度规 $q_{AB}$ + 角点位置与标架）；角点 boost 的荷是 $\mathcal A/8\pi G$。
 - 论文把约束解掉，得到真正的约化相空间；辛形式只剩边界与角点 ⇒ 括号可直接量子化。
 - 单位 boost 的 Noether 荷 $Q=\mathcal A/8\pi G$，解析延拓到 $i\pi$ 给 $e^{-2\pi K}=e^{-\mathcal A/4G\hbar}$——熵与面积谱的同一个源头。

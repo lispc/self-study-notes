@@ -14,16 +14,16 @@
 
 ### 第一部分：微分几何工具
 
-1. 流形与张量：流形、曲线与切矢量、余矢量、度规张量——"引力 = 时空几何"的舞台
-2. 联络与测地线：克氏符、协变导数、平行移动、测地线方程与测地偏离方程
-3. 曲率：Riemann/Ricci/Weyl 张量、比安基恒等式、Killing 矢量与对称性
-4. 微分形式与积分：楔积、外微分、Hodge 对偶、体元、Stokes 定理——一阶引力与规范理论的书写语言
+1. [流形与张量](docs/01-manifolds-and-tensors.md)：流形、曲线与切矢量、余矢量、度规张量——"引力 = 时空几何"的舞台；含 $(-,+,+,+)$ 与 QFT 书号差的翻译表、固有时作为时钟读数
+2. [联络与测地线](docs/02-connection-and-geodesics.md)：克氏符的推导（度量相容 + 无挠 ⇒ 唯一）、平行移动与和乐（球面上的转角 = 所围面积）、测地线方程与仿射参数、"类时测地线使固有时极大"与等效原理
+3. [曲率](docs/03-curvature.md)：$[\nabla,\nabla]$ 定义 Riemann、四条对称性与 20 个分量、第二 Bianchi ⇒ $\nabla_\mu G^{\mu\nu}=0$、Weyl 张量与潮汐力、测地偏离、Killing 矢量
+4. [微分形式与积分](docs/04-differential-forms-and-integration.md)：外积与外微分（$\mathrm{d}$ 不需要联络）、体积形式与 Hodge 对偶（$\star^2=-1$ 于 2-形式）、Stokes、Maxwell 两行、作用量的形式语言——一阶引力与规范理论的书写语言
 
 ### 第二部分：动力学与解
 
-5. Einstein 方程与 Einstein–Hilbert 作用量：真空方程与含物质方程、宇宙学常数、能动张量；作用量变分与"边界项从哪里来"的引出
+5. [Einstein 方程与 Einstein–Hilbert 作用量](docs/05-einstein-equations-eh-action.md)：为什么左边必须是 $G_{\mu\nu}$（二阶/对称/恒无散/4 维唯一）、能动张量与理想流体、EH 变分与 GHY、弱场极限给 $\nabla^2\Phi=4\pi G_N\rho$、$\Lambda$ 的三种身份、10 = 6 + 4 的初值计数
 5s. [一阶引力：标架、自旋联络与 Plebański 作用量](docs/05s-first-order-gravity.md)：度规换成 tetrad + 自旋联络，Palatini 作用量的两个变分（$T=0$ 与 Einstein 方程），BF + 简单性约束 $B=\star(e\wedge e)$——"约束不含导数 ⇒ 不加边界项 ⇒ 边界变量可缝合"，零锥量子化（QFT 书第 9 阶段）的出发点
-6. Schwarzschild 解与黑洞几何：Birkhoff 定理、视界与奇点、Penrose 图、测地线
+6. [Schwarzschild 解与黑洞几何](docs/06-schwarzschild.md)：球对称 ansatz 解出 $f=1-2G_NM/r$、Birkhoff 定理、Kretschmann 判据（$r=2G_NM$ 非奇异）、Kruskal 延拓与四区域、有效势与 ISCO $6G_NM$、光线偏折 $4G_NM/b$、视界面积与 $T,S$ 预告
 7. [因果结构](docs/07-causal-structure.md)：光锥与因果序、全局双曲与 Cauchy 面、因果菱形（两张零片 + caps + 角点 $S$）——$I^\pm$/$J^\pm$、依赖域、MOTS，"零锥量子化"的舞台为何是菱形
 8. [零超曲面几何](docs/08-null-hypersurface-geometry.md)：零生成元与仿射参数、横向度规 $q_{ab}$、膨胀/剪切/扭转、Raychaudhuri 方程与聚焦、面积振幅 $\varrho$ 的 ODE ——"引力时钟"与"面积上界"的物理核心，全书面向量子化目标的第一块基石
 9. 特征初值问题：零锥上的初始数据、double null 片、解的存在性与延拓——"在零锥上解约束"的存在性依据
