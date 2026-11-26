@@ -2,7 +2,7 @@
 
 > 路线图位置：量子力学书 · 尾声（测量、诠释与量子信息）· 第 14 篇（[测量、EPR 与 Bell](14-measurement-epr-bell.md)）的补充材料（第 14s 篇）
 > 前置知识：第 03 篇（测量公设、第 8 节密度矩阵与约化密度矩阵、第 9 节张量积）；第 05 篇（泡利矩阵）；第 05s 篇（自旋单态——本篇的标准纠缠载体）；第 14 篇（Bell 不等式与 no-signaling——本篇把它当工具用）。
-> 学习目标：会把一般量子比特态画在 Bloch 球上、用 $\operatorname{Tr}\rho^2$ 区分纯混态；会陈述并证明 Schmidt 分解，用纠缠熵 $S = -\operatorname{Tr}\rho_A\log_2\rho_A$ 给二分纯态的纠缠记账；会证明 no-cloning 定理并说清它与 no-signaling 的互锁；会完整推导密集编码、隐形传态两个协议的代数，并论证隐形传态不违反 no-cloning 也不超光速；会按 BB84 与 E91 两个协议解释量子密钥分发的安全性来源。
+> 学习目标：会把一般量子比特态画在 Bloch 球上、用 $\operatorname{Tr}\rho^2$ 区分纯混态；会陈述并证明 Schmidt 分解，用纠缠熵 $S = -\operatorname{Tr}\rho_A\log_2\rho_A$ 给二分纯态的纠缠记账；会证明 no-cloning 定理并说清它与 no-signaling 的互锁；会完整推导密集编码、隐形传态两个协议的代数，并论证隐形传态不违反 no-cloning 也不超光速；会算两态的迹距离与保真度、用它们把"不可区分"量化（单次最优区分概率）；会按 BB84 与 E91 两个协议解释量子密钥分发的安全性来源。
 >
 > 记号约定：保留 $\hbar$（本篇几乎不用）。熵取 $\log_2$，单位比特。两比特 Bell 基：$\lvert\Phi^\pm\rangle = (\lvert00\rangle\pm\lvert11\rangle)/\sqrt2$，$\lvert\Psi^\pm\rangle = (\lvert01\rangle\pm\lvert10\rangle)/\sqrt2$；$\lvert\pm\rangle = (\lvert0\rangle\pm\lvert1\rangle)/\sqrt2$。
 
@@ -92,7 +92,45 @@ $$\lvert\psi\rangle_1\lvert\Phi^+\rangle_{23} = \tfrac12\Big[\lvert\Phi^+\rangle
 - **不超光速**：Bob 收到 2 经典比特之前手里是什么？对 Alice 四个结果取平均（twirl，自检问题 3）：$\rho_3 = \tfrac14\sum_i \sigma_i\lvert\psi\rangle\langle\psi\rvert\sigma_i = \tfrac12\mathbb 1$——**与 $\lvert\psi\rangle$ 无关的最大混态**。没有经典指令，纠缠什么都递不过去。信息分两半：量子相干关系（提前铺好）+ 经典指令（光速传递）。
 - **资源记账**：每传一个量子比特消耗一份 Bell 态（纠缠是不可再生资本，定量资源观——§3 的熵就是它的记账单位）。
 
-### 5.3 量子密钥分发：BB84 与 E91
+### 5.3 态有多像：迹距离与保真度
+
+前两节把纠缠当资源；这一节补一件记账工具：**两个量子态"有多像"**。第 2 节说过非正交态不可靠区分，但"不可靠"到什么程度需要定量语言。熵不够——相同熵的两个态可以任意不同；可区分性要另外的度量。
+
+**迹距离**：
+
+$$D(\rho,\sigma) \equiv \frac12\operatorname{Tr}\lvert\rho-\sigma\rvert,\qquad \lvert A\rvert \equiv \sqrt{A^\dagger A}.$$
+
+性质：$0\le D\le 1$；$D = 0$ 当且仅当 $\rho = \sigma$；$D = 1$ 当且仅当两者支集正交；对称、凸；**在 CPTP 映射下不增**：$D(\Lambda\rho,\Lambda\sigma)\le D(\rho,\sigma)$——任何量子操作都不能把两个态变得更容易区分。这是"物理不能凭空放大差异"的精确定述，与 no-cloning 同一族定理。
+
+操作含义（**Holevo–Helstrom**）：等先验地单次区分两个态，最优成功概率
+
+$$P_{\mathrm{succ}} = \frac12\left(1 + D(\rho,\sigma)\right).$$
+
+迹距离就是"单次测量能榨出的可区分度"：正交态（$D=1$）可完美区分，同一态（$D=0$）只能瞎猜。
+
+**保真度**：
+
+$$F(\rho,\sigma) \equiv \left(\operatorname{Tr}\sqrt{\sqrt{\rho}\,\sigma\sqrt{\rho}}\right)^2.$$
+
+纯态情形大大简化：$F(\lvert\psi\rangle,\lvert\phi\rangle) = \lvert\langle\psi\vert\phi\rangle\rvert^2$——就是两态重叠的平方。性质：$0\le F\le 1$；$F = 1$ 当且仅当 $\rho = \sigma$。
+
+两者可以互相换算（**Fuchs–van de Graaf 不等式**）：
+
+$$1 - F(\rho,\sigma) \;\le\; D(\rho,\sigma) \;\le\; \sqrt{1 - F(\rho,\sigma)^2},$$
+
+纯态时上界取等：$D = \sqrt{1-F}$。这把"内积意义下的接近"与"测量意义下的可区分"钉在一起。
+
+**比特例子**：$\lvert0\rangle$ 与 $\lvert+\rangle$ 的 $F = \lvert\langle0\vert+\rangle\rvert^2 = \tfrac12$，故 $D = \sqrt{1-\tfrac12} = 1/\sqrt2\approx 0.707$。Helstrom 给出单次最优区分成功概率 $\tfrac12(1+1/\sqrt2)\approx 0.854$——比瞎猜好，但离完美很远。
+
+**Bloch 球上的显式公式**（$\rho = \tfrac12(\mathbb 1+\vec r\cdot\vec\sigma)$）：
+
+$$D(\rho,\sigma) = \tfrac12\lvert\vec r - \vec r'\rvert,\qquad F(\rho,\sigma) = \tfrac12\left(1 + \vec r\cdot\vec r' + \sqrt{(1-\lvert\vec r\rvert^2)(1-\lvert\vec r'\rvert^2)}\right).$$
+
+纯态（$\lvert\vec r\rvert = \lvert\vec r'\rvert = 1$）时 $F = \cos^2(\theta/2)$、$D = \sin(\theta/2)$，$\theta$ 是两个 Bloch 矢量的夹角——几何与可区分性直接对应。
+
+**为什么在本书里专门补这一节**：QFT 书第 9 阶段（代数量子引力专题）里"两组边界制备能否区分"是硬论证——因果菱形 Hilbert 空间有限性的证明用迹距离界定"boost 相位几乎相同的中间态"与目标制备的偏离（论文 arXiv:2611.34924 的 (5.32) 与附录 D.2）；那里必须有一个定量的"差得足够远"，而熵胜任不了。
+
+### 5.4 量子密钥分发：BB84 与 E91
 
 目标不是传密文（密文走经典信道即可），而是让双方**共享同一串随机密钥且确信无人偷听**——经典世界做不到（窃听者可完美复制在途信息），量子的"不可复制 + 不可偷看不留痕"恰好对症。
 
@@ -108,6 +146,7 @@ $$\lvert\psi\rangle_1\lvert\Phi^+\rangle_{23} = \tfrac12\Big[\lvert\Phi^+\rangle
 - **凝聚态书**：纠缠熵 → [拓扑序](../../condensed-matter/docs/12s-topological-order.md)的拓扑纠缠熵（基态简并的纠缠判据）；[第 12 章 拓扑物态](../../condensed-matter/docs/12-topological-phases.md)。
 - **第 03 篇 §8/§9**：密度矩阵与张量积是本篇的全部语法；本篇是它们的"第二遍"——从公设变成工具。
 - **第 08s 篇**：Mott 极化仪（自旋的量子干涉当仪器）与本篇 QKD（单光子的量子不可克隆当锁）是同一类"基本定理变工程"的故事。
+- **QFT 书第 9 阶段 04 篇**：零锥正则引力的"因果菱形 Hilbert 空间有限维"论证，用迹距离界定两组边界制备的可区分性（论文 (5.32)、附录 D.2）——本篇 §5.3 是那一步的数学准备。
 
 ## 小结
 
@@ -119,6 +158,7 @@ $$\lvert\psi\rangle_1\lvert\Phi^+\rangle_{23} = \tfrac12\Big[\lvert\Phi^+\rangle
 | No-cloning | $\langle\psi\vert\phi\rangle = \langle\psi\vert\phi\rangle^2$ | 与 no-signaling 互锁 |
 | 密集编码 | $I/X/Z/XZ \to$ 四 Bell 态 | 1 qubit + 纠缠 = 2 bits |
 | 隐形传态 | Bell 测量 + 2 bits + Pauli 修正 | 不克隆、不超光速 |
+| 迹距离/保真度 | $D=\tfrac12\operatorname{Tr}\lvert\rho-\sigma\rvert$；$P_{\mathrm{succ}}=\tfrac12(1+D)$ | 把"不可区分"量化 |
 | BB84 / E91 | 错误率 25% / $S$ 跌落 = 警报 | no-cloning 与 Bell 当保安 |
 
 一句话收束：把纠缠当资源记账（Schmidt 谱是账本），no-cloning 与 no-signaling 是物理给信息划的两条宪法边界，而密集编码、隐形传态、QKD 是在这两条边界内做成生意的三家公司——每家都用第 14 篇的"哲学定理"当了生产资料。

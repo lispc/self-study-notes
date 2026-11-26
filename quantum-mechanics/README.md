@@ -17,7 +17,7 @@
 
 3. [形式体系：希尔伯特空间、算符与狄拉克记号](docs/03-formalism-hilbert-dirac.md)：态空间、可观测量、表象变换、不确定性关系
    - 3s. [波动力学基础：坐标表象、一维定态与隧穿](docs/03s-wave-mechanics-basics.md)：自由粒子与波包、方势阱、势垒隧穿、δ 势——抽象机器在坐标表象里的样子
-   - 3s2. 相空间量子力学：Wigner 函数、Weyl 排序与 Moyal 星积——$[x,p]$ 代数的"函数语言"，路径积分算符排序问题与半经典极限的公共源头（待写；QFT 书第 4 阶段补充材料与第 9 阶段的共同前置）
+   - 3s2. [相空间量子力学：Wigner 函数、Weyl 排序与 Moyal 星积](docs/03s2-phase-space-quantum-mechanics.md)：$[x,p]$ 代数的"函数语言"、路径积分算符排序问题与半经典极限的公共源头——QFT 书第 9 阶段 Weyl 量子化与接触项的前置
 
 ### 第二部分：可精确求解的体系
 
@@ -54,7 +54,7 @@
 ### 尾声：测量、诠释与量子信息
 
 14. [测量、EPR 与 Bell 不等式](docs/14-measurement-epr-bell.md)：冯诺依曼链与退相干、CHSH 推导与 $2\sqrt2$ 违反、no-signaling、2022 诺奖与诠释清单
-   - 14s. [量子信息初步：纠缠作为资源](docs/14s-quantum-information.md)：量子比特与 Bloch 球、Schmidt 分解与纠缠熵、no-cloning、密集编码、隐形传态、BB84 与 E91
+   - 14s. [量子信息初步：纠缠作为资源](docs/14s-quantum-information.md)：量子比特与 Bloch 球、Schmidt 分解与纠缠熵、no-cloning、密集编码、隐形传态、迹距离与保真度、BB84 与 E91
    - 14s2. [量子计算初步：线路、算法与纠错](docs/14s2-quantum-computing.md)：通用门集、Deutsch–Jozsa、Grover、Shor 的结构、纠错码与表面码（= toric code）、量子模拟与 VQE
 
 ## 与另两本书的接口

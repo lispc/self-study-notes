@@ -24,10 +24,10 @@
 
 ### 第二部分：哈密顿力学与几何化
 
-9. 哈密顿方程与 Poisson 括号：Legendre 变换、相空间、括号代数——正则对易子的经典对应（量子化见[量子力学书第 03 篇](../quantum-mechanics/docs/03-formalism-hilbert-dirac.md)）
-10. 正则变换与辛结构：生成函数、辛形式与相空间体积元、刘维尔定理——[热统书](../thermal-physics/README.md)系综理论的相空间地基
+9. [哈密顿方程与 Poisson 括号](docs/09-hamilton-equations-poisson-brackets.md)：Legendre 变换、相空间、括号代数——正则对易子的经典对应（量子化见[量子力学书第 03 篇](../quantum-mechanics/docs/03-formalism-hilbert-dirac.md)）
+10. [正则变换与辛结构](docs/10-canonical-transformations-symplectic.md)：生成函数、辛形式与相空间体积元、刘维尔定理——[热统书](../thermal-physics/README.md)系综理论的相空间地基
 11. Hamilton–Jacobi 方程：作用量作为生成函数、作用量–角变量、绝热不变量——旧量子论 Sommerfeld 量子化规则（[量子力学书第 01 篇](../quantum-mechanics/docs/01-old-quantum-theory.md)）与 WKB（[07s 篇](../quantum-mechanics/docs/07s-variational-and-wkb.md)）的源头
-12. 约束系统与 Dirac 理论：拉格朗日乘子、第一类/第二类约束、Dirac 括号、参数化粒子玩具模型——处理规范冗余与约束系统的正则语言（[广义相对论书](../general-relativity/README.md)的 ADM 形式与[QFT 书第 9 阶段](../qft-sm/README.md)协变相空间的共同前置）
+12. [约束系统与 Dirac 理论](docs/12-constraints-dirac-theory.md)：拉格朗日乘子、第一类/第二类约束、Dirac 括号、参数化粒子玩具模型——处理规范冗余与约束系统的正则语言（[广义相对论书](../general-relativity/README.md)的 ADM 形式与[QFT 书第 9 阶段](../qft-sm/README.md)协变相空间的共同前置）
 
 ### 第三部分：深入与现代
 

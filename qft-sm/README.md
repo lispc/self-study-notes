@@ -135,10 +135,10 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 第 8 阶段是"地图"（各家回答了什么、卡在哪），本阶段是"专题"：沿其中最活跃的一条线——因果菱形/零锥上的代数量子引力——把语言补齐。**目标样例**：能读懂 Chandrasekaran《An algebraic quantization of gravity from the null cone》（arXiv:2611.34924）的正文 §1–§6 与附录 A–C 的论证逻辑（附录 D 可只看结论）。前置：第 4 阶段路径积分及其补充材料、第 5 阶段规范对称性、第 8 阶段两篇、[广义相对论书](../general-relativity/README.md)第 7、8、10、11、12 章、[理论力学书](../classical-mechanics/README.md)约束章、[量子力学书 9s2](../quantum-mechanics/docs/09s2-second-quantization-rigor.md)（C*-代数与 GNS 的指针）。
 
-1. **弯曲时空量子场论与半经典引力**：真空不唯一与 Bogoliubov 变换、Unruh/Hawking 效应、单圈有效作用量、Schwinger–Keldysh（in-in）形式与接触项、KMS 条件与热态、半经典 Einstein 方程（待写）
-2. **QFT 中的算子代数**：von Neumann 代数与型分类、GNS 构造在场论中的使用、纯态延拓与型 I 因子——量子引力子区域代数的语言（待写）
-3. **JT 引力与引力时钟**：dilaton、二维因果菱形的完整量子化与粘合——四维纲领的二维热身（待写）
-4. **零锥正则引力与黑洞熵**：特征数据的正则结构、引力时钟与面积算符的离散谱、Bekenstein–Hawking 熵及其对数修正、跃迁振幅在有限 $G_N$ 下的绝对收敛性（待写）
+1. **弯曲时空量子场论与半经典引力**：真空不唯一与 Bogoliubov 变换、Unruh/Hawking 效应、单圈有效作用量、Schwinger–Keldysh（in-in）形式与接触项、KMS 条件与热态、半经典 Einstein 方程（[笔记](docs/stage-09-algebraic-quantum-gravity/01-qft-curved-spacetime-semiclassical.md)）
+2. **QFT 中的算子代数**：von Neumann 代数与型分类、GNS 构造在场论中的使用、纯态延拓与型 I 因子——量子引力子区域代数的语言（[笔记](docs/stage-09-algebraic-quantum-gravity/02-operator-algebras-in-qft.md)）
+3. **JT 引力与引力时钟**：dilaton、二维因果菱形的完整量子化与粘合——四维纲领的二维热身（[笔记](docs/stage-09-algebraic-quantum-gravity/03-jt-gravity-gravitational-clock.md)）
+4. **零锥正则引力与黑洞熵**：特征数据的正则结构、引力时钟与面积算符的离散谱、Bekenstein–Hawking 熵及其对数修正、跃迁振幅在有限 $G_N$ 下的绝对收敛性（[笔记](docs/stage-09-algebraic-quantum-gravity/04-null-canonical-gravity-black-hole-entropy.md)）
 
 **自检里程碑**：能复述"解约束 → 约化相空间 → 辛形式只剩边界项"的链条；能说出目标样例论文四个结论（振幅绝对收敛、因果菱形 Hilbert 空间有限维、BH 熵对数修正、半经典 Einstein 方程）各自用到的每件前置工具来自哪篇笔记。
 
