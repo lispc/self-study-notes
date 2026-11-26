@@ -81,7 +81,7 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 8. **严格性回望（选学）**：哪些四维量子场论真的存在——构造性场论战役、四维 $\phi^4$ 的平凡性、Yang–Mills 千禧年难题的精确卡点（[笔记](docs/stage-04-qft-core/08-constructive-qft-triviality.md)）
 9. **格点场论（选学）**：路径积分的另一种算法——与微扰论平行的非微扰路线；Wilson 作用量、强耦合展开与面积律、费米子 doubling、Monte Carlo 与连续极限（[笔记](docs/stage-04-qft-core/09-lattice-field-theory.md)）
 
-补充材料（待写）：**相空间路径积分与算符排序**——$\int\mathcal{D}q\,\mathcal{D}p\;e^{i\int(p\dot q-H)}$ 的相空间形式、Weyl 排序与 Moyal 星积、Schwinger–Dyson 方程与接触项。把第 10 节"诚实声明"悬置的排序问题正面讲清，并兑现[路径积分解氢原子](../quantum-mechanics/docs/06s3-coulomb-path-integral.md)里"中点处方"两处承认引用的账；是[第 9 阶段](#第-9-阶段代数量子引力专题选学)的算符语言前置。
+补充材料：**[相空间路径积分与算符排序](docs/stage-04-qft-core/07s-phase-space-path-integral-and-ordering.md)**——$\int\mathcal{D}q\,\mathcal{D}p\;e^{i\int(p\dot q-H)}$ 的相空间形式、Weyl 排序与 Moyal 星积、Schwinger–Dyson 方程与接触项。把第 10 节"诚实声明"悬置的排序问题正面讲清，并兑现[路径积分解氢原子](../quantum-mechanics/docs/06s3-coulomb-path-integral.md)里"中点处方"两处承认引用的账；是[第 9 阶段](#第-9-阶段代数量子引力专题选学)的算符语言前置。
 
 教材（按难度排）：
 

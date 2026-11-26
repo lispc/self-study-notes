@@ -13,20 +13,20 @@
 ### 第〇部分：牛顿力学的重审
 
 1. [牛顿力学回顾与批判](docs/01-newtonian-mechanics-review.md)：质点系与守恒律、约束与广义坐标、虚位移与 d'Alembert 原理——为什么牛顿形式不够用
-2. 中心力场：Kepler 问题的完整解法、轨道分类、Runge–Lenz 矢量（它的量子化身见[量子力学书 06s](../quantum-mechanics/docs/06s-hydrogen-matrix-mechanics.md)）
+2. [中心力场](docs/02-central-force-kepler.md)：Kepler 问题的完整解法、轨道分类、Runge–Lenz 矢量（它的量子化身见[量子力学书 06s](../quantum-mechanics/docs/06s-hydrogen-matrix-mechanics.md)）
 3. 刚体运动：欧拉角、惯量张量、陀螺——转动群的力学现身（群语言见[量子力学书第 02 篇](../quantum-mechanics/docs/02-so3-su2-and-angular-momentum.md)）
 
 ### 第一部分：拉格朗日力学（对称性第一性原理）
 
-5. 最小作用量原理：从 Galileo 相对性原理 + 时空均匀各向同性推出自由粒子的 $L = \frac12 mv^2$（Landau 式推导）、Euler–Lagrange 方程、拉氏量的非唯一性（$L \to L + \mathrm{d}f/\mathrm{d}t$）
-6. 对称性与守恒律：Noether 定理（力学版）——时间均匀性、空间均匀性、转动不变性分别给出能量、动量、角动量，"守恒律是时空对称性的影子"
+5. [最小作用量原理](docs/05-least-action-principle.md)：从 Galileo 相对性原理 + 时空均匀各向同性推出自由粒子的 $L = \frac12 mv^2$（Landau 式推导）、Euler–Lagrange 方程、拉氏量的非唯一性（$L \to L + \mathrm{d}f/\mathrm{d}t$）
+6. [对称性与守恒律](docs/06-noether-theorem.md)：Noether 定理（力学版）——时间均匀性、空间均匀性、转动不变性分别给出能量、动量、角动量，"守恒律是时空对称性的影子"
 7. 小振动：简正模与本征值问题、分子振动、从 $N$ 个耦合振子到链——[凝聚态书第 2 章声子](../condensed-matter/docs/02-lattice-vibrations-phonons.md)的经典原型
 
 ### 第二部分：哈密顿力学与几何化
 
 9. [哈密顿方程与 Poisson 括号](docs/09-hamilton-equations-poisson-brackets.md)：Legendre 变换、相空间、括号代数——正则对易子的经典对应（量子化见[量子力学书第 03 篇](../quantum-mechanics/docs/03-formalism-hilbert-dirac.md)）
 10. [正则变换与辛结构](docs/10-canonical-transformations-symplectic.md)：生成函数、辛形式与相空间体积元、刘维尔定理——[热统书](../thermal-physics/README.md)系综理论的相空间地基
-11. Hamilton–Jacobi 方程：作用量作为生成函数、作用量–角变量、绝热不变量——旧量子论 Sommerfeld 量子化规则（[量子力学书第 01 篇](../quantum-mechanics/docs/01-old-quantum-theory.md)）与 WKB（[07s 篇](../quantum-mechanics/docs/07s-variational-and-wkb.md)）的源头
+11. [Hamilton–Jacobi 方程](docs/11-hamilton-jacobi.md)：作用量作为生成函数、作用量–角变量、绝热不变量——旧量子论 Sommerfeld 量子化规则（[量子力学书第 01 篇](../quantum-mechanics/docs/01-old-quantum-theory.md)）与 WKB（[07s 篇](../quantum-mechanics/docs/07s-variational-and-wkb.md)）的源头
 12. [约束系统与 Dirac 理论](docs/12-constraints-dirac-theory.md)：拉格朗日乘子、第一类/第二类约束、Dirac 括号、参数化粒子玩具模型——处理规范冗余与约束系统的正则语言（[广义相对论书](../general-relativity/README.md)的 ADM 形式与[QFT 书第 9 阶段](../qft-sm/README.md)协变相空间的共同前置）
 
 ### 第三部分：深入与现代
