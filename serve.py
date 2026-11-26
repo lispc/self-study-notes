@@ -28,6 +28,15 @@ BOOKS = {
     "qft-sm": ("量子场论与标准模型 · 自学路线图", "从数学补课到标准模型拉氏量"),
     "condensed-matter": ("凝聚态物理入门导论", "从晶格振动到拓扑物态——场论思想的应用现场"),
     "digital-design": ("数字电路设计", "从逻辑门到一颗五级流水 RISC-V 核"),
+    "paper-reading": ("论文阅读", "逐篇拆解前沿论文的论证链——概念与前置知识指向仓库对应章节"),
+}
+
+# 首页的分类（slug 必须在 BOOKS 中；未列入任何分类的书归入末尾的"其他"）
+CATEGORIES = {
+    "科学": ["classical-mechanics", "electrodynamics", "general-relativity",
+             "quantum-mechanics", "thermal-physics", "qft-sm", "condensed-matter"],
+    "工程": ["digital-design"],
+    "论文阅读": ["paper-reading"],
 }
 
 # 书的目录页 /<书>/ 直接渲染该书的 README.md（目录单源维护；新增笔记只需同步 README），
@@ -124,17 +133,28 @@ def _doc_title(path):
     return os.path.basename(path)
 
 
-def render_home():
-    """书库首页：只列书，点进单本书的目录页。"""
-    parts = ["<h1>学习仓库</h1>",
-             '<p class="desc">自学讲义合集。每篇笔记末尾有 5 道自检题（点击展开答案）。</p>',
-             '<ul class="files">']
-    for book, (book_title, book_desc) in BOOKS.items():
-        parts.append(
-            f'<li><a href="/{book}/">{html.escape(book_title)}</a>'
-            f'<span class="fname">{book}/</span><br>'
+def _entry(slug):
+    book_title, book_desc = BOOKS[slug]
+    return (f'<li><a href="/{slug}/">{html.escape(book_title)}</a>'
+            f'<span class="fname">{slug}/</span><br>'
             f'<span class="desc">{html.escape(book_desc)}</span></li>')
-    parts.append("</ul>")
+
+
+def render_home():
+    """书库首页：按类别列书，点进单本书的目录页。"""
+    parts = ["<h1>学习仓库</h1>",
+             '<p class="desc">自学讲义合集。每篇笔记末尾有 5 道自检题（点击展开答案）。</p>']
+    seen = set()
+    for category, slugs in CATEGORIES.items():
+        entries = [_entry(s) for s in slugs if s in BOOKS]
+        seen.update(s for s in slugs if s in BOOKS)
+        if entries:
+            parts.append(f'<div class="stage"><h2>{html.escape(category)}</h2>\n'
+                         '<ul class="files">\n' + "\n".join(entries) + "\n</ul></div>")
+    rest = [_entry(s) for s in BOOKS if s not in seen]
+    if rest:
+        parts.append('<div class="stage"><h2>其他</h2>\n<ul class="files">\n'
+                     + "\n".join(rest) + "\n</ul></div>")
     return PAGE.format(title="学习仓库", content="\n".join(parts))
 
 

@@ -129,11 +129,11 @@ QFT = 量子力学 + 狭义相对论。量子力学不过关，后面全是空�
 
 选读教材：Zwiebach《A First Course in String Theory》前 14 章；概念问题读 Rovelli《Quantum Gravity》；渐近安全读 Reuter & Saueressig。任何一家的系统学习都是以学期计的独立支线，不属于本书主线。
 
-读完导览想继续深入，走[第 9 阶段](#第-9-阶段代数量子引力专题选学)专题；几何与经典前置见[广义相对论书](../general-relativity/README.md)（第 7、8、10、11、12 章）。
+读完导览想继续深入，走[第 9 阶段](#第-9-阶段代数量子引力专题选学)专题；几何与经典前置见[广义相对论书](../general-relativity/README.md)的[第 5s 章一阶引力](../general-relativity/docs/05s-first-order-gravity.md)、[第 7 章因果结构](../general-relativity/docs/07-causal-structure.md)、[第 8 章零超曲面几何](../general-relativity/docs/08-null-hypersurface-geometry.md)、[第 10 章带边界的作用量](../general-relativity/docs/10-boundary-terms-action.md)、[第 12 章协变相空间](../general-relativity/docs/12-covariant-phase-space.md)（均已写完），以及第 11 章 ADM（待写）。
 
 ## 第 9 阶段：代数量子引力专题（选学）
 
-第 8 阶段是"地图"（各家回答了什么、卡在哪），本阶段是"专题"：沿其中最活跃的一条线——因果菱形/零锥上的代数量子引力——把语言补齐。**目标样例**：能读懂 Chandrasekaran《An algebraic quantization of gravity from the null cone》（arXiv:2611.34924）的正文 §1–§6 与附录 A–C 的论证逻辑（附录 D 可只看结论）。前置：第 4 阶段路径积分及其补充材料、第 5 阶段规范对称性、第 8 阶段两篇、[广义相对论书](../general-relativity/README.md)第 7、8、10、11、12 章、[理论力学书](../classical-mechanics/README.md)约束章、[量子力学书 9s2](../quantum-mechanics/docs/09s2-second-quantization-rigor.md)（C*-代数与 GNS 的指针）。
+第 8 阶段是"地图"（各家回答了什么、卡在哪），本阶段是"专题"：沿其中最活跃的一条线——因果菱形/零锥上的代数量子引力——把语言补齐。**目标样例**：能读懂 Chandrasekaran《An algebraic quantization of gravity from the null cone》（arXiv:2611.34924）的正文 §1–§6 与附录 A–C 的论证逻辑（附录 D 可只看结论）。论文的读法地图见[论文阅读专栏首篇](../paper-reading/docs/01-null-cone-quantum-gravity.md)。前置：第 4 阶段路径积分及其补充材料、第 5 阶段规范对称性、第 8 阶段两篇、[广义相对论书](../general-relativity/README.md)第 [5s](../general-relativity/docs/05s-first-order-gravity.md)、[7](../general-relativity/docs/07-causal-structure.md)、[8](../general-relativity/docs/08-null-hypersurface-geometry.md)、[10](../general-relativity/docs/10-boundary-terms-action.md)、[12](../general-relativity/docs/12-covariant-phase-space.md) 章、[理论力学书](../classical-mechanics/README.md)约束章、[量子力学书 9s2](../quantum-mechanics/docs/09s2-second-quantization-rigor.md)（C*-代数与 GNS 的指针）。
 
 1. **弯曲时空量子场论与半经典引力**：真空不唯一与 Bogoliubov 变换、Unruh/Hawking 效应、单圈有效作用量、Schwinger–Keldysh（in-in）形式与接触项、KMS 条件与热态、半经典 Einstein 方程（[笔记](docs/stage-09-algebraic-quantum-gravity/01-qft-curved-spacetime-semiclassical.md)）
 2. **QFT 中的算子代数**：von Neumann 代数与型分类、GNS 构造在场论中的使用、纯态延拓与型 I 因子——量子引力子区域代数的语言（[笔记](docs/stage-09-algebraic-quantum-gravity/02-operator-algebras-in-qft.md)）

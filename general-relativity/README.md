@@ -22,16 +22,17 @@
 ### 第二部分：动力学与解
 
 5. Einstein 方程与 Einstein–Hilbert 作用量：真空方程与含物质方程、宇宙学常数、能动张量；作用量变分与"边界项从哪里来"的引出
+5s. [一阶引力：标架、自旋联络与 Plebański 作用量](docs/05s-first-order-gravity.md)：度规换成 tetrad + 自旋联络，Palatini 作用量的两个变分（$T=0$ 与 Einstein 方程），BF + 简单性约束 $B=\star(e\wedge e)$——"约束不含导数 ⇒ 不加边界项 ⇒ 边界变量可缝合"，零锥量子化（QFT 书第 9 阶段）的出发点
 6. Schwarzschild 解与黑洞几何：Birkhoff 定理、视界与奇点、Penrose 图、测地线
-7. 因果结构：光锥与因果序、全局双曲、柯西面、因果菱形——"因果菱形"是 QFT 书第 9 阶段量子化的舞台
-8. 零超曲面几何：零生成元与仿射参数、膨胀与剪切、Raychaudhuri 方程与聚焦定理、俘获面——"引力时钟"的物理核心，全书面向量子化目标的第一块基石
+7. [因果结构](docs/07-causal-structure.md)：光锥与因果序、全局双曲与 Cauchy 面、因果菱形（两张零片 + caps + 角点 $S$）——$I^\pm$/$J^\pm$、依赖域、MOTS，"零锥量子化"的舞台为何是菱形
+8. [零超曲面几何](docs/08-null-hypersurface-geometry.md)：零生成元与仿射参数、横向度规 $q_{ab}$、膨胀/剪切/扭转、Raychaudhuri 方程与聚焦、面积振幅 $\varrho$ 的 ODE ——"引力时钟"与"面积上界"的物理核心，全书面向量子化目标的第一块基石
 9. 特征初值问题：零锥上的初始数据、double null 片、解的存在性与延拓——"在零锥上解约束"的存在性依据
 
 ### 第三部分：边界、约束与相空间（面向量子化）
 
-10. 带边界的作用量：GHY 边界项、零边界项与角点项、缝合条件——变分原理在区域有边界时的完整形态
+10. [带边界的作用量](docs/10-boundary-terms-action.md)：GHY 边界项与 Dirichlet 变分原理、Brown–York 张量与 ADM 质量、零边界为什么没有 GHY（$\sqrt h=0$）、$\int\sqrt q\,\Theta$ 是全导数 ⇒ 角点项、缝合时 GHY 相消
 11. ADM 哈密顿形式与约束：超哈密顿约束与动量约束、时间问题（与[QFT 书量子引力导览的自检题 4](../qft-sm/docs/stage-08-quantum-gravity/01-why-quantum-gravity-is-hard.md)的参数化粒子玩具模型对上）
-12. 协变相空间与守恒荷：辛势、Wald 荷、角点对称性与边缘模——经典侧收官章，QFT 书第 9 阶段的直接前置
+12. [协变相空间与守恒荷](docs/12-covariant-phase-space.md)：预辛势 $\theta$、辛流形式 $\omega=\delta\theta$、$\Omega$ 与切片无关、$\delta H_\xi=\int_{\partial\Sigma}Q_\xi$、Komar 质量与 Wald 熵 $S=2\pi\oint Q=A/4G$、边缘模与角点 boost 荷 $K=\mathcal A/8\pi G$——经典侧收官章，QFT 书第 9 阶段的直接前置
 
 ### 第四部分：黑洞热力学（桥接量子）
 
@@ -43,4 +44,5 @@
 - 上游是[理论力学书](../classical-mechanics/README.md)：第 9/10 章（哈密顿方程、Poisson 括号、辛结构）与第 12 章（约束系统与 Dirac 理论）是本书第三部分的直接前置。
 - 上游是[电动力学书](../electrodynamics/README.md)：第 11–12 章（Lorentz 变换、四维矢量与张量）是本书第一部分的语言起点——狭义相对论就是"度规取 $\eta$ 的特例"，本书把 $\eta$ 换成动力学变量。
 - 下游是[QFT 书](../qft-sm/README.md)：第 8 阶段导览只假定读者知道 $S_{\mathrm{EH}}$ 的样子；第 9 阶段（代数量子引力专题）假定读者读过本书第 7、8、10、11、12 章。
+- 与[论文阅读专栏](../paper-reading/README.md)：首篇（arXiv:2611.34924）以本书第 5s、7、8、10、12 章为几何前置——五章已写完，构成"从一阶引力到角点荷"的完整经典链。
 - 与[热统书](../thermal-physics/README.md)：第 13 章的黑洞熵是 $S = k_B\ln\Gamma$ 在引力系统里的化身，微观起源的量子计算留给 QFT 书第 9 阶段。

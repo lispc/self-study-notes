@@ -1,6 +1,6 @@
 # AGENTS.md
 
-QFT/量子力学/凝聚态/广义相对论/数字电路自学讲义仓库（"学习仓库"）。主要内容：根 `README.md`（书库入口）+ 八本书各自一个顶层目录（`classical-mechanics/`、`electrodynamics/`、`general-relativity/`、`quantum-mechanics/`、`thermal-physics/`、`qft-sm/`、`condensed-matter/`、`digital-design/`，各含 `README.md` 路线图与 `docs/` 笔记）+ `serve.py`（本地预览服务器）。笔记为简体中文，含 LaTeX 公式。
+QFT/量子力学/凝聚态/广义相对论/数字电路自学讲义仓库（"学习仓库"）。主要内容：根 `README.md`（书库入口）+ 八本书各自一个顶层目录（`classical-mechanics/`、`electrodynamics/`、`general-relativity/`、`quantum-mechanics/`、`thermal-physics/`、`qft-sm/`、`condensed-matter/`、`digital-design/`，各含 `README.md` 路线图与 `docs/` 笔记）+ 论文阅读专栏 `paper-reading/`（`README.md` 是论文索引，`docs/` 是逐篇思路摘要）+ `serve.py`（本地预览服务器）。笔记为简体中文，含 LaTeX 公式。
 
 ## 目录与文件约定
 
@@ -12,10 +12,11 @@ QFT/量子力学/凝聚态/广义相对论/数字电路自学讲义仓库（"学
 - 热统书笔记路径：`thermal-physics/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。本书 $k_B$ 默认显式保留（不取自然单位），熵、温度公式以含 $k_B$ 的形式书写，首次出现说明；上游是量子力学书，下游是凝聚态书与 QFT 书。
 - 理论力学书笔记路径：`classical-mechanics/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。本书是仓库物理线的起点书（下游链：电动力学 → 量子力学 → 热统 → QFT/凝聚态）。
 - 电动力学书笔记路径：`electrodynamics/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。**单位制：高斯制主线**（Maxwell 方程组的无 $4\pi\varepsilon_0$ 形式，首次出现说明），SI 对照收进附录章；狭义相对论收官章与 QFT 书 stage-03 的协变电磁学笔记衔接，注意内容不重复。
-- 广义相对论书笔记路径：`general-relativity/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位。度规号差 $\eta=\mathrm{diag}(-,+,+,+)$（Wald/Carroll 惯例，与 QFT 书相反，首次出现处给出对照），默认 $c=1$、显式保留 $G_N$。本书上游是理论力学书与电动力学书，下游是 QFT 书第 8 阶段（量子引力导览）与第 9 阶段（代数量子引力专题）。
-- 新增笔记后必须同步该书 README：QFT 书在对应路线图条目末尾加 `（[笔记](docs/...)）` 链接；量子力学书、凝聚态书、数字电路书、热统书、理论力学书和电动力学书把目录条目改为链接。`/<书>/` 目录页就是 README 渲染出来的，漏同步的笔记会出现在目录页底部的"README 未收录的笔记"清单里。
+- 广义相对论书笔记路径：`general-relativity/docs/NN-文档名.md`，编号对应该书 README 目录的章号，留空位（补充材料用 `NNs`，如 `05s`）。度规号差 $\eta=\mathrm{diag}(-,+,+,+)$（Wald/Carroll 惯例，与 QFT 书相反，首次出现处给出对照），默认 $c=1$、显式保留 $G_N$。本书上游是理论力学书与电动力学书，下游是 QFT 书第 8 阶段（量子引力导览）与第 9 阶段（代数量子引力专题）。
+- 论文阅读专栏笔记路径：`paper-reading/docs/NN-论文短名.md`，编号是篇目序号。每篇按"问题 → 关键想法 → 论证链 → 结论 → 前置清单"组织，概念首次出现时给仓库内相对路径链接（`../general-relativity/docs/...` 这类），不复制论文的完整推导。`paper-reading/README.md` 是论文索引，新增篇目要同步挂链接。
+- 新增笔记后必须同步该书 README：QFT 书在对应路线图条目末尾加 `（[笔记](docs/...)）` 链接；量子力学书、凝聚态书、数字电路书、热统书、理论力学书、电动力学书和广义相对论书把目录条目改为链接；论文阅读专栏同步 `paper-reading/README.md` 的篇目列表。`/<书>/` 目录页就是 README 渲染出来的，漏同步的笔记会出现在目录页底部的"README 未收录的笔记"清单里。
 - 跨书引用用相对路径（如凝聚态笔记引用 QFT 笔记：`../../qft-sm/docs/stage-XX/...`）。
-- `serve.py` 是两层结构：`/` 书库首页只列书（`BOOKS` 字典，现有八本书）；`/<书>/` 目录页直接渲染该书的 `README.md`（目录单源维护，不另做自动文件罗列），页尾自动附"README 未收录的笔记"兜底清单；新增书时在 `BOOKS` 加一行即可。另外：`/<书>`（无尾斜杠）会 301 到 `/<书>/`，README 里的相对链接依赖这个尾斜杠。
+- `serve.py` 是两层结构：`/` 书库首页按类别列书（`BOOKS` 字典现有九项：八本书 + 论文阅读；分类在 `CATEGORIES`，未归类的落到"其他"）；`/<书>/` 目录页直接渲染该书的 `README.md`（目录单源维护，不另做自动文件罗列），页尾自动附"README 未收录的笔记"兜底清单；新增书时在 `BOOKS` 加一行、在 `CATEGORIES` 对应类别里加 slug 即可。另外：`/<书>`（无尾斜杠）会 301 到 `/<书>/`，README 里的相对链接依赖这个尾斜杠。
 
 ## 笔记格式模板
 

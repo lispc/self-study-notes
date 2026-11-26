@@ -1,7 +1,7 @@
 # 零锥正则引力与黑洞熵：论文的伴读
 
 > 路线图位置：第 9 阶段（代数量子引力专题）· 第 4 篇（收官）
-> 前置知识：广义相对论书第 7、8、10、11、12 章（因果结构、零超曲面、带边界作用量、ADM、协变相空间）；理论力学书第 9、10、12 章；第 9 阶段 01–03 篇。
+> 前置知识：广义相对论书[第 5s 章](../../../general-relativity/docs/05s-first-order-gravity.md)（一阶引力）、[第 7 章](../../../general-relativity/docs/07-causal-structure.md)（因果结构）、[第 8 章](../../../general-relativity/docs/08-null-hypersurface-geometry.md)（零超曲面）、[第 10 章](../../../general-relativity/docs/10-boundary-terms-action.md)（带边界作用量）、[第 12 章](../../../general-relativity/docs/12-covariant-phase-space.md)（协变相空间）已写完，第 11 章（ADM）待写；理论力学书第 9、10、12 章；第 9 阶段 01–03 篇。论文的整体读法见[论文阅读专栏首篇](../../../paper-reading/docs/01-null-cone-quantum-gravity.md)。
 > 学习目标：复述"一阶引力 → 零初始数据 → 约化相空间 → 量子化 → 时钟投影 → 有限维 → 熵"的完整链条；能写出含边缘模的辛形式并认出 boost 荷 $K = A/8\pi G$；能推出时钟读数对面积的界；能复现熵的对数修正系数 $106/45$；知道半经典极限如何从微分同胚不变性出来。
 
 ---
